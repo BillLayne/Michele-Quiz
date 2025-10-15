@@ -417,6 +417,82 @@
             line-height: 1.6;
         }
 
+        .category-btn {
+            padding: 10px 20px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn:hover {
+            background: #f8f9ff;
+        }
+
+        .category-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .glossary-item {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .glossary-item:hover {
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+        }
+
+        .glossary-term {
+            font-size: 20px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .glossary-simple {
+            font-size: 18px;
+            color: #28a745;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .glossary-explanation {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .glossary-example {
+            background: #f8f9fa;
+            padding: 12px;
+            border-left: 4px solid #ffc107;
+            border-radius: 5px;
+            font-style: italic;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .glossary-category-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #e0e0e0;
+            border-radius: 12px;
+            font-size: 12px;
+            color: #666;
+            margin-right: 8px;
+            margin-top: 8px;
+        }
+
         @media (max-width: 600px) {
             .header h1 {
                 font-size: 24px;
@@ -448,6 +524,19 @@
             .btn {
                 width: 100%;
             }
+
+            .glossary-term {
+                font-size: 18px;
+            }
+
+            .glossary-simple {
+                font-size: 16px;
+            }
+
+            .category-btn {
+                padding: 8px 16px;
+                font-size: 13px;
+            }
         }
     </style>
 </head>
@@ -456,6 +545,9 @@
         <div class="header">
             <h1>🎓 NC Insurance Licensing Quiz</h1>
             <p>Property & Casualty Study Guide</p>
+            <button onclick="showGlossary()" style="margin-top: 15px; padding: 10px 20px; background: rgba(255,255,255,0.2); color: white; border: 2px solid white; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: bold;">
+                📖 Insurance Terms Made Simple
+            </button>
         </div>
 
         <div class="quiz-info" id="quizInfo" style="display: none;">
@@ -486,6 +578,9 @@
                     This quiz will help you prepare for the North Carolina Property & Casualty insurance licensing exam. 
                     You'll answer 10 questions with detailed explanations in simple terms. Questions include real-world 
                     claims scenarios to help you understand what coverage applies in everyday situations!
+                    <br><br>
+                    <strong>📖 New!</strong> Click "Insurance Terms Made Simple" above to access a searchable glossary of 
+                    insurance terms in plain English!
                 </div>
                 
                 <div id="startStats" style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0; display: none;">
@@ -527,6 +622,11 @@
                         <div class="feature-title">Real Claims</div>
                         <div>Practical scenarios</div>
                     </div>
+                    <div class="feature">
+                        <div class="feature-icon">📖</div>
+                        <div class="feature-title">Terms Glossary</div>
+                        <div>45+ terms simplified</div>
+                    </div>
                 </div>
 
                 <button class="btn btn-primary" onclick="startQuiz()" style="max-width: 300px; margin: 0 auto;">
@@ -554,6 +654,28 @@
                     <button class="btn btn-primary" onclick="restartQuiz()">Take Another Quiz</button>
                     <button class="btn btn-secondary" onclick="reviewAnswers()">Review Answers</button>
                 </div>
+            </div>
+
+            <!-- Glossary Screen -->
+            <div id="glossaryScreen" style="display: none;">
+                <div style="margin-bottom: 30px;">
+                    <h2 style="color: #667eea; margin-bottom: 10px;">📖 Insurance Terms Made Simple</h2>
+                    <p style="color: #666; margin-bottom: 20px;">No more confusing jargon! Here's what these insurance words REALLY mean in plain English.</p>
+                    
+                    <input type="text" id="searchBox" placeholder="🔍 Search for a term..." style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 16px; margin-bottom: 20px;" onkeyup="filterGlossary()">
+                    
+                    <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
+                        <button onclick="filterCategory('all')" class="category-btn active" data-category="all">All Terms</button>
+                        <button onclick="filterCategory('general')" class="category-btn" data-category="general">General</button>
+                        <button onclick="filterCategory('property')" class="category-btn" data-category="property">Property</button>
+                        <button onclick="filterCategory('auto')" class="category-btn" data-category="auto">Auto</button>
+                        <button onclick="filterCategory('liability')" class="category-btn" data-category="liability">Liability</button>
+                    </div>
+                </div>
+                
+                <div id="glossaryList"></div>
+                
+                <button class="btn btn-secondary" onclick="hideGlossary()" style="margin-top: 30px; width: 100%;">Back to Quiz</button>
             </div>
         </div>
 
@@ -2049,6 +2171,404 @@
                 document.getElementById('startHighest').textContent = stats.highest + '/10';
             }
         });
+
+        // Insurance Terms Glossary
+        const glossaryTerms = [
+            {
+                term: "Peril",
+                simple: "Type of Claim / Cause of Damage",
+                explanation: "Just a fancy word for HOW something got damaged. Fire is a peril. Theft is a peril. Windstorm is a peril. Whenever you see 'peril,' just think 'type of damage' or 'cause of loss.'",
+                example: "Your house burned down. The PERIL is fire. Your car was stolen. The PERIL is theft.",
+                category: ["general", "property"]
+            },
+            {
+                term: "Hazard",
+                simple: "Something That Makes Damage More Likely",
+                explanation: "A condition that increases the chance of loss. Three types: Physical (oily rags that can catch fire), Moral (dishonest people who might commit fraud), Morale (careless people who don't care because they have insurance).",
+                example: "Leaving your car unlocked with keys inside is a hazard. Faulty wiring in your house is a hazard.",
+                category: ["general"]
+            },
+            {
+                term: "Premium",
+                simple: "The Price You Pay for Insurance",
+                explanation: "Your insurance bill. What you pay monthly, quarterly, or yearly to keep your insurance active. Think of it like a Netflix subscription - you pay every month to keep the service.",
+                example: "Your car insurance premium is $150 per month. That's what you pay to stay insured.",
+                category: ["general"]
+            },
+            {
+                term: "Deductible",
+                simple: "What YOU Pay First Before Insurance Kicks In",
+                explanation: "The amount YOU must pay out of your pocket before insurance pays anything. Higher deductible = lower premium. Lower deductible = higher premium.",
+                example: "$5,000 damage with $1,000 deductible: You pay $1,000, insurance pays $4,000.",
+                category: ["general"]
+            },
+            {
+                term: "Replacement Cost (RC)",
+                simple: "Will Buy You NEW Stuff",
+                explanation: "Insurance pays what it costs to replace something with a BRAND NEW version. No deduction for age or wear. You get enough money to buy new.",
+                example: "Your 5-year-old TV breaks. Replacement Cost pays $800 for a new TV (what it costs today).",
+                category: ["general", "property"]
+            },
+            {
+                term: "Actual Cash Value (ACV)",
+                simple: "What It's Worth USED (After Wear and Tear)",
+                explanation: "Replacement cost MINUS depreciation. It's the 'garage sale price' - what someone would pay for your used item. Always less than replacement cost.",
+                example: "Your 5-year-old TV breaks. It costs $800 new, but it's depreciated 50%. ACV pays $400.",
+                category: ["general", "property"]
+            },
+            {
+                term: "Liability Coverage",
+                simple: "Pays When YOU Hurt Someone Else or Damage Their Stuff",
+                explanation: "The 'I'm sorry' insurance. Covers damage YOU cause to OTHER people and their property. Pays their medical bills, car repairs, legal fees if they sue you.",
+                example: "You rear-end someone. YOUR liability insurance pays for THEIR injuries and car damage.",
+                category: ["liability", "auto"]
+            },
+            {
+                term: "Collision",
+                simple: "Your Car Hits Something (Or Tips Over)",
+                explanation: "Covers damage to YOUR car when it hits another car, hits an object (tree, pole, guardrail), or flips over. Doesn't matter who's at fault.",
+                example: "You slide on ice and hit a tree. Collision pays to fix YOUR car (you pay deductible).",
+                category: ["auto"]
+            },
+            {
+                term: "Comprehensive (Other Than Collision)",
+                simple: "Almost Everything EXCEPT Hitting Things",
+                explanation: "Covers theft, fire, hail, vandalism, hitting an animal, flood, falling objects. If your car wasn't moving and hitting something, it's probably Comprehensive.",
+                example: "Deer runs into your car. Hail dents your hood. Someone steals your car. All Comprehensive.",
+                category: ["auto"]
+            },
+            {
+                term: "Coverage A - Dwelling",
+                simple: "The House Structure",
+                explanation: "Covers the main house and anything permanently attached (garage, deck, built-in appliances). Basically the structure you live in.",
+                example: "Fire damages your kitchen. Coverage A pays to rebuild the walls, cabinets, floors.",
+                category: ["property"]
+            },
+            {
+                term: "Coverage B - Other Structures",
+                simple: "Detached Buildings (Shed, Detached Garage)",
+                explanation: "Covers structures NOT attached to the main house. Usually 10% of Coverage A automatically. Includes sheds, fences, detached garages, pools.",
+                example: "Your detached garage burns down. Coverage B pays to rebuild it.",
+                category: ["property"]
+            },
+            {
+                term: "Coverage C - Personal Property",
+                simple: "Your Stuff Inside (Furniture, Clothes, Electronics)",
+                explanation: "Covers your belongings anywhere in the world. Usually 50% of Coverage A. Your furniture, clothes, TV, computer, dishes - all the stuff you own.",
+                example: "Thief steals your laptop and TV. Coverage C replaces them (minus deductible).",
+                category: ["property"]
+            },
+            {
+                term: "Coverage D - Loss of Use",
+                simple: "Hotel & Extra Expenses If You Can't Live at Home",
+                explanation: "Pays the EXTRA costs when your home is unlivable due to damage. Hotel bills, eating out more, storage units. Only pays the EXTRA amount above your normal costs.",
+                example: "Fire makes home unlivable for 3 months. Coverage D pays hotel costs minus what you'd normally pay for housing.",
+                category: ["property"]
+            },
+            {
+                term: "Coverage E - Personal Liability",
+                simple: "Someone Sues You for Injuries/Damage at Your Home",
+                explanation: "Protects you if someone gets hurt at your property or you damage their property. Pays legal defense and damages if you're found responsible.",
+                example: "Guest trips on your stairs and breaks ankle. Coverage E pays their medical bills and lawyer if they sue.",
+                category: ["liability", "property"]
+            },
+            {
+                term: "Coverage F - Medical Payments to Others",
+                simple: "Quick Payment for Guest Injuries (No Lawsuit Needed)",
+                explanation: "Pays small medical bills for people hurt at your place, even if it wasn't your fault. Keeps things friendly. Low limits ($1,000-$5,000).",
+                example: "Neighbor's kid falls in your yard. Coverage F quickly pays ER bill without determining fault.",
+                category: ["liability", "property"]
+            },
+            {
+                term: "Named Peril",
+                simple: "Only Specific Listed Causes Are Covered",
+                explanation: "Insurance ONLY covers the perils (causes) specifically written in the policy. If it's not on the list, no coverage. Like a menu - you can only order what's listed.",
+                example: "Policy lists: fire, theft, wind. You're covered for those. Earthquake? Not on the list = not covered.",
+                category: ["general", "property"]
+            },
+            {
+                term: "Open Peril (All Risk)",
+                simple: "Everything Is Covered EXCEPT Specific Exclusions",
+                explanation: "Covers ALL causes of loss UNLESS specifically excluded. Better coverage. You're covered unless the policy says you're not.",
+                example: "Anything can damage your house and it's covered EXCEPT the exclusions list (flood, earthquake, war, etc.).",
+                category: ["general", "property"]
+            },
+            {
+                term: "Exclusion",
+                simple: "What's NOT Covered (The 'No' List)",
+                explanation: "Specific things the policy will NOT pay for. Every policy has exclusions. Common ones: flood, earthquake, war, intentional damage, normal wear and tear.",
+                example: "Earthquake is excluded from homeowners policies. Flood is excluded. You need separate policies for these.",
+                category: ["general"]
+            },
+            {
+                term: "Endorsement",
+                simple: "Add-On That Changes Your Policy",
+                explanation: "A form that adds, removes, or changes coverage. Like adding extra toppings to a pizza. Usually costs extra if adding coverage, gives discount if removing.",
+                example: "Add earthquake coverage endorsement for $200/year. Add jewelry floater to cover your engagement ring.",
+                category: ["general"]
+            },
+            {
+                term: "Declarations Page (Dec Page)",
+                simple: "The Info Page (Who, What, Where, When, How Much)",
+                explanation: "The front page of your policy with all your personal information. Shows your name, address, what's covered, coverage amounts, premium, policy period.",
+                example: "Your dec page shows: John Smith, 123 Main St, $200,000 dwelling, $1,000 deductible, $1,500/year premium.",
+                category: ["general"]
+            },
+            {
+                term: "Insurable Interest",
+                simple: "You Must Actually Lose Money If It's Damaged",
+                explanation: "You can only insure things where you'd suffer a real financial loss. Prevents gambling with insurance. You can't insure your neighbor's house - you wouldn't lose money if it burned.",
+                example: "You can insure YOUR house. You can't insure a random stranger's house. You have no financial stake in theirs.",
+                category: ["general"]
+            },
+            {
+                term: "Subrogation",
+                simple: "Insurance Company Goes After Whoever Really Caused Damage",
+                explanation: "After paying your claim, your insurance company can sue whoever was actually at fault to get their money back. They take over your right to sue.",
+                example: "Neighbor's tree falls on your house. Your insurance pays you, then sues your neighbor to recover the money.",
+                category: ["general"]
+            },
+            {
+                term: "Underwriting",
+                simple: "Deciding Who Gets Insurance and at What Price",
+                explanation: "The process of evaluating risk and deciding whether to insure someone and how much to charge. Like a bank deciding whether to give you a loan.",
+                example: "Underwriter reviews your application: clean driving record = approved at standard rates. Multiple DUIs = declined or very high rates.",
+                category: ["general"]
+            },
+            {
+                term: "Agent",
+                simple: "Sells Insurance FOR the Company (Can Bind Coverage)",
+                explanation: "An authorized representative of an insurance company. Has power to make coverage effective immediately. Works FOR the insurance company.",
+                example: "You call an agent. They say 'You're covered starting now!' and it's official immediately.",
+                category: ["general"]
+            },
+            {
+                term: "Broker",
+                simple: "Shops Insurance FOR You (Must Get Company Approval)",
+                explanation: "Works for the customer, not the insurance company. Shops multiple companies for best price. Cannot bind coverage - must submit applications and wait for approval.",
+                example: "Broker gets quotes from 5 companies, helps you pick the best one, submits application for approval.",
+                category: ["general"]
+            },
+            {
+                term: "Binder",
+                simple: "Temporary Insurance Until Real Policy Is Printed",
+                explanation: "Proof of immediate coverage. Like a receipt that says 'You're insured right now.' Lasts until the official policy is issued (usually 30-90 days).",
+                example: "Need proof of insurance for house closing tomorrow. Agent issues binder - you're covered immediately.",
+                category: ["general"]
+            },
+            {
+                term: "DP-1, DP-2, DP-3 (Dwelling Policies)",
+                simple: "Insurance for Rental Properties (Not Your Home)",
+                explanation: "Dwelling policies are for properties you own but DON'T live in. Rentals, vacation homes, vacant properties. DP-1 = basic, DP-2 = better, DP-3 = best.",
+                example: "You own a house and rent it to tenants. You need a DP-3, not a homeowners policy.",
+                category: ["property"]
+            },
+            {
+                term: "HO-3 (Homeowners Policy)",
+                simple: "Most Common Homeowners Insurance",
+                explanation: "The standard homeowners policy for owner-occupied houses. House covered 'open peril,' contents covered 'named peril.' Most people have this.",
+                example: "You own and live in a house. HO-3 is what you probably have.",
+                category: ["property"]
+            },
+            {
+                term: "HO-4 (Renters Policy)",
+                simple: "Insurance for Apartment Renters",
+                explanation: "Covers YOUR belongings and liability if you rent. Doesn't cover the building (landlord's insurance does that). Super cheap and important!",
+                example: "You rent an apartment. HO-4 covers your furniture, TV, clothes if there's a fire or theft.",
+                category: ["property"]
+            },
+            {
+                term: "HO-6 (Condo Policy)",
+                simple: "Insurance for Condo Owners",
+                explanation: "Covers the inside of your condo unit ('walls in'), your belongings, and liability. The building structure is covered by the condo association's policy.",
+                example: "You own a condo. HO-6 covers your kitchen, bathroom, flooring, and all your stuff inside.",
+                category: ["property"]
+            },
+            {
+                term: "Uninsured Motorist (UM)",
+                simple: "Protects You When Hit by Driver With No Insurance",
+                explanation: "Covers YOUR injuries if an uninsured driver hits you or in a hit-and-run. Required in NC. Protects you from irresponsible drivers.",
+                example: "Hit-and-run driver totals your car and breaks your arm. YOUR UM coverage pays your medical bills.",
+                category: ["auto"]
+            },
+            {
+                term: "Medical Payments (Auto)",
+                simple: "Pays Medical Bills for You and Your Passengers",
+                explanation: "Covers medical expenses for people IN YOUR CAR, regardless of who caused the accident. Quick payment without proving fault.",
+                example: "You cause an accident. Your passenger breaks a leg. YOUR Med Pay covers their medical bills.",
+                category: ["auto"]
+            },
+            {
+                term: "Flood Insurance (NFIP)",
+                simple: "Separate Policy for Water Coming From Outside",
+                explanation: "Regular homeowners insurance DOES NOT cover floods. Need special flood insurance from the federal government (NFIP). 30-day wait period.",
+                example: "River overflows and floods your house. Only flood insurance covers this, not regular homeowners insurance.",
+                category: ["property"]
+            },
+            {
+                term: "Workers Compensation",
+                simple: "Insurance That Pays Employees Hurt on the Job",
+                explanation: "Mandatory insurance (3+ employees in NC) that pays medical bills and lost wages for work injuries. Employees can't sue employer. 'No-fault' system.",
+                example: "Warehouse worker hurts back lifting boxes. Workers Comp pays medical bills and replaces part of their wages.",
+                category: ["liability"]
+            },
+            {
+                term: "General Liability (CGL)",
+                simple: "Business Insurance for Lawsuits Over Injuries/Damage",
+                explanation: "Protects businesses if customers or the public sue them for injuries or property damage. Like homeowners liability but for businesses.",
+                example: "Customer slips in your store and breaks hip. CGL pays their medical bills and legal defense.",
+                category: ["liability"]
+            },
+            {
+                term: "80% Rule (Coinsurance)",
+                simple: "Must Insure for 80% of Value or Face Penalty",
+                explanation: "If you don't insure your property for at least 80% of its replacement cost, you'll get penalized on claims. You become a 'co-insurer' and only get partial payment.",
+                example: "House worth $200K. Insured for only $100K (not 80%). $50K fire. Insurance only pays $31,250 (penalty).",
+                category: ["property"]
+            },
+            {
+                term: "Depreciation",
+                simple: "Loss of Value Over Time (Wear and Tear)",
+                explanation: "How much value something loses as it gets older and used. A 5-year-old car is worth less than a new car. Insurance uses this to calculate ACV.",
+                example: "New couch costs $1,000. After 5 years, it's depreciated 40%. Now it's worth $600 (60% of original).",
+                category: ["general"]
+            },
+            {
+                term: "Claims-Made Policy",
+                simple: "Covers Claims REPORTED During Policy Period",
+                explanation: "The policy that's active when you REPORT the claim is the one that pays, regardless of when the injury happened. Common in professional liability.",
+                example: "Injury happens in 2020. Claim filed in 2024. Your 2024 policy pays (if Claims-Made).",
+                category: ["liability"]
+            },
+            {
+                term: "Occurrence Policy",
+                simple: "Covers Claims for Injuries That HAPPENED During Policy Period",
+                explanation: "The policy that was active when the injury OCCURRED pays, even if the claim is filed years later. Better for insured than Claims-Made.",
+                example: "Injury happens in 2020. Claim filed in 2024. Your 2020 policy pays (if Occurrence).",
+                category: ["liability"]
+            },
+            {
+                term: "Rebating",
+                simple: "Illegally Offering Kickbacks to Buy Insurance",
+                explanation: "Agent offers cash, gifts, or special deals NOT in the policy to get someone to buy. Totally illegal. Can lose your license.",
+                example: "Agent says 'Buy from me and I'll give you $100 cash back.' That's illegal rebating!",
+                category: ["general"]
+            },
+            {
+                term: "Vacancy",
+                simple: "Building That's Completely Empty (No People or Stuff)",
+                explanation: "Property with no people AND no furniture. Much riskier than occupied property. Most policies limit coverage after 30-60 days vacant.",
+                example: "House sits empty for 90 days during renovation. Most homeowners policies won't cover it - need special vacant property policy.",
+                category: ["property"]
+            },
+            {
+                term: "NC Reinsurance Facility",
+                simple: "State Pool That Shares High-Risk Drivers",
+                explanation: "NC system where all insurance companies share the losses from high-risk drivers they're required to insure. Keeps insurance available for everyone.",
+                example: "High-risk driver assigned to Company A. Company A 'cedes' the risk to the Facility. All NC insurers share the loss.",
+                category: ["auto"]
+            },
+            {
+                term: "Permissive Use",
+                simple: "You Give Someone Permission to Drive Your Car",
+                explanation: "Anyone you allow to drive your car is automatically covered by YOUR insurance. Insurance follows the car, not the driver.",
+                example: "Friend borrows your car with permission. They crash. YOUR insurance pays first (they're a permissive user).",
+                category: ["auto"]
+            },
+            {
+                term: "Per Occurrence Limit",
+                simple: "Total Insurance Pays for ONE Accident",
+                explanation: "Maximum your insurance will pay for a single incident, no matter how many people are hurt. Each separate accident gets its own limit.",
+                example: "$300K per occurrence. One accident injures 5 people totaling $400K damages. Insurance pays $300K max (you owe $100K).",
+                category: ["liability"]
+            },
+            {
+                term: "Aggregate Limit",
+                simple: "Total Insurance Pays for ENTIRE POLICY PERIOD",
+                explanation: "The maximum your insurance will pay for ALL claims during the policy period combined. Once you hit this limit, you're out of coverage.",
+                example: "$1M aggregate. Three separate accidents this year total $1.2M. Insurance pays $1M, you owe $200K.",
+                category: ["liability"]
+            },
+            {
+                term: "Duty to Defend",
+                simple: "Insurance MUST Hire You a Lawyer",
+                explanation: "If someone sues you for a covered claim, the insurance company MUST provide legal defense, even if the claim is groundless.",
+                example: "Someone sues you (covered situation). Insurance pays for your lawyer, court costs, etc., even if you did nothing wrong.",
+                category: ["liability"]
+            }
+        ];
+
+        function showGlossary() {
+            document.getElementById('startScreen').style.display = 'none';
+            document.getElementById('quizContainer').style.display = 'none';
+            document.getElementById('resultsScreen').classList.remove('show');
+            document.getElementById('glossaryScreen').style.display = 'block';
+            document.getElementById('quizInfo').style.display = 'none';
+            renderGlossary('all');
+        }
+
+        function hideGlossary() {
+            document.getElementById('glossaryScreen').style.display = 'none';
+            document.getElementById('startScreen').style.display = 'block';
+        }
+
+        function renderGlossary(category = 'all') {
+            const glossaryList = document.getElementById('glossaryList');
+            const searchTerm = document.getElementById('searchBox').value.toLowerCase();
+            
+            let filteredTerms = glossaryTerms;
+            
+            // Filter by category
+            if (category !== 'all') {
+                filteredTerms = filteredTerms.filter(term => term.category.includes(category));
+            }
+            
+            // Filter by search
+            if (searchTerm) {
+                filteredTerms = filteredTerms.filter(term => 
+                    term.term.toLowerCase().includes(searchTerm) ||
+                    term.simple.toLowerCase().includes(searchTerm) ||
+                    term.explanation.toLowerCase().includes(searchTerm)
+                );
+            }
+            
+            glossaryList.innerHTML = '';
+            
+            if (filteredTerms.length === 0) {
+                glossaryList.innerHTML = '<p style="text-align: center; color: #666; padding: 40px;">No terms found. Try a different search or category.</p>';
+                return;
+            }
+            
+            filteredTerms.forEach(item => {
+                const glossaryItem = document.createElement('div');
+                glossaryItem.className = 'glossary-item';
+                glossaryItem.innerHTML = `
+                    <div class="glossary-term">${item.term}</div>
+                    <div class="glossary-simple">= ${item.simple}</div>
+                    <div class="glossary-explanation">${item.explanation}</div>
+                    <div class="glossary-example">📌 ${item.example}</div>
+                    <div>
+                        ${item.category.map(cat => `<span class="glossary-category-tag">${cat}</span>`).join('')}
+                    </div>
+                `;
+                glossaryList.appendChild(glossaryItem);
+            });
+        }
+
+        function filterCategory(category) {
+            // Update active button
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            renderGlossary(category);
+        }
+
+        function filterGlossary() {
+            const activeCategory = document.querySelector('.category-btn.active').dataset.category;
+            renderGlossary(activeCategory);
+        }
 
         function shuffleArray(array) {
             const shuffled = [...array];
