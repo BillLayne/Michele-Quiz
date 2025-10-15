@@ -484,14 +484,33 @@
                 <div class="start-title">Ready to Test Your Knowledge?</div>
                 <div class="start-description">
                     This quiz will help you prepare for the North Carolina Property & Casualty insurance licensing exam. 
-                    You'll answer 10 questions with detailed explanations in simple terms.
+                    You'll answer 10 questions with detailed explanations in simple terms. Questions include real-world 
+                    claims scenarios to help you understand what coverage applies in everyday situations!
+                </div>
+                
+                <div id="startStats" style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0; display: none;">
+                    <h3 style="text-align: center; margin-bottom: 15px; color: #667eea;">📈 Your Progress</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 12px; color: #666;">Quizzes Taken</div>
+                            <div id="startTotal" style="font-size: 24px; font-weight: bold; color: #667eea;">0</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 12px; color: #666;">Average Score</div>
+                            <div id="startAverage" style="font-size: 24px; font-weight: bold; color: #667eea;">0</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 12px; color: #666;">Highest Score</div>
+                            <div id="startHighest" style="font-size: 24px; font-weight: bold; color: #28a745;">0</div>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="features">
                     <div class="feature">
                         <div class="feature-icon">📝</div>
-                        <div class="feature-title">10 Questions</div>
-                        <div>Per quiz session</div>
+                        <div class="feature-title">130+ Questions</div>
+                        <div>10 random per quiz</div>
                     </div>
                     <div class="feature">
                         <div class="feature-icon">💡</div>
@@ -500,13 +519,13 @@
                     </div>
                     <div class="feature">
                         <div class="feature-icon">📊</div>
-                        <div class="feature-title">Instant Feedback</div>
-                        <div>See results immediately</div>
+                        <div class="feature-title">Score Tracking</div>
+                        <div>See your progress</div>
                     </div>
                     <div class="feature">
                         <div class="feature-icon">🎯</div>
-                        <div class="feature-title">Track Progress</div>
-                        <div>Monitor your score</div>
+                        <div class="feature-title">Real Claims</div>
+                        <div>Practical scenarios</div>
                     </div>
                 </div>
 
@@ -1607,6 +1626,378 @@
                 correct: 1,
                 explanation: "A Peril is simply the CAUSE of a loss - the specific event or thing that damaged your property. Think of 'peril' as just another word for 'type of damage' or 'cause of damage.' Common perils include: fire, lightning, windstorm, hail, explosion, theft, vandalism, falling objects, weight of ice and snow, water damage, smoke. Insurance policies either list specific covered perils ('Named Peril' coverage) or cover all perils except excluded ones ('Open Peril' or 'All Risk' coverage). Example: Your house is damaged. HOW was it damaged? By FIRE - that's the peril. By WIND - that's the peril. By EARTHQUAKE - that's the peril. The peril determines whether you're covered. Whenever you see 'peril,' just think 'cause of damage' or 'type of claim.' Don't overthink it!",
                 simpleAnswer: "Peril = Type of damage/cause of loss - Just a fancy word for what caused the damage (fire, theft, wind, etc.). Each policy lists which perils it covers."
+            },
+            {
+                question: "REAL CLAIM: A customer calls and says 'I hit a deer with my car last night. My front bumper is smashed.' What coverage pays for this?",
+                answers: [
+                    "Liability Coverage",
+                    "Collision Coverage",
+                    "Comprehensive Coverage",
+                    "Uninsured Motorist Coverage"
+                ],
+                correct: 2,
+                explanation: "Hitting an ANIMAL is always Comprehensive (Other Than Collision), not Collision. Why? Because the insurance rule is: if your car hits an animal OR an animal hits your car, it's Comprehensive. Animals are considered unpredictable moving objects. Think of it this way: you can't control when a deer jumps in front of you. It's like an 'act of nature.' Other Comprehensive claims: hitting a bird, a cow in the road, or even if a deer runs into the side of your parked car. The customer will pay their Comprehensive deductible (often $500) and insurance fixes the damage. Fun fact: Deer claims are SUPER common in North Carolina, especially in fall during mating season!",
+                simpleAnswer: "Comprehensive - Hitting any animal (deer, dog, etc.) is always Comprehensive coverage, NOT Collision."
+            },
+            {
+                question: "REAL CLAIM: A customer says 'I swerved to miss a deer and hit a tree instead. My car is totaled.' What coverage pays?",
+                answers: [
+                    "Liability Coverage",
+                    "Collision Coverage",
+                    "Comprehensive Coverage",
+                    "No coverage"
+                ],
+                correct: 1,
+                explanation: "This is Collision, NOT Comprehensive! Here's the key difference: If you HIT the deer = Comprehensive. If you MISS the deer but hit something else (tree, ditch, guardrail, another car) = Collision. Why? Because you (and your moving car) collided with an object. It doesn't matter WHY you hit the tree - the fact is your car hit a fixed object, which is the definition of Collision. The customer will pay their Collision deductible (often $500-$1,000) and insurance will pay to fix or replace the car. Pro tip: From a claims perspective, it's actually better to hit the deer (Comprehensive, lower deductible) than to swerve and hit a tree (Collision, higher deductible)! But safety first - never risk your life to save on a deductible!",
+                simpleAnswer: "Collision - If you MISS the deer but hit something else (tree, guardrail, ditch), that's Collision because your car hit an object."
+            },
+            {
+                question: "REAL CLAIM: Customer calls: 'Someone broke my car window and stole my laptop that was on the seat.' What's covered?",
+                answers: [
+                    "Auto insurance covers both the window and laptop",
+                    "Auto Comprehensive covers the window; Homeowners/Renters covers the laptop",
+                    "Only the laptop is covered",
+                    "Nothing is covered"
+                ],
+                correct: 1,
+                explanation: "This requires TWO different policies! The broken CAR WINDOW is part of the vehicle, so it's covered under Auto Comprehensive coverage (if the customer has it). They'll pay their auto Comprehensive deductible. But the LAPTOP is personal property, NOT part of the car, so it's covered under their Homeowners or Renters insurance (Coverage C - Personal Property), not their auto policy. They'd pay their homeowners deductible. This surprises many people! Your auto policy covers the VEHICLE and its permanently installed parts. Personal items inside (phones, computers, purses, tools, etc.) are covered by your homeowners/renters policy. Pro tip: Homeowners policies cover your stuff anywhere in the world, including inside your car!",
+                simpleAnswer: "Two policies needed - Auto Comprehensive covers the broken window; Homeowners/Renters insurance covers the stolen laptop (personal property)."
+            },
+            {
+                question: "REAL CLAIM: 'Hail damaged my car yesterday. The roof and hood are dented.' What coverage pays?",
+                answers: [
+                    "Liability",
+                    "Collision",
+                    "Comprehensive",
+                    "Uninsured Motorist"
+                ],
+                correct: 2,
+                explanation: "Hail damage is ALWAYS Comprehensive. Weather-related damage to your car (that doesn't involve you hitting something) falls under Comprehensive. This includes: hail, flood, tornado damage, tree falling on car, lightning strike, etc. Collision is only for when your car hits something or something hits your moving car. Hail just falls from the sky - your car wasn't moving and hitting anything. The customer pays their Comprehensive deductible. Interesting note: After major hailstorms in North Carolina, insurance companies often send teams of adjusters and set up temporary claim centers in parking lots because hundreds of cars get damaged at once! Hail can cause thousands of dollars in damage - sometimes requiring complete roof/hood replacement or paintless dent repair.",
+                simpleAnswer: "Comprehensive - Weather damage like hail, flood, or fallen trees is always Comprehensive (not Collision)."
+            },
+            {
+                question: "REAL CLAIM: 'I was backing out of my driveway and hit my mailbox. Who pays?'",
+                answers: [
+                    "Liability covers the mailbox",
+                    "Collision covers the car damage; Homeowners covers the mailbox",
+                    "Comprehensive covers both",
+                    "Nothing is covered - it's your own property"
+                ],
+                correct: 1,
+                explanation: "When you damage your OWN property, it gets tricky! The damage to your CAR is covered under your Auto Collision coverage (your moving car hit an object). You'll pay your Collision deductible. But the MAILBOX is covered under your Homeowners policy as 'property damage' - specifically Coverage A or B depending on whether it's attached to the house or a separate structure. However, here's the catch: most people won't file a homeowners claim for a mailbox because it costs less than the deductible ($500-$1,000). So realistically, you'd probably pay out of pocket for the mailbox ($100-200) and either pay out of pocket for the car damage or file an auto Collision claim if the damage is expensive.",
+                simpleAnswer: "Auto Collision for car, Homeowners for mailbox - But most people just pay for the mailbox themselves since it's usually less than the deductible."
+            },
+            {
+                question: "REAL CLAIM: 'Someone hit my parked car in the parking lot and drove away. I don't know who did it.' What covers my car damage?",
+                answers: [
+                    "Liability",
+                    "Collision",
+                    "Uninsured Motorist Property Damage",
+                    "No coverage"
+                ],
+                correct: 1,
+                explanation: "This is a Collision claim on YOUR policy (if you have Collision coverage). Even though you weren't driving, your car was involved in a collision with another vehicle. Hit-and-run situations where you don't know who did it are covered under your own Collision coverage. You pay your deductible and insurance fixes your car. In some states, you can use Uninsured Motorist Property Damage for hit-and-run, but that's usually not available in NC for hit-and-run situations unless you can identify the vehicle. If someone saw the accident and got the other driver's license plate, then you could file a claim against THEIR insurance instead of yours. Always leave a note with your contact info if you're a witness to a parking lot accident - you could save someone from paying their deductible!",
+                simpleAnswer: "Your own Collision coverage - Hit-and-run with unknown driver means you file under your own Collision (if you have it) and pay your deductible."
+            },
+            {
+                question: "REAL CLAIM: 'I was cooking and the stove caught fire. The kitchen is destroyed.' What homeowners coverage pays?",
+                answers: [
+                    "No coverage - cooking fires are excluded",
+                    "Coverage A for structure, Coverage C for damaged belongings",
+                    "Only Contents are covered",
+                    "Liability coverage"
+                ],
+                correct: 1,
+                explanation: "Accidental cooking fires are FULLY covered under homeowners insurance! This is exactly what the policy is for. Coverage A (Dwelling) pays to repair/rebuild the kitchen structure - walls, cabinets, countertops, flooring. Coverage C (Personal Property) pays for damaged belongings - destroyed dishes, small appliances, food, etc. If the home is unlivable during repairs, Coverage D (Loss of Use) pays for hotel and extra expenses. Fire is one of the most basic covered perils in ANY insurance policy. The only time a fire wouldn't be covered is if it was set INTENTIONALLY (arson). Accidental fires from cooking, candles, fireplaces, electrical problems, etc. are all covered. The customer pays one deductible for the whole claim. This is why having adequate coverage limits is so important!",
+                simpleAnswer: "Fully covered - Coverage A fixes the kitchen structure, Coverage C replaces damaged belongings. Fire is always covered unless intentional."
+            },
+            {
+                question: "REAL CLAIM: 'A pipe burst in my wall and flooded my house. Water everywhere!' Is this covered?",
+                answers: [
+                    "No - water damage is always excluded",
+                    "Yes - sudden and accidental water discharge is covered",
+                    "Only if you have flood insurance",
+                    "Only the pipe is covered"
+                ],
+                correct: 1,
+                explanation: "YES, this IS covered! There's a BIG difference between FLOOD (excluded) and accidental water discharge (covered). A burst pipe, leaking water heater, or overflowing washing machine are all 'sudden and accidental' water discharge - fully covered! FLOOD means water coming from outside and covering the ground first (river overflow, heavy rain). THAT'S excluded. But water from your home's systems (pipes, appliances) is covered under standard policies. Coverage A pays to fix the walls, floors, and pipe. Coverage C pays for damaged furniture, carpet, etc. Important: If the pipe burst because you went on vacation in winter and didn't heat the house, that might be excluded as 'freezing' - you're supposed to maintain heat or drain pipes. But a random pipe burst? Covered!",
+                simpleAnswer: "YES, covered - Burst pipes and water from your home's systems are covered. FLOOD (water from outside) is what's excluded."
+            },
+            {
+                question: "REAL CLAIM: 'My neighbor's kid was playing in my yard, fell off my swing set, and broke his arm. They're asking me to pay the medical bills.'",
+                answers: [
+                    "Not your problem",
+                    "Coverage E - Personal Liability",
+                    "Coverage F - Medical Payments to Others",
+                    "Either Coverage E or F could apply"
+                ],
+                correct: 3,
+                explanation: "Both coverages could help here! Coverage F (Medical Payments to Others) is the EASY solution: it pays medical bills for guests injured on your property, regardless of fault - no questions asked, no lawsuit needed. Limits are usually $1,000-$5,000. Perfect for small injuries to keep things friendly. If the medical bills are under your Medical Payments limit and the neighbor isn't making it a big deal, Coverage F pays quickly. But if they SUE you claiming the swing set was dangerous and you were negligent, then Coverage E (Personal Liability) applies - it provides legal defense and pays damages up to your policy limit (often $100,000-$500,000). Most claims like this settle quickly with Medical Payments Coverage. That's why it's called 'goodwill coverage' - it prevents lawsuits!",
+                simpleAnswer: "Both can help - Medical Payments (Coverage F) pays small bills quickly; Liability (Coverage E) covers if they sue you for negligence."
+            },
+            {
+                question: "REAL CLAIM: 'I rear-ended the car in front of me at a red light. They say they have neck pain.' What coverage handles this?",
+                answers: [
+                    "Collision covers their injuries",
+                    "Liability covers their injuries and car damage",
+                    "Comprehensive covers everything",
+                    "Medical Payments covers their injuries"
+                ],
+                correct: 1,
+                explanation: "You were at fault (rear-end = almost always your fault), so YOUR Liability coverage (Part A) pays for: (1) Their medical bills/injuries, (2) Their car repairs, (3) Their lost wages if they miss work, (4) Your legal defense if they sue, and (5) Pain and suffering if proven. Your Liability coverage has limits (in NC, minimum $30,000 per person/$60,000 per accident for injuries, $25,000 for property damage). If their injuries are serious and exceed your limits, you could be sued personally for the difference. To fix YOUR car, you'd use your own Collision coverage (if you have it) and pay your deductible. Medical Payments on YOUR policy only covers injuries to YOU and your passengers, not people you injure in other vehicles.",
+                simpleAnswer: "Your Liability coverage - Pays for their injuries, their car damage, and provides you a lawyer if they sue you."
+            },
+            {
+                question: "REAL CLAIM: 'A tornado lifted my trampoline and it crashed through my neighbor's window.' Who pays?",
+                answers: [
+                    "Your Homeowners Liability",
+                    "Your neighbor's Homeowners",
+                    "No coverage - Act of God",
+                    "Your Coverage B pays"
+                ],
+                correct: 1,
+                explanation: "This surprises people, but YOUR NEIGHBOR'S homeowners insurance pays to fix THEIR window! Why? Because wind damage (windstorm/tornado) is a covered peril under their Coverage A (Dwelling). Even though YOUR trampoline did the damage, it was an 'Act of God' (tornado) that caused it, not your negligence. You weren't at fault. Now, if your neighbor can prove you were NEGLIGENT (like you knew a tornado was coming and didn't secure the trampoline when you easily could have), they could potentially make a claim against your Liability coverage. But that's hard to prove with tornadoes - they're unpredictable. In most cases, each person files under their own policy for tornado damage. Your neighbor files for their window, you file for your trampoline and any house damage.",
+                simpleAnswer: "Neighbor's homeowners pays - Wind damage to their property is covered by THEIR insurance. You weren't negligent; the tornado was an Act of God."
+            },
+            {
+                question: "REAL CLAIM: 'Teenagers spray-painted graffiti all over my garage door overnight.' What coverage pays?",
+                answers: [
+                    "Not covered - vandalism by strangers is excluded",
+                    "Coverage A - Dwelling (if HO-3 or better)",
+                    "Liability coverage",
+                    "You have to catch the teens first"
+                ],
+                correct: 1,
+                explanation: "Vandalism is a covered peril under most homeowners policies! The garage door is part of your dwelling (if attached) or Other Structures (if detached), so Coverage A or B pays to clean or replace it. On an HO-3, the dwelling is covered for vandalism because it's 'open peril' (everything except exclusions, and vandalism isn't excluded). On an HO-2, vandalism is one of the named perils. The customer pays their deductible and insurance handles the rest. You do NOT need to catch the vandals or file a police report for coverage to apply (though a police report is a good idea for documentation). Vandalism claims are common: graffiti, broken windows, slashed tires, mailboxes knocked over, etc. It's one of the reasons having insurance is so important!",
+                simpleAnswer: "Coverage A/B pays - Vandalism to your property is a covered peril. You pay your deductible; insurance pays to clean/fix it."
+            },
+            {
+                question: "REAL CLAIM: 'My engagement ring was stolen from my house during a break-in.' How much will homeowners insurance pay?",
+                answers: [
+                    "Full replacement cost of the ring",
+                    "Actual cash value of the ring",
+                    "Only up to the special limit (usually $1,000-$1,500 for jewelry)",
+                    "Nothing - jewelry isn't covered"
+                ],
+                correct: 2,
+                explanation: "This is a HUGE surprise for most people! Standard homeowners policies have special SUB-LIMITS for certain valuable items. For jewelry, watches, and furs, the limit is typically only $1,000-$1,500 TOTAL, not per item. So even if your $5,000 engagement ring is stolen, you only get $1,500 max under the standard policy. Other sub-limits: $200 for cash, $1,500 for electronics, $2,500 for firearms, $2,500 for silverware. These limits apply to THEFT only - if the items are destroyed in a fire, full coverage applies. The solution? Buy a 'Scheduled Personal Property' endorsement (also called a 'Floater' or 'Personal Articles Policy'). You list specific valuable items with their appraised values, pay a small extra premium, and get full coverage with no deductible for ALL perils including mysterious disappearance!",
+                simpleAnswer: "Only $1,000-$1,500 - Standard policies have LOW limits for jewelry theft. Need a special 'scheduled' endorsement for full coverage of expensive jewelry."
+            },
+            {
+                question: "REAL CLAIM: 'I left my car running with the keys in it at a gas station. Someone jumped in and stole it.' Is this covered?",
+                answers: [
+                    "No - your carelessness voids coverage",
+                    "Yes - theft is theft, regardless of circumstances",
+                    "Only if you have comprehensive",
+                    "B and C are both correct"
+                ],
+                correct: 3,
+                explanation: "YES, vehicle theft is covered under Comprehensive coverage, even if you made it easy for the thief! You might think 'morale hazard' or carelessness would void coverage, but it doesn't. Theft is theft. The insurance company might give you safety tips for the future, but they'll still pay the claim. The customer pays their Comprehensive deductible (often $500) and insurance pays the actual cash value of the stolen vehicle. If the car is recovered damaged, they'll pay to repair it. If it's never found, they pay the total value. However, if you made a FALSE claim (lied about a theft to collect money), that's fraud and you'd lose all coverage and face criminal charges. But genuine theft, even from carelessness, is covered. Pro tip: NEVER leave your car running unattended - this is extremely common and preventable!",
+                simpleAnswer: "YES, covered - Theft is covered by Comprehensive even if you were careless (left keys in it). They'll pay but might lecture you about safety!"
+            },
+            {
+                question: "REAL CLAIM: 'A storm knocked a tree onto my house AND my car.' How many deductibles do I pay?",
+                answers: [
+                    "One deductible covers both",
+                    "Two separate deductibles - one homeowners, one auto",
+                    "No deductible for storm damage",
+                    "Whichever deductible is higher"
+                ],
+                correct: 1,
+                explanation: "You'll pay TWO separate deductibles because these are two different insurance policies. The tree damage to your HOUSE is a claim on your Homeowners policy (Coverage A - Dwelling) - you pay your homeowners deductible (often $1,000-$2,500). The tree damage to your CAR is a claim on your Auto policy (Comprehensive coverage) - you pay your auto Comprehensive deductible (often $500). They're completely separate. Each policy pays its own claim. This can be frustrating in situations like this where one storm causes multiple damages! Some people think they should only pay one deductible, but that's not how insurance works - each policy has its own deductible. The good news? At least both damages are covered! Without insurance, you'd pay for everything out of pocket.",
+                simpleAnswer: "Two deductibles - Homeowners deductible for the house damage, Auto Comprehensive deductible for the car damage. They're separate policies."
+            },
+            {
+                question: "REAL CLAIM: 'My teenager hosted a party while I was away. Kids got drunk and one drove home and crashed. The victim's family is suing ME.' Am I covered?",
+                answers: [
+                    "No - not your fault",
+                    "Yes - Homeowners Liability coverage may apply",
+                    "Only if you gave permission for the party",
+                    "No - alcohol-related claims are excluded"
+                ],
+                correct: 1,
+                explanation: "This is a 'social host liability' situation. In North Carolina and many states, homeowners CAN be held liable for injuries caused by underage guests who drank at their home. The theory: you provided the location and failed to supervise, even if you weren't home. Your Homeowners Liability coverage (Coverage E) would provide legal defense and pay damages if you're found liable (up to your limits). However, there's a catch: some policies have 'liquor liability' exclusions that might limit coverage if you were in the business of serving alcohol or if you intentionally provided alcohol to minors. For casual social hosting, coverage usually applies. This is exactly why parents need high liability limits! The lesson: Never allow unsupervised parties at your home. You can be held responsible for what happens there. Consider umbrella liability insurance for extra protection beyond your homeowners policy.",
+                simpleAnswer: "Possibly covered - Homeowners Liability might cover you, but this is a serious risk. You can be held responsible for what happens at your home."
+            },
+            {
+                question: "REAL CLAIM: 'Lightning struck my house and fried my TV, computer, and appliances. The power surge destroyed everything plugged in.' Is this covered?",
+                answers: [
+                    "No - electronics aren't covered",
+                    "Yes - lightning damage is fully covered",
+                    "Only the house structure is covered",
+                    "Only if you have surge protectors"
+                ],
+                correct: 1,
+                explanation: "Lightning damage is one of the most basic covered perils in ALL property insurance policies! If lightning strikes your house or the power surge from nearby lightning damages your electronics, everything is covered. Coverage A pays to repair any structural damage to the house. Coverage C (Personal Property) pays to replace all your fried electronics - TV, computer, appliances, etc. (up to your policy limits). You pay ONE deductible for the entire claim. You don't need surge protectors for coverage (though they're a great idea!). Lightning claims can be expensive - thousands of dollars in electronics - but insurance covers it all. Fun fact: In North Carolina, we're in the 'lightning belt' of the US. We get tons of thunderstorms, so lightning claims are very common! Always unplug expensive electronics during storms if possible.",
+                simpleAnswer: "Fully covered - Lightning is a basic covered peril. Structure damage AND fried electronics are both covered (pay one deductible)."
+            },
+            {
+                question: "REAL CLAIM: 'I was texting and rear-ended someone. My passenger (my friend) got hurt in the crash.' Who pays my friend's medical bills?",
+                answers: [
+                    "The other driver's insurance",
+                    "My Medical Payments coverage",
+                    "My Liability coverage",
+                    "My friend's health insurance only"
+                ],
+                correct: 1,
+                explanation: "YOUR Medical Payments coverage (Part B) pays for injuries to your passengers, regardless of who was at fault. Even though YOU caused the accident (texting), your Med Pay still covers your friend's medical bills up to the policy limits (usually $1,000-$10,000 per person). This is 'first party' coverage that protects people in YOUR car. It pays quickly without anyone needing to sue. Your Liability coverage (Part A) would NOT apply here because Liability only covers people you injure in OTHER vehicles, not your own passengers. If your friend's injuries exceed your Med Pay limits, they could make a claim against your Liability coverage or their own health insurance. But Med Pay pays first. Pro tip: If you regularly carry passengers, buy higher Med Pay limits to protect your friends and family!",
+                simpleAnswer: "Your Medical Payments coverage - This covers YOUR passengers' medical bills, even when the accident is your fault."
+            },
+            {
+                question: "REAL CLAIM: 'My house was vacant for 90 days while I was renovating. Now there's been a break-in and vandalism.' Will insurance pay?",
+                answers: [
+                    "Yes, fully covered",
+                    "Probably not - most policies limit coverage after 30-60 days vacancy",
+                    "Only if you notified the insurance company",
+                    "B and C are both factors"
+                ],
+                correct: 3,
+                explanation: "This is a BIG problem! Most homeowners policies have 'vacancy clauses' that significantly limit or exclude coverage if the property is vacant (empty of both people AND belongings) for more than 30-60 consecutive days. Why? Vacant properties are MUCH riskier - no one's there to notice problems, vandals target them, pipes can freeze unnoticed, etc. If you were renovating for 90 days without telling your insurance company, they might: (1) Deny the claim entirely, or (2) Pay reduced benefits, or (3) Exclude certain perils like vandalism and theft. The RIGHT thing to do: Call your agent BEFORE the renovation. Get a 'Vacant Property' or 'Builders Risk' policy, or get an endorsement allowing the vacancy. It costs extra but maintains coverage. Never assume your regular policy covers long vacancies!",
+                simpleAnswer: "Probably denied - Policies typically exclude or limit coverage after 30-60 days of vacancy. MUST notify insurance for renovations or long absences."
+            },
+            {
+                question: "REAL CLAIM: 'My sewer backed up and flooded my finished basement with sewage. Everything is ruined.' Is this covered?",
+                answers: [
+                    "Yes - water damage is always covered",
+                    "No - sewer backup is specifically excluded on standard policies",
+                    "Only if you have Flood Insurance",
+                    "Only the structure is covered"
+                ],
+                correct: 1,
+                explanation: "Sewer and drain backup is specifically EXCLUDED from standard homeowners policies! This surprises many people. Why? Because it's considered a maintenance issue and very expensive. Insurance companies don't want to cover problems that might be prevented by proper upkeep. However, you CAN (and should!) buy 'Water Backup Coverage' as an endorsement for usually $50-100 per year. This adds coverage for sewer backup, sump pump failure, and drain overflow - typically with limits of $5,000-$25,000. Without this endorsement, the customer would pay out of pocket for everything: cleanup, repairs, replacing belongings. Sewage cleanup can cost $10,000-30,000 easily. This is one of the most important endorsements to have! North Carolina has clay soil and older sewer systems in many areas, making this a common problem.",
+                simpleAnswer: "NOT covered on standard policy - Sewer backup is excluded. Must buy 'Water Backup Coverage' endorsement (cheap but essential!)."
+            },
+            {
+                question: "REAL CLAIM: 'My dog bit the mail carrier on my property. They're suing me for $50,000.' What coverage handles this?",
+                answers: [
+                    "Homeowners Liability Coverage E",
+                    "Not covered - dog bites are excluded",
+                    "Medical Payments Coverage F",
+                    "Either A or C depending on amount"
+                ],
+                correct: 3,
+                explanation: "Dog bites ARE covered under homeowners insurance! This falls under Coverage E (Personal Liability) - you're legally responsible for your pet's actions on your property. Your insurance provides legal defense and pays damages up to your policy limit if you're found liable. But here's the challenge: many companies now exclude certain 'dangerous breeds' or charge extra for them. And if your dog has bitten before, you might be excluded. For a $50,000 lawsuit, Coverage E pays. For small injuries, Medical Payments (Coverage F) can pay quickly without a lawsuit (up to $1,000-$5,000). Dog bite claims are EXPENSIVE - the average payout is $50,000-$60,000 nationally! This is why many agents recommend high liability limits or umbrella policies if you have a dog.",
+                simpleAnswer: "Homeowners Liability (Coverage E) - Dog bites on your property are covered, but some breeds might be excluded or cost extra."
+            },
+            {
+                question: "REAL CLAIM: 'I was driving my friend's car with permission and got in an at-fault accident.' Whose insurance is primary?",
+                answers: [
+                    "My personal auto insurance",
+                    "My friend's auto insurance (the car owner)",
+                    "We split it 50/50",
+                    "Whoever has better coverage"
+                ],
+                correct: 1,
+                explanation: "The CAR OWNER'S insurance is always primary! Remember: 'Insurance follows the car, not the driver.' Since you were a permissive user (had permission), your FRIEND'S auto insurance Liability coverage pays first for the damages you caused. YOUR insurance only becomes secondary if damages exceed your friend's policy limits. This is why you need to be careful about who you lend your car to - THEIR actions affect YOUR insurance! If they cause a major accident, it goes on YOUR policy, YOUR rates might increase, and if damages exceed YOUR limits, YOU could be sued personally. On the flip side, if you borrow someone's car and crash it, you're using THEIR insurance, which affects them. Always make sure you have good Liability limits in case someone you lend your car to causes a serious accident.",
+                simpleAnswer: "The car owner's insurance pays first - Insurance follows the car. Your friend's policy is primary since it's their car (even though you were driving)."
+            },
+            {
+                question: "REAL CLAIM: 'A contractor was working on my roof and fell off. Now they're suing me for their injuries.' Am I liable?",
+                answers: [
+                    "Yes - Homeowners Liability covers this",
+                    "No - contractors have Workers Compensation",
+                    "Only if they weren't insured",
+                    "It depends on whether they have insurance"
+                ],
+                correct: 3,
+                explanation: "This is complicated! If the contractor has Workers Compensation insurance (required if they have 3+ employees in NC), their OWN Workers Comp pays for their injuries - you're protected. Workers Comp is their 'exclusive remedy' - they can't sue you. But if it's: (1) A handyman working alone with no insurance, or (2) An unlicensed contractor, or (3) A contractor's employee whose boss doesn't have Workers Comp, then YES, they can sue YOU and your Homeowners Liability (Coverage E) would have to defend you and potentially pay. This is why you should ALWAYS: (1) Hire licensed, insured contractors, (2) Ask for proof of insurance (including Workers Comp), (3) Never hire unlicensed 'handymen' for major work. Your insurance company might deny coverage if you hired uninsured workers.",
+                simpleAnswer: "It depends on their insurance - If they have Workers Comp, it pays. If not, they can sue YOU. Always hire insured, licensed contractors!"
+            },
+            {
+                question: "REAL CLAIM: 'My air conditioning unit froze up and leaked water all over my hardwood floors. They're ruined.' Is this covered?",
+                answers: [
+                    "No - maintenance issues aren't covered",
+                    "Yes - sudden and accidental discharge is covered",
+                    "Only if it happened while you were home",
+                    "Only with an endorsement"
+                ],
+                correct: 1,
+                explanation: "This IS covered as 'sudden and accidental' water discharge! Even though the AC unit froze due to a maintenance issue (dirty filter, low refrigerant, etc.), the resulting water damage is covered. Here's the rule: The policy doesn't cover the cost to FIX the AC unit itself (that's maintenance), but it DOES cover the damage the AC unit caused (the ruined floors). So: Insurance does NOT pay to repair/replace the AC unit. Insurance DOES pay to replace the damaged hardwood floors (under Coverage A - Dwelling). You pay your deductible. This same principle applies to: old water heaters that burst, washing machine hoses that rupture, etc. The appliance itself isn't covered, but the water damage it causes IS covered. Always maintain your home's systems to prevent these expensive problems!",
+                simpleAnswer: "Floors are covered, AC is not - Insurance pays for the water damage (floors) but NOT to fix the AC unit (that's maintenance)."
+            },
+            {
+                question: "REAL CLAIM: 'I had a fender bender. Minor damage to both cars. Should I file a claim or pay out of pocket?'",
+                answers: [
+                    "Always file a claim - that's what insurance is for",
+                    "Consider paying out of pocket if damage is close to your deductible",
+                    "Never file small claims",
+                    "File immediately before the other person does"
+                ],
+                correct: 1,
+                explanation: "This is a strategic decision! Here's the math: If total damage is $1,200 and your deductible is $1,000, insurance only pays $200 - barely worth claiming. Plus, filing a claim (especially at-fault) can raise your rates by 20-40% for 3-5 years. That rate increase might cost you $500-1,000 total over time - way more than the $200 payout! Many experienced agents recommend: If damages are less than $1,500-$2,000, consider paying out of pocket to avoid a rate increase. But you MUST report the accident to your insurance company even if you don't file a claim (policy requirement). Just say 'I'm reporting this but not filing a claim.' If the other person's damage is significant or they seem injury-prone, file a claim for protection. Your insurance company will handle everything and protect you from lawsuits.",
+                simpleAnswer: "Do the math - If damage barely exceeds your deductible, paying out of pocket might be cheaper long-term than rate increases from a claim."
+            },
+            {
+                question: "REAL CLAIM: 'Squirrels chewed through my attic wiring and now nothing works.' Is this covered?",
+                answers: [
+                    "Yes - rodent damage is covered",
+                    "No - animal/pest damage is typically excluded",
+                    "Only if you have pest control",
+                    "Only the wiring is covered"
+                ],
+                correct: 1,
+                explanation: "Unfortunately, damage by birds, vermin, rodents, insects, or pets is specifically EXCLUDED from most homeowners policies! This includes: squirrels, rats, mice, raccoons, bats, termites, carpenter ants, and even your own pets. Why? Insurance companies consider this a maintenance and prevention issue. You're expected to keep pests out and maintain your property. The exclusion applies to: damage TO your property (chewed wiring, nest damage, etc.) and damage BY pests (squirrel infestation). However, there's an exception: if the pest caused a COVERED PERIL, that IS covered. Example: Squirrels chew wiring (not covered) → wiring sparks and causes a FIRE (covered) → the fire damage IS covered. But just the chewed wiring itself? Not covered. This is why pest control and prevention are so important!",
+                simpleAnswer: "NOT covered - Pest and animal damage (rodents, birds, insects) is excluded. You're expected to prevent pests. Only covered if they cause a fire."
+            },
+            {
+                question: "REAL CLAIM: 'I was in a parking lot and both me and another car backed into each other at the same time. Who's at fault?'",
+                answers: [
+                    "The other driver",
+                    "You are",
+                    "Both drivers share fault (50/50)",
+                    "Whoever files first"
+                ],
+                correct: 2,
+                explanation: "When both drivers are backing at the same time and collide, it's typically considered 'shared fault' - both drivers share responsibility 50/50 (or some other percentage the insurance companies negotiate). This is called 'comparative negligence.' In this scenario: BOTH drivers should file claims on their OWN insurance (Collision coverage on each policy). Each person pays their own deductible. If both insurance companies agree it's 50/50 fault, each company might try to recover 50% from the other. In North Carolina (a 'contributory negligence' state), if you're even 1% at fault, you technically can't recover from the other driver. So practically, everyone files on their own insurance. Pro tip: ALWAYS check your mirrors and surroundings before backing - these accidents are super common in parking lots and are almost always avoidable!",
+                simpleAnswer: "Both at fault (50/50) - Each person files on their own Collision coverage and pays their own deductible. Parking lot backing accidents are usually shared fault."
+            },
+            {
+                question: "REAL CLAIM: 'My college student daughter lives in a dorm. Her laptop was stolen from her dorm room.' Is this covered?",
+                answers: [
+                    "Not covered - she doesn't live at home",
+                    "Yes - parents' homeowners policy covers students' property at college",
+                    "Only if she has renters insurance",
+                    "Only up to $500"
+                ],
+                correct: 1,
+                explanation: "GREAT NEWS - this IS covered under the parents' homeowners policy! Most policies automatically extend Coverage C (Personal Property) coverage to property of students who are away at college. Typically, coverage extends up to 10% of the total Coverage C limit while at school. So if you have $100,000 in personal property coverage, your student has $10,000 of coverage at college. This covers: theft, fire, water damage, etc. The parents pay their homeowners deductible. The student is considered a 'resident of the household' even while away at school (as long as they're a full-time student and plan to return home during breaks). This is a huge benefit many people don't know about! However, for expensive electronics or jewelry, consider a separate Personal Articles policy for better coverage and no deductible.",
+                simpleAnswer: "YES, covered by parents' homeowners - Students away at college get 10% of the home's contents coverage automatically. Parents pay the deductible."
+            },
+            {
+                question: "REAL CLAIM: 'I cancelled my auto insurance to save money. Two weeks later I got in an accident. Can I reactivate my policy retroactively?'",
+                answers: [
+                    "Yes - just pay the back premiums",
+                    "No - you cannot backdate coverage",
+                    "Yes, if you pay a penalty",
+                    "Only if you weren't at fault"
+                ],
+                correct: 1,
+                explanation: "Absolutely NOT! You cannot backdate insurance coverage to cover something that already happened. That would be insurance fraud. When you cancel insurance, coverage stops immediately. Period. If you have an accident while uninsured, you're personally responsible for ALL damages - the other person's car, their injuries, your car, your injuries - everything out of pocket. In NC, driving without insurance is also ILLEGAL. Penalties include: fines up to $150, license suspension, vehicle registration suspension, and having to file SR-22 (high-risk insurance certificate) for 3 years. Plus, if you cause serious damage or injuries, you could be sued and lose everything - house, savings, wages garnished. NEVER drive without insurance to 'save money.' The risk is catastrophic. If you can't afford insurance, you can't afford to drive.",
+                simpleAnswer: "NO - You cannot backdate coverage. No insurance = you're personally liable for ALL damages plus illegal penalties. Never drive uninsured!"
+            },
+            {
+                question: "REAL CLAIM: 'My detached garage burned down completely. Inside was my motorcycle, lawn mower, and all my tools.' What pays for what?",
+                answers: [
+                    "Coverage A pays for everything",
+                    "Coverage B pays for garage; Coverage C pays for contents",
+                    "Only the garage is covered",
+                    "Need separate motorcycle insurance"
+                ],
+                correct: 1,
+                explanation: "Multiple coverages apply here! Coverage B (Other Structures) pays to rebuild the DETACHED GARAGE (remember, detached structures are Coverage B, not A). Standard limit is 10% of Coverage A (so if house insured for $200,000, garage gets $20,000). Coverage C (Personal Property) pays for the CONTENTS: lawn mower, tools, sports equipment. These are personal belongings covered under contents. However, the MOTORCYCLE is tricky - it's a motor vehicle, which is specifically EXCLUDED from Coverage C. You'd need separate motorcycle insurance to cover the bike itself! So in this scenario: Garage rebuild = Coverage B, Tools/mower = Coverage C, Motorcycle = Not covered (need motorcycle policy). You pay ONE deductible for the entire claim. This shows why it's important to have adequate limits and understand what's excluded!",
+                simpleAnswer: "Coverage B for garage, Coverage C for contents (except motorcycle) - Motor vehicles are excluded from homeowners. Need separate motorcycle insurance."
+            },
+            {
+                question: "REAL CLAIM: 'I slid on ice and hit a guardrail. No other cars involved.' What coverage pays?",
+                answers: [
+                    "Comprehensive - weather-related",
+                    "Collision - you hit an object",
+                    "Liability - you damaged state property",
+                    "No coverage - ice is an Act of God"
+                ],
+                correct: 1,
+                explanation: "This is COLLISION coverage, not Comprehensive! Even though ice (weather) was involved, the key factor is: Did your MOVING car HIT something? Yes - you hit a guardrail. That's Collision. Here's the rule: Collision = your car's impact with another vehicle or object, OR if your car overturns. Doesn't matter WHY you hit it (ice, distraction, mechanical failure) - if you hit it, it's Collision. Comprehensive covers weather damage where you DIDN'T hit anything (hail dents, tree falling on parked car, flood). Ice on the road causing you to slide into something = Collision. Ice falling from the sky and denting your hood = Comprehensive. You pay your Collision deductible (often $500-$1,000). This is one of the most common winter claims in North Carolina when we get ice storms!",
+                simpleAnswer: "Collision - Any time your moving car hits an object (guardrail, tree, pole, another car), it's Collision regardless of why you hit it."
             }
         ];
 
@@ -1615,6 +2006,49 @@
         let score = 0;
         let answered = 0;
         let selectedAnswer = null;
+        let quizHistory = [];
+
+        // Load quiz history from localStorage
+        function loadQuizHistory() {
+            const saved = localStorage.getItem('quizHistory');
+            if (saved) {
+                quizHistory = JSON.parse(saved);
+            }
+        }
+
+        // Save quiz history to localStorage
+        function saveQuizHistory() {
+            localStorage.setItem('quizHistory', JSON.stringify(quizHistory));
+        }
+
+        // Calculate statistics
+        function calculateStats() {
+            if (quizHistory.length === 0) {
+                return { average: 0, highest: 0, lowest: 0, total: 0 };
+            }
+            const scores = quizHistory.map(q => q.score);
+            const sum = scores.reduce((a, b) => a + b, 0);
+            return {
+                average: (sum / scores.length).toFixed(1),
+                highest: Math.max(...scores),
+                lowest: Math.min(...scores),
+                total: quizHistory.length
+            };
+        }
+
+        // Initialize on page load
+        loadQuizHistory();
+        
+        // Display stats on start screen if user has taken quizzes
+        window.addEventListener('DOMContentLoaded', function() {
+            if (quizHistory.length > 0) {
+                const stats = calculateStats();
+                document.getElementById('startStats').style.display = 'block';
+                document.getElementById('startTotal').textContent = stats.total;
+                document.getElementById('startAverage').textContent = stats.average + '/10';
+                document.getElementById('startHighest').textContent = stats.highest + '/10';
+            }
+        });
 
         function shuffleArray(array) {
             const shuffled = [...array];
@@ -1746,6 +2180,19 @@
             const percentage = (score / currentQuiz.length) * 100;
             let title, message;
             
+            // Save this quiz result
+            quizHistory.push({
+                date: new Date().toLocaleDateString(),
+                time: new Date().toLocaleTimeString(),
+                score: score,
+                total: currentQuiz.length,
+                percentage: percentage.toFixed(1)
+            });
+            saveQuizHistory();
+            
+            // Calculate stats
+            const stats = calculateStats();
+            
             if (percentage >= 90) {
                 title = "Outstanding! 🌟";
                 message = "You're crushing it! You really know your insurance stuff. You're ready for that exam!";
@@ -1767,21 +2214,67 @@
             document.getElementById('resultsMessage').textContent = message;
             
             const reviewList = document.getElementById('reviewList');
-            reviewList.innerHTML = '<h3 style="margin-bottom: 15px;">Your Results:</h3>';
+            reviewList.innerHTML = `
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                    <h3 style="margin-bottom: 15px; font-size: 20px;">📊 Your Statistics</h3>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 15px;">
+                        <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 14px; opacity: 0.9;">Average Score</div>
+                            <div style="font-size: 28px; font-weight: bold; margin-top: 5px;">${stats.average}/10</div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 14px; opacity: 0.9;">Quizzes Taken</div>
+                            <div style="font-size: 28px; font-weight: bold; margin-top: 5px;">${stats.total}</div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 14px; opacity: 0.9;">Highest Score</div>
+                            <div style="font-size: 28px; font-weight: bold; margin-top: 5px;">${stats.highest}/10</div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 14px; opacity: 0.9;">Lowest Score</div>
+                            <div style="font-size: 28px; font-weight: bold; margin-top: 5px;">${stats.lowest}/10</div>
+                        </div>
+                    </div>
+                </div>
+                <h3 style="margin-bottom: 15px;">Recent Quiz History:</h3>
+                <div style="max-height: 300px; overflow-y: auto;">
+            `;
             
-            currentQuiz.forEach((question, index) => {
-                const userAnswer = selectedAnswer;
-                const isCorrect = userAnswer === question.correct;
-                const reviewItem = document.createElement('div');
-                reviewItem.className = 'review-item' + (isCorrect ? ' correct' : '');
-                reviewItem.innerHTML = `
-                    <strong>Question ${index + 1}:</strong> ${isCorrect ? '✓ Correct' : '✗ Incorrect'}<br>
-                    <small>${question.question}</small>
+            // Show last 5 quiz results
+            const recentQuizzes = quizHistory.slice(-5).reverse();
+            recentQuizzes.forEach((quiz, index) => {
+                const isCurrentQuiz = index === 0;
+                reviewList.innerHTML += `
+                    <div style="background: ${isCurrentQuiz ? '#e8f5e9' : '#f8f9fa'}; padding: 15px; margin-bottom: 10px; border-radius: 8px; border-left: 4px solid ${quiz.percentage >= 70 ? '#28a745' : '#ffc107'};">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                            <div>
+                                <strong>${isCurrentQuiz ? '🎯 Current Quiz' : quiz.date + ' at ' + quiz.time}</strong>
+                            </div>
+                            <div style="font-size: 20px; font-weight: bold; color: ${quiz.percentage >= 70 ? '#28a745' : '#856404'};">
+                                ${quiz.score}/${quiz.total} (${quiz.percentage}%)
+                            </div>
+                        </div>
+                    </div>
                 `;
-                reviewList.appendChild(reviewItem);
             });
             
+            reviewList.innerHTML += `
+                </div>
+                <button onclick="clearHistory()" style="margin-top: 15px; padding: 10px 20px; background: #dc3545; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 14px;">
+                    Clear Quiz History
+                </button>
+            `;
+            
             document.getElementById('resultsScreen').classList.add('show');
+        }
+
+        function clearHistory() {
+            if (confirm('Are you sure you want to clear all quiz history? This cannot be undone.')) {
+                quizHistory = [];
+                saveQuizHistory();
+                alert('Quiz history cleared successfully!');
+                location.reload();
+            }
         }
 
         function restartQuiz() {
