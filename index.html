@@ -1751,8 +1751,429 @@
                 difficulty: "medium"
             },
 
-            // ... [Continue with remaining 48 property questions - I'll add a few more examples here]
-
+            {
+                question: "What's the main difference between DP-1, DP-2, and DP-3 Dwelling Policies?",
+                answers: ["Cost - DP-1 is cheapest, DP-3 is most expensive", "Coverage breadth - DP-1 has basic named perils, DP-2 has broad named perils, DP-3 has open peril for dwelling", "Only the deductible amounts differ", "DP-1 is for condos, DP-2 for apartments, DP-3 for houses"],
+                correct: 1,
+                explanation: "DP-1 (Basic Form) covers dwelling for 10 basic perils only (fire, lightning, windstorm, etc.). DP-2 (Broad Form) adds more perils like falling objects, weight of ice/snow, water damage from plumbing. DP-3 (Special Form) covers dwelling on OPEN PERIL basis - everything except specific exclusions. Personal property in all three is named peril only. Think: Basic → Broad → Special (best).",
+                simpleAnswer: "Coverage gets broader - DP-1 has fewest covered perils, DP-2 has more, DP-3 gives dwelling open peril coverage (best protection).",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "Coverage A in a Homeowners policy covers what?",
+                answers: ["Personal property", "The dwelling structure itself", "Other structures like garages", "Liability claims"],
+                correct: 1,
+                explanation: "Homeowners policies have standard lettered coverages: Coverage A = Dwelling (the house itself), Coverage B = Other Structures (detached garage, shed, fence), Coverage C = Personal Property (your stuff), Coverage D = Loss of Use (hotel if house uninhabitable), Coverage E = Personal Liability, Coverage F = Medical Payments. Remember 'A' for Address/building you live AT.",
+                simpleAnswer: "The dwelling - Coverage A protects the house structure itself (walls, roof, attached structures).",
+                topic: "Property Insurance",
+                difficulty: "easy"
+            },
+            {
+                question: "You have an HO-3 with $300,000 Coverage A (dwelling). How much is automatically provided for Coverage B (Other Structures) unless you specifically increase it?",
+                answers: ["$15,000 (5%)", "$30,000 (10%)", "$60,000 (20%)", "$150,000 (50%)"],
+                correct: 1,
+                explanation: "Coverage B (Other Structures) is automatically 10% of Coverage A unless specifically increased. Coverage A $300K → Coverage B $30K. Coverage C (Personal Property) is 50% of Coverage A ($150K in this example). Coverage D (Loss of Use) is 20% of Coverage A ($60K). These percentages can be increased for additional premium if needed.",
+                simpleAnswer: "10% of Coverage A - Other Structures coverage is automatically 10% of dwelling coverage ($30,000 in this example).",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What type of property insurance would a renter need to protect their personal belongings?",
+                answers: ["HO-3 Homeowners Policy", "HO-4 Renters Policy", "HO-6 Condo Policy", "DP-3 Dwelling Policy"],
+                correct: 1,
+                explanation: "HO-4 is specifically designed for renters. It covers: (1) Your personal property against named perils, (2) Loss of Use if apartment becomes uninhabitable, (3) Personal Liability (someone slips in your apartment), (4) Medical Payments. It does NOT cover the building itself - that's the landlord's responsibility with their DP-3 or commercial policy.",
+                simpleAnswer: "HO-4 Renters Policy - Covers your belongings and liability as a renter; landlord's policy covers the building.",
+                topic: "Property Insurance",
+                difficulty: "easy"
+            },
+            {
+                question: "What's the main difference between HO-3 and HO-5 policies?",
+                answers: ["HO-5 costs less", "HO-5 covers personal property on open peril basis; HO-3 covers it on named peril", "HO-5 has higher deductibles", "HO-3 is for condos, HO-5 is for single-family homes"],
+                correct: 1,
+                explanation: "HO-3 is the most common policy. It covers dwelling on OPEN PERIL but personal property on NAMED PERIL. HO-5 (Premier/Comprehensive) covers BOTH dwelling AND personal property on OPEN PERIL - the best coverage. HO-5 is more expensive but offers broader protection for your belongings. Example: mysterious disappearance of jewelry might be covered under HO-5 but not HO-3.",
+                simpleAnswer: "HO-5 has better personal property coverage - Both cover dwelling openly, but HO-5 also covers personal property on open peril (broader protection).",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What does an HO-6 Condo Policy cover?",
+                answers: ["The entire condo building", "Only common areas", "Your unit's interior, improvements, personal property, and liability", "Only your personal belongings"],
+                correct: 2,
+                explanation: "HO-6 is designed for condo owners. The condo association's master policy covers the building structure and common areas. YOUR HO-6 covers: (1) Interior walls, fixtures, improvements you made, (2) Your personal property, (3) Loss of Use, (4) Personal Liability, (5) Loss Assessment (if association charges you for common area damage). It fills the gap between association policy and your personal needs.",
+                simpleAnswer: "Interior, belongings, and liability - Covers your unit's interior improvements, personal property, liability, and assessments (building is covered by association).",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is the 'Loss Assessment Coverage' in an HO-6 Condo Policy?",
+                answers: ["Covers your legal fees", "Pays if the condo association charges you for damage to common areas", "Assesses the value of your losses", "Covers property tax assessments"],
+                correct: 1,
+                explanation: "If the condo association has a loss (fire damages lobby, hurricane damages roof) that exceeds their insurance coverage or deductible, they can 'assess' all unit owners a charge to cover the shortfall. Loss Assessment Coverage (usually $1,000-$5,000) pays your share. Example: Roof damage costs $100K, association deductible is $50K. 50 units = $1,000 per unit assessment. Your Loss Assessment coverage pays this.",
+                simpleAnswer: "Pays association charges - If the condo association bills you for common area damage, this coverage pays your share.",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "Which is broader coverage: 'Named Peril' or 'Open Peril'?",
+                answers: ["Named Peril", "Open Peril", "They're the same", "It depends on the deductible"],
+                correct: 1,
+                explanation: "NAMED PERIL = Only specific listed perils are covered (like fire, theft, windstorm - usually 16 perils listed). If it's not on the list, it's not covered. OPEN PERIL (also called 'Special Form' or 'All Risk') = EVERYTHING is covered EXCEPT specifically excluded perils. Much broader! With Open Peril, burden is on insurer to prove something is excluded. With Named Peril, burden is on you to prove your loss is on the list.",
+                simpleAnswer: "Open Peril is broader - Covers everything except exclusions (vs. Named Peril which only covers listed events).",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is 'Actual Cash Value' (ACV)?",
+                answers: ["Replacement cost minus depreciation", "The amount you paid for the item", "Market value if you sold it today", "Replacement cost plus inflation"],
+                correct: 0,
+                explanation: "ACV = Replacement Cost minus Depreciation. Example: 10-year-old roof. New roof costs $15,000. Old roof is 50% depreciated. ACV = $15,000 - $7,500 = $7,500. You'd get $7,500 (minus deductible). With REPLACEMENT COST coverage, you'd get the full $15,000 to install a new roof. ACV leaves you short because it accounts for age and wear.",
+                simpleAnswer: "Replacement cost minus depreciation - What the item was worth considering age and wear, not enough to fully replace it.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is 'Replacement Cost' coverage?",
+                answers: ["Pays to replace with identical item", "Pays depreciated value", "Pays current cost to repair or replace without depreciation deduction", "Only available for new homes"],
+                correct: 2,
+                explanation: "Replacement Cost pays the CURRENT cost to repair or replace damaged property with new items of similar quality - NO depreciation deducted. Example: 15-year-old carpet destroyed. ACV might pay $500 (heavily depreciated). Replacement Cost pays $3,000 for new carpet. Note: Usually paid in two parts - ACV upfront, then depreciation amount after repairs completed to prevent fraud.",
+                simpleAnswer: "Pays full cost to replace - Pays current cost to repair/replace with new items without reducing for age or wear.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What are common exclusions found in most property insurance policies?",
+                answers: ["Fire and theft", "Flood, earthquake, war, nuclear hazard, intentional damage", "Wind and hail", "Vandalism and falling objects"],
+                correct: 1,
+                explanation: "Standard property policy exclusions include: Flood (need separate policy or NFIP), Earthquake (need endorsement), War/military action, Nuclear hazard, Intentional damage, Neglect, Power failure off-premises, Ordinance or law (building code upgrades), Earth movement. These are typically excluded because they're either catastrophic, insurable elsewhere, or within the insured's control.",
+                simpleAnswer: "Flood, earthquake, war, intentional damage - Major exclusions that require separate coverage or endorsements.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is an 'Ordinance or Law' endorsement?",
+                answers: ["Covers legal fees", "Pays for building code upgrades required after a loss", "Covers parking tickets", "Required by law"],
+                correct: 1,
+                explanation: "When you rebuild after a loss, current building codes might require upgrades (new electrical, sprinklers, ADA compliance, etc.). Standard policies don't cover this extra cost - they only pay for 'like kind and quality' replacement. Ordinance or Law endorsement adds: (1) Coverage for demolition costs, (2) Coverage for increased cost to meet current codes, (3) Loss to undamaged portion that must be demolished. Very important for older buildings.",
+                simpleAnswer: "Pays for code upgrade costs - Covers extra expense when building codes require improvements beyond just replacing what was damaged.",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is a 'Scheduled Personal Property' endorsement?",
+                answers: ["Lists your weekly schedule", "Provides higher limits and broader coverage for valuable items specifically listed", "Schedules claim payments", "Required for all personal property"],
+                correct: 1,
+                explanation: "Scheduled Personal Property (also called 'Floater') covers specific valuable items for agreed amounts with broader protection. Benefits: (1) No deductible, (2) Often open peril coverage, (3) Higher limits than policy sub-limits, (4) Agreed value (no depreciation). Common items: jewelry, furs, cameras, fine arts, musical instruments, silverware, golf equipment. You provide appraisals, and each item is 'scheduled' (listed) with its value.",
+                simpleAnswer: "Special coverage for valuables - Lists specific expensive items with agreed values, no deductible, and broader coverage than standard policy.",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What does 'Loss of Use' (Coverage D) pay for?",
+                answers: ["Lost wages", "Additional living expenses if your home is uninhabitable", "Medical bills", "Legal fees"],
+                correct: 1,
+                explanation: "Loss of Use (Coverage D) pays Additional Living Expenses (ALE) if your home becomes uninhabitable due to a covered loss. Pays for: (1) Hotel/rental housing, (2) Restaurant meals (above normal food costs), (3) Laundry/dry cleaning, (4) Pet boarding, (5) Storage fees, (6) Moving costs. It covers the EXTRA costs above your normal living expenses. Usually 20% of Coverage A, lasts until home is repaired or you permanently relocate.",
+                simpleAnswer: "Extra living expenses - Pays hotel, meals, etc. if you can't live in your home due to covered damage while it's being repaired.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "Most HO policies have special limits (sub-limits) for certain types of personal property. What's typically true about these limits?",
+                answers: ["All property has unlimited coverage", "Items like jewelry, money, and firearms have lower limits ($1,000-$2,500) unless scheduled", "Cash has $50,000 coverage", "There are no limits on personal property"],
+                correct: 1,
+                explanation: "Standard policies have sub-limits for certain property categories: Money/coins ($200-$500), Securities/stamps ($1,500), Jewelry/furs ($1,500), Firearms ($2,500), Silverware ($2,500), Business property ($2,500 on-premises). These limits apply TOTAL even if multiple items are stolen. To increase coverage, you must 'schedule' items (list them specifically with values) through an endorsement.",
+                simpleAnswer: "Low limits on valuables - Jewelry, cash, guns, etc. have low limits ($1,000-$2,500) unless you buy additional scheduled coverage.",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is an 'Inflation Guard' endorsement?",
+                answers: ["Protects against inflation on groceries", "Automatically increases dwelling coverage annually to keep pace with construction costs", "Reduces premiums during inflation", "Only for commercial properties"],
+                correct: 1,
+                explanation: "Inflation Guard automatically increases your Coverage A (dwelling) limits each year by a set percentage (often 4-6%) to keep pace with construction cost inflation. Without it, a house insured for $300K in 2020 would still be $300K in 2025 - but construction costs rose significantly! Inflation Guard might have increased it to $360K automatically. Prevents being underinsured. Premium increases to match the higher limits.",
+                simpleAnswer: "Auto-increases dwelling coverage - Raises your coverage limits annually to keep up with rising construction costs.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is 'Water Backup Coverage'?",
+                answers: ["Covers flood damage", "Covers sewer/drain backup into your home", "Covers well water", "Required in all policies"],
+                correct: 1,
+                explanation: "Water Backup coverage is an endorsement that pays for damage from water/sewage backing up through sewers, drains, or sump pumps. Standard policies EXCLUDE this. Common claim: Heavy rain overwhelms city sewer, sewage backs up into basement through floor drains, causes $20K damage. Without this endorsement, NOT COVERED. Typically $5,000-$10,000 limits available. Different from flood insurance (rising water from outside).",
+                simpleAnswer: "Sewer/drain backup coverage - Pays if water or sewage backs up through drains into your home (excluded from standard policies).",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "In an HO-3 policy, your personal property is typically covered for what percentage of Coverage A?",
+                answers: ["10%", "30%", "50%", "100%"],
+                correct: 2,
+                explanation: "Coverage C (Personal Property) is automatically 50% of Coverage A unless specifically changed. Coverage A (dwelling) = $200,000 → Coverage C = $100,000. This often isn't enough for people with lots of belongings. You can increase Coverage C for additional premium. Remember: Coverage B (Other Structures) = 10%, Coverage C (Personal Property) = 50%, Coverage D (Loss of Use) = 20%.",
+                simpleAnswer: "50% of dwelling coverage - Personal property coverage is automatically half of Coverage A (can be increased if needed).",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is the difference between 'Replacement Cost' on dwelling and 'Extended Replacement Cost'?",
+                answers: ["They're the same", "Extended Replacement Cost pays an additional percentage (like 125%) above policy limits if costs exceed limits", "Extended is cheaper", "Replacement Cost includes land, Extended does not"],
+                correct: 1,
+                explanation: "REPLACEMENT COST: Pays to rebuild up to policy limits. Insured for $300K, costs $300K to rebuild, pays $300K. Insured for $300K, costs $350K to rebuild, pays only $300K (you pay $50K). EXTENDED REPLACEMENT COST: Pays an extra percentage above limits (typically 25-50%). Insured for $300K with 125% Extended, costs $350K to rebuild, pays up to $375K (125% of $300K). Protects against sudden material/labor cost spikes.",
+                simpleAnswer: "Extended pays above policy limits - Pays extra percentage (like 25%) over your limits if rebuilding costs exceed coverage amount.",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What does 'Guaranteed Replacement Cost' coverage provide?",
+                answers: ["Guarantees lowest price", "Pays FULL cost to rebuild regardless of policy limits", "Same as regular replacement cost", "Only for new homes"],
+                correct: 1,
+                explanation: "Guaranteed Replacement Cost is the BEST coverage (and most expensive). Pays FULL cost to rebuild your home exactly as it was, even if costs wildly exceed limits. Insured for $400K, disaster causes material shortage, costs $600K to rebuild - they pay $600K! Requires home to be insured at 100% of estimated replacement cost initially. Rare now - most insurers replaced it with Extended Replacement Cost due to unpredictable costs.",
+                simpleAnswer: "Unlimited rebuild coverage - Pays full cost to rebuild no matter how high, even if it exceeds your policy limits.",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is an 'Earthquake' endorsement?",
+                answers: ["Included in all policies", "Optional coverage for earthquake damage with separate deductible (often 10-25%)", "Only required in California", "Covers sinkhole damage"],
+                correct: 1,
+                explanation: "Earthquake coverage is excluded from standard policies and must be added by endorsement. Features: (1) Separate high deductible (often 10-25% of dwelling coverage), (2) Covers earthquake, landslide, mudflow, earth sinking/rising/shifting, (3) May have waiting period (10-30 days after purchase), (4) Expensive in high-risk areas. Example: $300K dwelling, 15% earthquake deductible = $45,000 deductible before coverage applies.",
+                simpleAnswer: "Optional earthquake protection - Must be added separately with high deductibles (10-25%) because earthquake is excluded from standard policies.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "Your homeowners policy typically covers trees, shrubs, and plants up to what limit per item?",
+                answers: ["$100", "$500", "$1,500", "Unlimited"],
+                correct: 1,
+                explanation: "Most HO policies cover trees, shrubs, plants, and lawns up to 5% of Coverage A total, with $500 per item limit. Only covered for specific named perils: fire, lightning, explosion, riot, aircraft, vehicles not owned by resident, vandalism, theft. NOT covered for wind, disease, or neglect. Coverage A $200K → $10,000 total for landscaping, max $500 per tree. After tornado, you can't collect for all trees - only what the limits allow.",
+                simpleAnswer: "$500 per item - Usually 5% of Coverage A total with $500 per tree/shrub limit, only for specific perils.",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is a 'Windstorm Deductible' in coastal areas?",
+                answers: ["Regular deductible applies", "Higher percentage deductible (1-5%) specifically for wind/hurricane damage", "Lower deductible for wind", "No deductible for wind"],
+                correct: 1,
+                explanation: "Coastal properties often have separate WIND deductibles (1-5% of Coverage A) that apply only to wind/hurricane damage. Regular deductible: $1,000. Wind deductible: 2% of $300K = $6,000. If fire causes $20K damage, $1,000 deductible. If hurricane causes $20K damage, $6,000 deductible! Wind deductibles may trigger based on: wind speed, hurricane category, or named storm declaration. Read policy carefully for trigger conditions.",
+                simpleAnswer: "Higher deductible for wind - Percentage deductible (1-5% of coverage) that applies only to windstorm/hurricane damage in coastal areas.",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is 'Personal Liability' coverage (Coverage E) in a Homeowners policy?",
+                answers: ["Covers your medical bills", "Protects you if someone sues you for injury/damage you caused", "Covers car accidents", "Pays for lawyer for any lawsuit"],
+                correct: 1,
+                explanation: "Coverage E provides liability protection if you're legally responsible for bodily injury or property damage to others. Covers: (1) Legal defense costs, (2) Settlements or judgments, (3) Examples: Guest slips on icy steps and sues, your dog bites mailman, your kid breaks neighbor's window, tree falls on neighbor's car. Does NOT cover: auto liability (need auto policy), intentional acts, business activities. Typical limits: $100K-$500K.",
+                simpleAnswer: "Lawsuit protection - Pays legal defense and damages if someone sues you for injuries or property damage you caused.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is 'Medical Payments to Others' (Coverage F)?",
+                answers: ["Covers your family's medical bills", "Pays small medical bills for guests injured on your property, no fault determination needed", "Only covers major injuries", "Requires lawsuit"],
+                correct: 1,
+                explanation: "Coverage F pays small medical expenses ($1,000-$5,000) for guests injured on your property or by your activities - NO determination of fault required! It's a goodwill coverage to avoid lawsuits. Example: Neighbor trips on your sidewalk, breaks wrist, $2,500 medical bills. Coverage F pays the $2,500 even if you weren't negligent - keeps things friendly. Does NOT cover: you or residents, business invitees. If bigger lawsuit follows, Coverage E takes over.",
+                simpleAnswer: "No-fault guest medical coverage - Pays small medical bills for guests injured on your property regardless of who's at fault.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is an 'Umbrella Policy'?",
+                answers: ["Covers rain damage", "Provides extra liability coverage above your auto/home policies", "Only for businesses", "Covers all property damage"],
+                correct: 1,
+                explanation: "Umbrella policy provides extra liability coverage above your underlying home/auto policies. Example: Home policy has $300K liability. Auto has $250K/$500K. Umbrella adds $1-5 million MORE. Big lawsuit happens for $800K - Home policy pays $300K, Umbrella pays remaining $500K. Benefits: (1) High limits cheaply, (2) Broader coverage than underlying policies, (3) Covers you worldwide. Requirements: Must maintain minimum underlying limits to qualify.",
+                simpleAnswer: "Extra liability protection - Provides additional millions in liability coverage above your home and auto policy limits.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is the difference between 'Broad' theft coverage and 'Limited' theft coverage?",
+                answers: ["Dollar amount limits", "Broad covers theft anywhere; Limited only covers theft from your residence", "Broad is cheaper", "No difference"],
+                correct: 1,
+                explanation: "BROAD THEFT: Personal property covered for theft anywhere in the world (off-premises). Laptop stolen from car, jewelry stolen from hotel - covered. LIMITED THEFT: Only covers theft FROM your residence premises. Same laptop stolen from car - NOT covered. Dwelling policies (DP-1, DP-2, DP-3) typically have LIMITED theft. Homeowners policies (HO-2, HO-3, HO-5) typically have BROAD theft. If you want broader coverage on a DP, must add endorsement.",
+                simpleAnswer: "Broad = worldwide; Limited = residence only - Broad covers theft anywhere, Limited only covers theft from your home.",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What does HO-2 'Broad Form' cover?",
+                answers: ["Same as HO-3", "Dwelling and personal property on named peril basis (broader than HO-1)", "Open peril for everything", "Only fire and theft"],
+                correct: 1,
+                explanation: "HO-2 covers BOTH dwelling and personal property on a NAMED PERIL basis - but more perils than HO-1 (Basic). HO-2 adds: falling objects, weight of ice/snow/sleet, water damage from plumbing/heating/AC, electrical damage. Still not as good as HO-3 (which has open peril for dwelling). HO-2 is less common today - most people buy HO-3. Remember progression: HO-1 Basic < HO-2 Broad < HO-3 Special < HO-5 Premier.",
+                simpleAnswer: "Named perils for dwelling and property - Covers both for broad list of named perils (more than HO-1, less than HO-3).",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "Under most homeowners policies, property used for business purposes has what limit?",
+                answers: ["Unlimited coverage", "Full Coverage C", "$2,500 on-premises, $500 off-premises", "$10,000"],
+                correct: 2,
+                explanation: "Standard HO policies severely limit business property coverage: Typically $2,500 on-premises, $500 off-premises. If you run a business from home (beyond incidental work), you need separate business insurance. Examples of business property: inventory, equipment, supplies, samples. If you have $20K of business inventory and your home burns, you'd only collect $2,500 max. Professional liability also excluded - need Business Owners Policy or Commercial coverage.",
+                simpleAnswer: "$2,500 on-premises, $500 off - Business property has very low limits in homeowners policies; need separate business coverage.",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is a 'Functional Replacement Cost' endorsement?",
+                answers: ["Same as replacement cost", "Pays to replace with less expensive but functionally equivalent materials", "Pays more than replacement cost", "Only for older homes"],
+                correct: 1,
+                explanation: "Functional Replacement Cost allows rebuilding with less expensive modern materials that serve the same purpose. Example: Original house has plaster walls (expensive), policy pays for drywall (cheaper but equivalent). Original has custom wood windows, policy pays for vinyl (equivalent function). Reduces premium compared to full replacement cost. Good for historic homes where exact replication is extremely expensive. Saves money but home may not look identical.",
+                simpleAnswer: "Cheaper equivalent materials - Pays to rebuild with modern, less expensive materials that function the same as originals.",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is an 'Agreed Amount' endorsement for property insurance?",
+                answers: ["You agree to the premium", "Waives coinsurance penalty if insured for the agreed amount", "Agreement to use certain contractors", "Agreement on deductible"],
+                correct: 1,
+                explanation: "Agreed Amount endorsement SUSPENDS the coinsurance clause. You and insurer agree on a value upfront. As long as you insure for that amount, no coinsurance penalty applies even if actual value changes. Without it: House worth $500K, insured for $400K, 80% coinsurance clause, $100K loss → penalty applies because you should have $400K minimum (80% of $500K). WITH Agreed Amount: No penalty as long as you maintained the agreed amount.",
+                simpleAnswer: "Removes coinsurance penalty - Insurer agrees on a value upfront; no penalty for under-insurance as long as you insure for agreed amount.",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is a 'Vacant' vs. 'Unoccupied' property?",
+                answers: ["Same thing", "Vacant = no people and no furniture; Unoccupied = no people but furniture remains", "Vacant = for sale; Unoccupied = seasonal", "No difference for insurance"],
+                correct: 1,
+                explanation: "VACANT = No people AND no furniture/contents (empty). UNOCCUPIED = No people but furniture/contents still there (like vacation home off-season). Insurance treats these VERY differently. Vacant properties have much higher risk (vandalism, squatters, frozen pipes) - many policies exclude coverage or require endorsement after 30-60 days vacant. Unoccupied is better - still covered. Always notify insurer if property will be vacant!",
+                simpleAnswer: "Vacant = empty; Unoccupied = furnished - Vacant means no furniture (higher risk, often excluded); Unoccupied means temporarily empty but furnished.",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is 'Building Code Upgrade' coverage?",
+                answers: ["Covers code violations", "Pays extra costs to meet current building codes when rebuilding", "Required by law", "Only for commercial properties"],
+                correct: 1,
+                explanation: "When rebuilding after a loss, current codes may require upgrades beyond 'like kind and quality' replacement: wider doors, fire sprinklers, energy-efficient systems, hurricane straps, etc. Standard policies only pay to replace what was there. Building Code Upgrade (or Ordinance or Law) coverage pays the EXTRA costs for required upgrades. Critical for older homes that were built before modern codes existed.",
+                simpleAnswer: "Pays for required upgrades - Covers extra costs when building codes require improvements beyond replacing what was damaged.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is a 'Mortgage Clause' in a property insurance policy?",
+                answers: ["Increases coverage for mortgaged properties", "Protects mortgage lender's interest in the property", "Reduces premiums", "Required by state law"],
+                correct: 1,
+                explanation: "Mortgage Clause (also called 'Loss Payable Clause') protects the lender's financial interest. It states: (1) Lender is named on the policy, (2) Claim payments are made to BOTH you and lender jointly, (3) Insurer must notify lender of cancellation, (4) Lender's interest is protected even if you violate policy terms. Example: Arson by insured might void policy, but lender still gets paid their loan amount. Prevents you from taking claim money without repairing home.",
+                simpleAnswer: "Protects lender - Makes lender a co-payee on claims and protects their interest even if you violate policy terms.",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is a 'Pair and Set' clause?",
+                answers: ["Covers matching furniture", "Insurer can repair/replace individual items from sets rather than replacing entire set", "Only for jewelry", "Requires buying two policies"],
+                correct: 1,
+                explanation: "Pair and Set clause states if part of a matched set is damaged, insurer can: (1) Repair the damaged piece, (2) Replace the damaged piece, (3) Pay you the fair proportion of the set's total value. They DON'T have to replace the entire set. Example: You have matching dining room chairs worth $5,000 for 8 chairs ($625 each). One is damaged. Insurer pays $625, not $5,000. Prevents windfall where you'd get a whole new set for one chair's damage.",
+                simpleAnswer: "Individual item value in sets - Insurer can replace/repair single items from matched sets rather than replacing the entire set.",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What does 'inland marine' insurance typically cover?",
+                answers: ["Boats only", "Ocean cargo", "Movable property or property in transit (jewelry, equipment, contractor tools)", "Submarine damage"],
+                correct: 2,
+                explanation: "Despite the name, Inland Marine has nothing to do with water! It covers: (1) Property in transit, (2) Movable property (contractor equipment, camera equipment), (3) Property held by bailees (dry cleaner, jeweler), (4) Bridges, tunnels, communication towers. Historical note: Originally covered cargo moved inland from ships via rivers/rail. Evolved to cover all mobile/transportable property. Common policies: Contractors Equipment, Camera Equipment, Jewelers Block, Fine Arts.",
+                simpleAnswer: "Movable/transit property - Covers portable property, items in transit, or specialty property (not related to water despite the name).",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is a 'Debris Removal' coverage?",
+                answers: ["Included unlimited in all policies", "Covers cost to remove damaged property debris, usually up to 25% of claim payment", "Only for landscaping", "Separate policy required"],
+                correct: 1,
+                explanation: "After a covered loss, you need to remove damaged property before rebuilding. Debris Removal pays for this. Usually: Up to 25% of the loss payment, plus an extra $5,000-$25,000 if that's not enough. Example: $100K fire loss, $20K to remove debris → Covered up to $25K (25% of $100K). If debris removal costs $30K, the extra 5K-25K kicks in. Without this coverage, you'd pay out-of-pocket to haul away your own burned/damaged property.",
+                simpleAnswer: "Pays to remove damaged property - Covers cost to haul away debris after a loss, typically 25% of claim plus extra amount if needed.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is the 'Liberalization Clause'?",
+                answers: ["Reduces premiums", "Automatically gives you broader coverage if insurer files broader policy forms without premium increase", "Allows policy changes anytime", "Only in commercial policies"],
+                correct: 1,
+                explanation: "Liberalization Clause is PRO-CONSUMER! If the insurance company files broader coverage with the state during your policy period, you automatically get the broader coverage - even though you paid for the narrower version. No premium increase. Example: Insurer files form adding water backup coverage in January. Your policy renewed in October. You automatically get the addition! Prevents insurer from selling outdated forms while using better ones for new customers.",
+                simpleAnswer: "Auto-upgrade to better coverage - You automatically get broader coverage if insurer files improved forms during your policy period.",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What are 'Pollutant' exclusions in property policies?",
+                answers: ["Exclude outdoor air pollution only", "Exclude damage from release/contamination by pollutants (oil, chemicals, etc.)", "Only in commercial policies", "Pollution is always covered"],
+                correct: 1,
+                explanation: "Most property policies exclude damage from release, discharge, seepage, or migration of pollutants (oil, chemicals, hazardous materials, etc.). Example: Home heating oil tank leaks, contaminates soil - NOT COVERED. Mold caused by pollutants - often excluded. These exclusions stem from catastrophic environmental cleanup costs. Need specialized Pollution Liability coverage for contamination exposures, especially for commercial properties or underground storage tanks.",
+                simpleAnswer: "Excludes contamination damage - Damage from release of pollutants (oil, chemicals) is excluded; need specialized pollution coverage.",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is 'Actual Loss Sustained' in Business Income coverage?",
+                answers: ["The actual cash value", "The actual loss of income you suffer during shutdown period after covered loss", "Your annual income", "Guaranteed payment amount"],
+                correct: 1,
+                explanation: "Business Income coverage (part of property/BOP policies) pays for lost income when business must close due to covered property damage. 'Actual Loss Sustained' means the insurer pays the ACTUAL net income + continuing expenses you lost during the shutdown period - not a predetermined amount. Formula: (Net Income + Continuing Expenses) × Time Period. Example: Fire closes business 2 months, would have earned $50K profit + $30K fixed expenses = $80K covered.",
+                simpleAnswer: "Actual income lost - Pays the real net income plus continuing expenses lost while business is closed, not a set amount.",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is the maximum 'Period of Restoration' for Business Income coverage?",
+                answers: ["30 days", "6 months", "Usually 12 months from date of loss", "Unlimited"],
+                correct: 2,
+                explanation: "Business Income coverage typically pays for lost income for the 'Period of Restoration' - usually limited to 12 months from the date of loss OR until property is repaired and business resumes, whichever is SHORTER. If repairs take 8 months, coverage lasts 8 months. If repairs take 18 months, coverage stops at 12 months (unless extended period endorsement purchased). Period starts with the loss date, not when repairs begin.",
+                simpleAnswer: "12 months or until reopening - Typically pays lost income for up to 12 months or until you reopen, whichever is shorter.",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is 'Extra Expense' coverage?",
+                answers: ["Covers luxury expenses", "Pays extra costs to continue operating after a loss (temporary location, equipment rental)", "Same as loss of use", "Only for personal policies"],
+                correct: 1,
+                explanation: "Extra Expense coverage pays extra costs to keep your business running after a loss that would otherwise shut you down. Examples: Rent temporary space, rent equipment, pay overtime, expedited shipping for materials. Different from Business Income (which pays lost profits). Some businesses choose Extra Expense instead - like newspapers that can't afford to shut down. Others get both. Example: Fire damages office, you rent temporary space for $5K/month - Extra Expense pays the extra cost.",
+                simpleAnswer: "Costs to keep operating - Pays extra expenses to continue business after a loss (temporary location, equipment rental, overtime).",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is 'Civil Authority' coverage in Business Income?",
+                answers: ["Covers government fines", "Pays lost income if government orders your area closed after nearby covered loss", "Only for government buildings", "Covers protests"],
+                correct: 1,
+                explanation: "Civil Authority coverage pays for lost income when a government order (police, fire marshal, etc.) prohibits access to your business due to damage to nearby property. Example: Fire damages building next door. Fire marshal closes the block for safety. Your restaurant can't operate for 2 weeks even though it wasn't damaged - Civil Authority pays lost income. Usually limited to 2-4 weeks. Important for downtown businesses in connected buildings.",
+                simpleAnswer: "Government closure income - Pays lost income if government closes your area due to damage to nearby properties.",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is the 'Appraisal Clause' in property insurance?",
+                answers: ["Requires annual property appraisals", "Dispute resolution method where each party selects an appraiser to determine loss value", "Only for commercial property", "Determines policy premiums"],
+                correct: 1,
+                explanation: "Appraisal Clause is a dispute resolution process when you and insurer disagree on amount of loss (not coverage - only value). Process: (1) Each party selects an appraiser, (2) Two appraisers select an umpire, (3) Appraisers evaluate loss independently, (4) If they disagree, umpire decides, (5) Agreement of any two is binding. Faster and cheaper than lawsuit. Example: You say fire damage is $200K, insurer says $150K → appraisal resolves dispute.",
+                simpleAnswer: "Dispute resolution for value - Each side picks an appraiser to resolve disagreements about how much damage costs (not coverage disputes).",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is a 'Concealment or Fraud' condition?",
+                answers: ["Insurance commits fraud", "If you intentionally hide material facts or commit fraud, coverage is void", "Requires background check", "Only for large policies"],
+                correct: 1,
+                explanation: "All insurance policies have a Concealment or Fraud condition: If insured intentionally hides material facts (before or after a loss) or commits fraud, the ENTIRE policy is VOID. Examples: Lying about prior losses when applying, staging a theft, inflating claims, arson. Not only is the specific claim denied, but the whole policy is cancelled with no premium refund. Criminal prosecution may follow. Applies during application AND claims process.",
+                simpleAnswer: "Voids entire policy - If you intentionally hide facts or commit fraud, your entire policy becomes void with no coverage.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What are 'Duties After a Loss'?",
+                answers: ["Insurance company duties", "Required actions by insured after a loss (notify promptly, protect property, cooperate, provide documentation)", "Optional steps", "Only for large claims"],
+                correct: 1,
+                explanation: "Property policies list specific 'Duties After a Loss' that you MUST follow or risk denial: (1) Promptly notify insurer, (2) Protect property from further damage, (3) Prepare inventory of damaged property, (4) Provide documentation (receipts, records), (5) Cooperate with investigation, (6) Submit to examination under oath if requested, (7) Don't abandon property to insurer. Failure to comply can result in claim denial even for covered loss.",
+                simpleAnswer: "Required post-loss actions - Must notify insurer promptly, protect property, document loss, cooperate with investigation or claim may be denied.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What does a 'No Benefit to Bailee' clause mean?",
+                answers: ["Bailees are excluded", "Policy doesn't cover property held by others", "If someone is holding your property, your insurance covers you but they don't benefit from your coverage", "Bailees must have insurance"],
+                correct: 2,
+                explanation: "No Benefit to Bailee clause prevents someone holding your property (bailee) from benefiting from YOUR insurance. Example: Dry cleaner loses your coat in fire. Your HO policy covers your loss (up to limits). Dry cleaner doesn't benefit from your coverage - they're still liable to you and can be sued. This prevents bailees from shirking their responsibility to carry their own insurance. Your insurance pays you, but bailee still owes you AND you can subrogate against them.",
+                simpleAnswer: "Bailees don't benefit - Your insurance covers your loss but doesn't protect whoever was holding your property from liability.",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
             {
                 question: "What is the purpose of the 80% coinsurance clause commonly found in property insurance policies?",
                 answers: ["Requires insuring property for at least 80% of its value to avoid penalties", "Insurer pays 80% of any loss", "Insured pays 20% of any loss", "Coverage limit is 80% of replacement cost"],
@@ -1795,7 +2216,312 @@
                 difficulty: "medium"
             },
 
-            // [Continue with remaining auto insurance questions...]
+            {
+                question: "What are the 4 main parts of a Personal Auto Policy (PAP)?",
+                answers: ["Liability, Medical, Comprehensive, Collision", "Part A (Liability), Part B (Medical Payments), Part C (Uninsured Motorist), Part D (Physical Damage)", "Property, Casualty, Life, Health", "Bodily Injury, Property Damage, Collision, Comprehensive"],
+                correct: 1,
+                explanation: "The PAP has 4 standardized parts: Part A = Liability (covers damage you cause to others), Part B = Medical Payments (pays medical bills for you/passengers), Part C = Uninsured/Underinsured Motorist (protects you from uninsured drivers), Part D = Physical Damage to your car (Collision + Comprehensive). These are universal across all states, though some states require certain parts.",
+                simpleAnswer: "Part A-D: Liability, Medical, UM, Physical Damage - Four parts covering liability, medical payments, uninsured motorist, and damage to your car.",
+                topic: "Auto Insurance",
+                difficulty: "easy"
+            },
+            {
+                question: "What does 'split limit' liability coverage like 50/100/50 mean?",
+                answers: ["Total coverage of $200,000", "$50K per person injured, $100K per accident for injuries, $50K for property damage", "$50K for you, $100K for others, $50K for property", "Three separate deductibles"],
+                correct: 1,
+                explanation: "Split limits are expressed as three numbers (e.g., 50/100/50 means $50,000/$100,000/$50,000). First number: Maximum per person for bodily injury. Second number: Maximum per accident total for all bodily injuries. Third number: Maximum for property damage per accident. Example: 3 people hurt in crash, $60K + $50K + $40K = $150K total. You pay: $50K + $50K + $40K = $140K (within per-person limits), but total injuries limited to $100K, so $40K unpaid. Property separate.",
+                simpleAnswer: "$50K/person, $100K/accident injuries, $50K property - Three limits: per person injured, total per accident injuries, and property damage per accident.",
+                topic: "Auto Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is the current minimum required auto insurance in North Carolina (before July 1, 2025)?",
+                answers: ["15/30/10", "25/50/25", "30/60/25", "50/100/50"],
+                correct: 2,
+                explanation: "Current NC minimums are 30/60/25 ($30,000 per person injured, $60,000 per accident for injuries, $25,000 for property damage). These are LOW limits - not recommended! On July 1, 2025, minimums increase to 50/100/50. These minimums ensure all drivers have SOME financial responsibility. Liability coverage is MANDATORY in NC - you cannot legally drive without it.",
+                simpleAnswer: "30/60/25 currently - $30K per person, $60K per accident injuries, $25K property damage (increases to 50/100/50 in July 2025).",
+                topic: "Auto Insurance",
+                difficulty: "easy"
+            },
+            {
+                question: "You're driving and rear-end another car, damaging their vehicle. Which coverage pays for THEIR car repairs?",
+                answers: ["Your Collision coverage", "Your Property Damage Liability", "Your Comprehensive coverage", "Their Collision coverage"],
+                correct: 1,
+                explanation: "YOUR Property Damage LIABILITY (part of Part A) pays for damage to OTHER PEOPLE'S property when you're at fault. Your Collision coverage would pay for YOUR car. Their Collision coverage could pay for their car if they have it (then their insurer would subrogate against you). Liability always pays for damage you cause to OTHERS.",
+                simpleAnswer: "Your Property Damage Liability - Part A liability coverage pays for damage you cause to other people's vehicles and property.",
+                topic: "Auto Insurance",
+                difficulty: "easy"
+            },
+            {
+                question: "What does Part B - Medical Payments coverage pay for?",
+                answers: ["Only the driver's medical bills", "Medical bills for you and passengers regardless of fault", "Only if you're at fault", "Other driver's medical bills"],
+                correct: 1,
+                explanation: "Med Pay (Part B) is NO-FAULT coverage. It pays reasonable medical expenses for you and passengers injured in your vehicle, regardless of who caused the accident. Also covers you as a pedestrian hit by a car, or while riding in someone else's car. Common limits: $1,000-$5,000. Pays quickly without waiting for liability determination. Coordination with health insurance may apply.",
+                simpleAnswer: "Your/passengers' medical bills, no-fault - Pays medical expenses for you and passengers regardless of who caused the accident.",
+                topic: "Auto Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is Uninsured Motorist (UM) coverage?",
+                answers: ["Covers you if you hit an uninsured driver", "Protects YOU when an uninsured/hit-and-run driver injures you or damages your car", "Pays to insure uninsured drivers", "Only for property damage"],
+                correct: 1,
+                explanation: "UM coverage protects YOU when you're hit by: (1) Uninsured driver, (2) Hit-and-run driver, (3) Driver whose insurer is insolvent. UM Bodily Injury pays for your injuries. UM Property Damage pays for your car (less common, since Collision covers this). UM basically acts like the at-fault driver HAD insurance. In NC, you must be OFFERED UM coverage - you can reject it in writing but it's not smart to.",
+                simpleAnswer: "Protects you from uninsured drivers - Pays your injuries/damage when an uninsured or hit-and-run driver hits you.",
+                topic: "Auto Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is Underinsured Motorist (UIM) coverage?",
+                answers: ["Same as uninsured motorist", "Covers the gap when at-fault driver's insurance isn't enough to pay your full damages", "Covers you if you don't have enough insurance", "Pays for driver training"],
+                correct: 1,
+                explanation: "UIM pays when the at-fault driver HAS insurance, but not enough. Example: You're hurt, damages total $100K. At-fault driver has minimum 30/60 ($30K per person max). They pay $30K. Your UIM pays the remaining $70K (up to your UIM limits). Without UIM, you'd sue the driver personally for $70K - good luck collecting! UIM is crucial when you have high injury costs.",
+                simpleAnswer: "Fills the gap when other driver's limits are too low - Pays the difference when at-fault driver's insurance isn't enough to cover your damages.",
+                topic: "Auto Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is the difference between Collision and Comprehensive coverage?",
+                answers: ["Collision is cheaper", "Collision = hitting objects/vehicles; Comprehensive = everything else (theft, fire, animals, weather)", "Comprehensive covers collisions", "They're the same"],
+                correct: 1,
+                explanation: "COLLISION: Damage from hitting another vehicle or object (tree, guardrail, building), OR being hit by another vehicle, OR rollover. COMPREHENSIVE (Other Than Collision): Theft, fire, vandalism, glass breakage, hail, flood, hitting an animal, falling objects, civil commotion. Simple rule: If you HIT something or something HITS you = Collision. Almost everything else = Comprehensive.",
+                simpleAnswer: "Collision = crashes; Comprehensive = other perils - Collision covers hitting things; Comprehensive covers theft, animals, weather, vandalism, etc.",
+                topic: "Auto Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "You hit a deer with your car. Which coverage applies?",
+                answers: ["Collision", "Comprehensive", "Liability", "Uninsured Motorist"],
+                correct: 1,
+                explanation: "Hitting ANY animal (deer, dog, moose, etc.) is ALWAYS Comprehensive, never Collision. This is a specific rule in the policy. Animals are unpredictable 'acts of nature' like weather. Even though you technically 'collided' with the deer, insurance treats it as Comprehensive. Remember: Animals → Comprehensive!",
+                simpleAnswer: "Comprehensive - Hitting any animal is always Comprehensive coverage, NOT Collision (even though it seems like a collision).",
+                topic: "Auto Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What are 'Covered Autos' in a Personal Auto Policy?",
+                answers: ["Any car you drive", "Your policy car, temporary substitute vehicles, newly acquired vehicles (within time limits), and trailers", "Only the vehicles listed on declarations", "All vehicles you own"],
+                correct: 1,
+                explanation: "PAP automatically covers: (1) Vehicles shown on Declarations page, (2) Newly acquired autos (automatic coverage for a limited time - 14-30 days depending on coverage type), (3) Temporary substitute vehicles (while yours is being repaired), (4) Trailers you own. For new cars: Liability automatically extends. Collision/Comp only extend if you already have it on another car and you notify insurer within the time period.",
+                simpleAnswer: "Listed vehicles, new purchases, substitutes, trailers - Your policy auto-extends to new/substitute vehicles within specified time limits.",
+                topic: "Auto Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "Who is an 'Insured' under Part A - Liability Coverage?",
+                answers: ["Only the named insured", "Named insured, family members, anyone driving with permission, and anyone responsible for your covered auto", "Only people listed on the policy", "Anyone driving any car"],
+                correct: 1,
+                explanation: "Part A (Liability) insures: (1) You (named insured), (2) Family members (relatives living with you), (3) Anyone using your covered auto WITH your permission (permissive users), (4) Anyone/entity legally responsible for your covered auto's use. Example: Friend borrows your car with permission - your liability coverage protects them. Your teenager living at home - covered as family member.",
+                simpleAnswer: "You, family, permissive users - Named insured, family members, and anyone driving your car with permission.",
+                topic: "Auto Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is 'Stacking' of Uninsured Motorist coverage?",
+                answers: ["Storing cars vertically", "Combining UM limits from multiple vehicles on your policy for higher total protection", "Adding coverage to multiple policies", "It's illegal"],
+                correct: 1,
+                explanation: "Stacking allows combining UM limits from multiple insured vehicles. NON-STACKED: 3 cars, $50K UM each. You're hit by uninsured driver, hurt badly, $120K damages. You collect max $50K. STACKED: Same 3 cars. You combine limits: $50K × 3 = $150K available. You collect $120K. Stacking costs more in premium but gives better protection. Some states require offering stacked coverage; others allow non-stacked.",
+                simpleAnswer: "Combining UM limits from multiple vehicles - Allows adding together UM coverage from all your vehicles for higher total protection.",
+                topic: "Auto Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is 'Betterment' or 'Depreciation' in auto physical damage claims?",
+                answers: ["Increasing car value", "Insurer reduces payment because new parts improve car beyond pre-loss condition", "Mandatory coverage upgrade", "Extra coverage"],
+                correct: 1,
+                explanation: "When new parts are installed, your car may be 'better' than before. Insurer may apply betterment/depreciation deduction. Example: Your 8-year-old car needs new tires after accident. New tires are better than worn tires. Insurer pays for new tires MINUS depreciation for the wear on the old tires. With Actual Cash Value (ACV), depreciation is standard. With new car replacement or stated value, less depreciation applied.",
+                simpleAnswer: "Deduction for improvement - Insurer may reduce payment when new parts improve your car beyond its pre-accident condition.",
+                topic: "Auto Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is a 'Total Loss' for auto insurance?",
+                answers: ["Car is completely destroyed", "Repair costs exceed the actual cash value of the vehicle (or state threshold percentage)", "Any accident over $10,000", "Only applies to new cars"],
+                correct: 1,
+                explanation: "Total Loss declared when: (1) Repair cost + salvage value ≥ Actual Cash Value, OR (2) Repair cost ≥ State threshold (often 75-80% of ACV). Example: Car ACV = $10,000. Repairs = $8,500. In state with 80% threshold, that's a total loss. Insurer pays ACV minus deductible, takes the car. You can sometimes 'buy back' the salvage. Not about complete destruction - about economics.",
+                simpleAnswer: "Repair costs exceed car's value - When fixing the car costs more than it's worth (or exceeds state percentage threshold).",
+                topic: "Auto Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is 'Rental Reimbursement' coverage?",
+                answers: ["Reimburses all rental car costs", "Pays daily limit ($30-$50/day) for rental car while yours is being repaired after covered loss", "Covers vacation rental cars", "Required by law"],
+                correct: 1,
+                explanation: "Rental Reimbursement is optional coverage paying daily amount ($30-$50 typical) for rental car while your covered vehicle is being repaired OR stolen and not recovered. Usually has per-day and total limits ($30/day, $900 total = 30 days max). Does NOT cover: rental cars on vacation (that's in the PAP automatically), or delays in getting repairs done. Starts when repairs begin, ends when completed or totaled.",
+                simpleAnswer: "Daily rental payment during repairs - Pays set daily amount for rental car while yours is being repaired after covered loss.",
+                topic: "Auto Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is 'Towing and Labor' coverage?",
+                answers: ["Covers driver wages", "Pays for towing and roadside assistance (flat tire, jumpstart, lockout) up to per-disablement limit", "Only pays for accident towing", "Requires AAA membership"],
+                correct: 1,
+                explanation: "Towing and Labor (or Emergency Road Service) pays for: (1) Towing to repair facility, (2) Flat tire changes, (3) Jumpstarts, (4) Lockout service, (5) Fuel delivery, (6) Winching. Typical limit: $50-$100 per disablement. Applies to breakdowns AND accidents. Different from towing after an accident (which may be covered under Collision/Comp as part of loss). Cheap coverage, very useful!",
+                simpleAnswer: "Roadside assistance coverage - Pays for towing and roadside help (jumpstart, flat tire, lockout) up to per-incident limit.",
+                topic: "Auto Insurance",
+                difficulty: "easy"
+            },
+            {
+                question: "What is a 'Named Driver Exclusion'?",
+                answers: ["Lists covered drivers", "Specifically excludes certain drivers from coverage to reduce premium", "Names additional drivers", "Required for all policies"],
+                correct: 1,
+                explanation: "Named Driver Exclusion endorsement specifically excludes certain household members from coverage. Used when: (1) High-risk driver in household (DUI, terrible record), (2) Person has own insurance, (3) Unlicensed person. Reduces premium significantly. BUT - if excluded person drives and has accident, NO COVERAGE for any damages! Must be signed acknowledgment. Dangerous - should only exclude someone who absolutely will not drive vehicle.",
+                simpleAnswer: "Removes specific driver from coverage - Excludes named person from all coverage to reduce premium (risky - no coverage if they drive).",
+                topic: "Auto Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What does 'Diminished Value' mean in auto insurance?",
+                answers: ["Depreciation over time", "Loss of resale value even after proper repairs due to accident history", "Lower insurance value", "Reduced coverage"],
+                correct: 1,
+                explanation: "Diminished Value (DV) is the reduction in market value because car has accident history, even with perfect repairs. Example: Car worth $30K. After accident, repaired perfectly for $8K. But now worth only $26K because CarFax shows accident. Lost $4K in value = Diminished Value. Some states require insurers to pay DV in first-party claims (your own Collision). Most don't. You can always pursue DV against at-fault party in third-party claims.",
+                simpleAnswer: "Lost value from accident history - Car worth less after accident even with perfect repairs; some states allow DV claims.",
+                topic: "Auto Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is 'Gap Insurance'?",
+                answers: ["Fills gaps in coverage", "Pays the difference between what you owe on car loan and car's actual cash value after total loss", "Covers warranty gaps", "Required for leases"],
+                correct: 1,
+                explanation: "Gap Insurance pays the 'gap' between loan balance and ACV after total loss. Example: You owe $25K on car loan. Car totaled, ACV = $18K. Insurance pays $18K. You still owe bank $7K! Gap Insurance pays that $7K. Critical for: new cars (depreciate fast), long loans, small down payments, rolled negative equity from previous cars. Usually required by lenders on leases. Available through insurers or lenders.",
+                simpleAnswer: "Covers loan payoff gap - Pays difference between what you owe on loan and car's value after total loss.",
+                topic: "Auto Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What are common exclusions in auto insurance policies?",
+                answers: ["Fire and theft", "Intentional damage, racing, using vehicle for hire (Uber/taxi), war, nuclear hazard", "Collision and theft", "Nothing is excluded"],
+                correct: 1,
+                explanation: "Standard auto exclusions: (1) Intentional damage, (2) Racing/competitive events, (3) Using for hire without proper coverage (Uber, taxi, delivery requires commercial/rideshare policy), (4) Owned vehicles not listed, (5) War/military, (6) Nuclear hazard, (7) Normal wear/tear, (8) Mechanical breakdown (need mechanical breakdown insurance). These exclusions protect against fraud, commercial exposures, and catastrophic events.",
+                simpleAnswer: "Intentional acts, racing, commercial use, war - Major exclusions include intentional damage, racing, using car for hire, and catastrophic events.",
+                topic: "Auto Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is an SR-22?",
+                answers: ["A type of sports car", "Proof of financial responsibility filing required after serious violations (DUI, driving without insurance)", "A claim form", "Sports car racing license"],
+                correct: 1,
+                explanation: "SR-22 is a certificate of financial responsibility that your insurance company files with the DMV proving you carry required insurance. Required for: DUI/DWI, driving without insurance, too many points, serious accidents while uninsured. Duration: Typically 3 years. If coverage lapses, insurer notifies DMV and license suspended. SR-22 doesn't change coverage - just proves you have it. Often significantly increases premiums because you're high-risk.",
+                simpleAnswer: "Financial responsibility certificate - Proof filed with DMV that you carry insurance, required after serious violations for 3 years.",
+                topic: "Auto Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "In NC, what is the penalty for driving without insurance?",
+                answers: ["Warning only", "Small fine", "Fine, license/registration suspension, must file SR-22, possible vehicle impoundment", "No penalty for first offense"],
+                correct: 2,
+                explanation: "NC takes uninsured driving seriously. Penalties: (1) Civil penalty up to $150, (2) License suspension, (3) Registration suspension (plates revoked), (4) Must obtain insurance and file SR-22 for 3 years, (5) Vehicle may be impounded, (6) If accident while uninsured, personally liable for all damages. Even lapses get caught - DMV monitors insurance through database. Not worth the risk!",
+                simpleAnswer: "Severe penalties - Fine, license suspension, must file SR-22, plus personal liability for any damages caused.",
+                topic: "Auto Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is 'Loan/Lease Gap Coverage'?",
+                answers: ["Same as regular Gap Insurance", "Pays loan balance minus insurance settlement after total loss", "Only for leased vehicles", "Covers missed loan payments"],
+                correct: 1,
+                explanation: "Loan/Lease Gap coverage (similar to Gap Insurance) pays the difference between your loan/lease payoff and insurance settlement after total loss. Especially important for leases where you don't own the car but must pay balance. Example: Lease payoff $28K, insurance pays $22K ACV, Gap pays $6K difference. Usually limited to 25% or 125% of ACV. Excludes: overdue payments, extended warranties financed, and penalties. Most lenders REQUIRE this on leases.",
+                simpleAnswer: "Lease/loan payoff protection - Covers difference between insurance payout and loan/lease balance after total loss.",
+                topic: "Auto Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is 'Mechanical Breakdown Insurance' (MBI)?",
+                answers: ["Included in all policies", "Optional coverage for mechanical/electrical failures after warranty expires", "Same as Collision coverage", "Only for new cars"],
+                correct: 1,
+                explanation: "MBI covers mechanical and electrical breakdowns after factory warranty expires. Covers: engine, transmission, electrical systems, A/C, etc. Does NOT cover: routine maintenance, wear items (tires, brakes, batteries), or damage from neglect. Works like extended warranty but through insurance. Requires deductible. Usually available only on newer used cars or with original owner. Alternative to dealer extended warranties.",
+                simpleAnswer: "Extended warranty through insurance - Covers mechanical failures after factory warranty expires (not maintenance or wear items).",
+                topic: "Auto Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is the 'Other Insurance' clause in auto policies?",
+                answers: ["Requires other insurance", "Specifies how payment is divided when multiple policies cover same loss", "Prohibits other insurance", "Increases coverage"],
+                correct: 1,
+                explanation: "Other Insurance clause determines how payment is split when multiple policies cover the same loss. Usually: (1) For owned vehicles, your own policy is primary, (2) For non-owned vehicles, vehicle owner's policy is primary, yours is excess, (3) Some policies prorate (split proportionally). Prevents collecting from multiple policies and profiting. Example: Driving friend's car, cause $50K damage. Friend's insurance pays first (up to limits), yours pays excess if needed.",
+                simpleAnswer: "Multi-policy payment rules - Specifies which policy pays first when multiple auto policies could cover the same accident.",
+                topic: "Auto Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is 'Personal Injury Protection' (PIP)?",
+                answers: ["Same as Medical Payments", "No-fault coverage paying medical, lost wages, and other expenses regardless of fault (required in some states)", "Bodily injury liability", "Personal property coverage"],
+                correct: 1,
+                explanation: "PIP is comprehensive no-fault coverage required in some states (not NC). Pays: (1) Medical expenses, (2) Lost wages, (3) Replacement services (childcare, housework), (4) Funeral expenses, (5) Survivor benefits. Pays quickly without determining fault. Higher limits than Med Pay ($10K-$50K typical). In PIP states, you sue for pain/suffering only if injuries exceed threshold. NC has OPTIONAL Med Pay instead - simpler but less comprehensive.",
+                simpleAnswer: "Enhanced no-fault coverage - Pays medical, lost wages, and expenses regardless of fault (required in some states, not NC).",
+                topic: "Auto Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is 'Agreed Value' vs. 'Stated Amount' in classic car insurance?",
+                answers: ["Same thing", "Agreed Value = guaranteed payout; Stated Amount = maximum payout (still subject to ACV)", "Stated Amount pays more", "Only for new cars"],
+                correct: 1,
+                explanation: "AGREED VALUE: You and insurer agree on car's value upfront (based on appraisal). Total loss pays the full agreed amount, no depreciation. Best for classics. STATED AMOUNT: You state a value, but claim pays lesser of stated amount OR actual cash value at time of loss. Less protection. Example: Agreed Value $50K - pays $50K. Stated Amount $50K, car depreciates to $45K - pays only $45K. Always choose Agreed Value for collectibles!",
+                simpleAnswer: "Agreed = guaranteed; Stated = maximum - Agreed Value pays set amount; Stated Amount is cap but actual payout may be less.",
+                topic: "Auto Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is a 'Drive Other Car' (DOC) endorsement?",
+                answers: ["Allows anyone to drive your car", "Extends liability coverage to non-owned vehicles for named insured (usually commercial)", "Requires permission", "Covers rental cars"],
+                correct: 1,
+                explanation: "DOC endorsement (mainly commercial policies) extends liability coverage to the NAMED INSURED when driving NON-OWNED cars. Example: Business owner occasionally drives employee's car on business. DOC provides liability coverage. Personal auto policies usually have this built-in for non-owned cars. But commercial policies often restrict coverage to scheduled vehicles only - DOC fills that gap. Doesn't cover physical damage to borrowed car.",
+                simpleAnswer: "Non-owned vehicle liability - Extends liability coverage when driving vehicles you don't own (mainly for commercial policies).",
+                topic: "Auto Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is 'OEM Parts' coverage?",
+                answers: ["Original Equipment Manufacturer parts guaranteed in repairs instead of aftermarket parts", "Cheapest parts", "Only for old cars", "Used parts"],
+                correct: 0,
+                explanation: "OEM Parts endorsement requires repairs use Original Equipment Manufacturer parts (made by car manufacturer) instead of aftermarket parts (made by third parties). Aftermarket parts are cheaper but quality varies. OEM parts match original specs exactly. New cars often require OEM parts to maintain warranty. Higher premium for OEM endorsement but better quality repairs. Important for new or luxury vehicles.",
+                simpleAnswer: "Original manufacturer parts required - Repairs must use factory parts instead of cheaper aftermarket parts.",
+                topic: "Auto Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is 'Accident Forgiveness'?",
+                answers: ["Forgives all accidents", "Prevents rate increase after first at-fault accident (must qualify/pay for it)", "Automatically removes accidents from record", "Free benefit"],
+                correct: 1,
+                explanation: "Accident Forgiveness prevents premium increase after your first at-fault accident. Requirements vary: (1) Usually costs extra OR requires clean record for 5 years, (2) Applies to one accident per policy period, (3) May reset if you switch insurers, (4) Doesn't remove accident from record - just prevents rate increase. Not free - you pay for it in advance. Worth it if you have clean record and want protection. Marketing term - not actual forgiveness!",
+                simpleAnswer: "Rate protection after first accident - Prevents premium increase after first at-fault accident (usually costs extra or requires clean record).",
+                topic: "Auto Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is 'Vanishing Deductible' or 'Disappearing Deductible'?",
+                answers: ["No deductible", "Deductible reduces by set amount for each claim-free year", "Deductible increases over time", "Only for comprehensive"],
+                correct: 1,
+                explanation: "Vanishing/Disappearing Deductible rewards claim-free driving by reducing deductible over time. Example: Start with $500 deductible. Each year claim-free, deductible drops $50-$100. After 5 years, deductible might be $0. Have an accident, deductible resets to original $500. Encourages safe driving and retention. Availability and terms vary by insurer. Marketing feature to attract/keep good drivers.",
+                simpleAnswer: "Deductible reduces over time - Deductible decreases annually for each claim-free year, potentially reaching zero.",
+                topic: "Auto Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What does 'Full Coverage' actually mean in auto insurance?",
+                answers: ["Covers everything", "No such thing - slang for Liability + Collision + Comprehensive", "Legal requirement", "Maximum coverage available"],
+                correct: 1,
+                explanation: "'Full Coverage' is NOT a real insurance term - it's slang! Usually means: Liability + Collision + Comprehensive. But doesn't include: Med Pay, UM/UIM, Rental, Gap, etc. And even with 'full coverage,' you still have exclusions and limits. Better to specify exactly what coverages and limits you have. Don't assume 'full coverage' means 'everything is covered'! Always read your policy declarations to know actual coverages.",
+                simpleAnswer: "Slang, not real coverage - Just means Liability + Collision + Comp; doesn't actually cover everything despite the name.",
+                topic: "Auto Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is 'Usage-Based Insurance' (UBI) or 'Telematics'?",
+                answers: ["Based on car type", "Rates based on actual driving behavior monitored by device/app (speed, braking, mileage, time of day)", "Only for commercial vehicles", "Required by law"],
+                correct: 1,
+                explanation: "UBI uses device (plug-in or smartphone app) to monitor driving habits: (1) Miles driven, (2) Hard braking, (3) Rapid acceleration, (4) Speed, (5) Time of day, (6) Phone use while driving. Good drivers get discounts (5-40%). Bad habits = higher rates. Privacy concern for some. Examples: Progressive Snapshot, State Farm Drive Safe & Save, Allstate Drivewise. Voluntary program - opt-in for potential discount.",
+                simpleAnswer: "Monitored driving discounts - Rates based on actual driving behavior tracked by device or app; good drivers save money.",
+                topic: "Auto Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is a 'Loss of Use' claim in auto insurance?",
+                answers: ["Loss of car usage - reimbursement for rental or loss of transportation while car is being repaired", "Total loss payout", "Loss of income", "Medical coverage"],
+                correct: 0,
+                explanation: "Loss of Use compensates for inability to use your vehicle during repairs. Methods: (1) Rental Reimbursement coverage pays daily amount for rental, (2) If other party at-fault, their liability covers your rental at reasonable rate, (3) Some policies pay daily amount without requiring actual rental. Important: Must be REASONABLE duration. If you delay repairs unnecessarily, insurer may stop paying. Get repairs started promptly!",
+                simpleAnswer: "Transportation during repairs - Compensation for rental car or loss of vehicle use while yours is being repaired.",
+                topic: "Auto Insurance",
+                difficulty: "medium"
+            },
 
             // ===== COMMERCIAL INSURANCE (25 questions) =====
             
@@ -1809,7 +2535,231 @@
                 difficulty: "medium"
             },
 
-            // [Continue with remaining commercial questions...]
+            {
+                question: "What is 'Commercial General Liability' (CGL) insurance?",
+                answers: ["Property coverage for businesses", "Liability coverage for bodily injury, property damage, personal injury, and advertising injury caused by business operations", "Auto liability for businesses", "Employee injury coverage"],
+                correct: 1,
+                explanation: "CGL protects businesses from liability claims for: (1) Bodily Injury - customer slips in store, (2) Property Damage - your employee damages customer property, (3) Personal & Advertising Injury - libel, slander, copyright infringement, false advertising. CGL is 'occurrence-based' - covers incidents that happen during policy period. Does NOT cover: autos (need commercial auto), professional errors (need E&O), employees (need workers' comp), intentional acts.",
+                simpleAnswer: "Business liability protection - Covers lawsuits for injuries, property damage, and advertising injuries caused by business operations.",
+                topic: "Commercial Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What are the three main coverage sections of a CGL policy?",
+                answers: ["Property, Liability, Workers Comp", "Coverage A (Bodily Injury/Property Damage), Coverage B (Personal/Advertising Injury), Coverage C (Medical Payments)", "Auto, Property, Liability", "Building, Contents, Loss of Income"],
+                correct: 1,
+                explanation: "CGL has three coverage parts: Coverage A = Bodily Injury and Property Damage Liability (most common claims - slip/fall, damaged property), Coverage B = Personal and Advertising Injury (libel, slander, copyright infringement), Coverage C = Medical Payments (small medical bills, no-fault, like homeowners Coverage F). Each has separate limits. Most important is Coverage A which covers 'accidents' that cause injury or property damage.",
+                simpleAnswer: "A, B, C: BI/PD, Personal/Ad Injury, Med Pay - Three sections covering physical liability, reputation/advertising issues, and small medical payments.",
+                topic: "Commercial Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is 'Workers' Compensation Insurance'?",
+                answers: ["Liability insurance for employees", "No-fault insurance covering employee work injuries - pays medical, lost wages, and protects employer from lawsuits", "Health insurance for workers", "Unemployment insurance"],
+                correct: 1,
+                explanation: "Workers' Compensation is NO-FAULT coverage required in most states (NC requires if 3+ employees). Benefits: (1) Pays employee medical bills, (2) Replaces lost wages (usually 66% of average wage), (3) Disability benefits, (4) Vocational rehabilitation, (5) Death benefits to survivors. In exchange, employees give up right to sue employer. Protects both parties - employees get automatic benefits, employers get lawsuit protection. Premium based on payroll and classification codes.",
+                simpleAnswer: "Employee injury coverage with lawsuit protection - Pays injured workers' medical/wages; employees can't sue in return (required by law in most states).",
+                topic: "Commercial Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What does 'Experience Modification Rate' (MOD) mean in Workers' Comp?",
+                answers: ["Years in business", "Multiplier adjusting premium up/down based on company's claims history compared to industry average", "Employee experience level", "Modification to coverage"],
+                correct: 1,
+                explanation: "Experience Mod (or MOD or EMR) adjusts Workers' Comp premium based on claims history. MOD of 1.0 = average. MOD of 0.85 = 15% credit (better than average). MOD of 1.25 = 25% penalty (worse than average). Example: Base premium $10,000, MOD 1.25 = actual premium $12,500. Calculated over 3-year period, excludes most recent year. Safety programs reduce claims → lower MOD → lower premium. Very important for contractors/construction.",
+                simpleAnswer: "Claims history multiplier - Adjusts premium up/down based on your claims compared to industry average (1.0 = average, <1.0 = credit, >1.0 = penalty).",
+                topic: "Commercial Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is 'Professional Liability' or 'Errors & Omissions' (E&O) insurance?",
+                answers: ["General liability for professionals", "Covers negligence, mistakes, or failure to perform professional services", "Employee liability", "Property coverage"],
+                correct: 1,
+                explanation: "Professional Liability/E&O covers financial damages from professional mistakes or negligence. Examples: Doctor misdiagnoses patient, accountant makes tax error, lawyer misses filing deadline, architect's design flaw causes building issues. Covers: Legal defense, settlements, judgments. Does NOT cover: intentional wrongdoing, criminal acts, bodily injury (that's CGL). Common for: doctors, lawyers, accountants, consultants, architects, engineers, insurance agents. Usually 'claims-made' policy - must report during policy period.",
+                simpleAnswer: "Professional mistake coverage - Protects professionals (doctors, lawyers, consultants) from lawsuits over errors, negligence, or failure to perform services.",
+                topic: "Commercial Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is the difference between 'Occurrence' and 'Claims-Made' liability policies?",
+                answers: ["No difference", "Occurrence covers incidents during policy period regardless of when reported; Claims-Made requires both incident AND claim during policy period", "Claims-Made is cheaper", "Occurrence is temporary"],
+                correct: 1,
+                explanation: "OCCURRENCE: Covers incidents that occur during policy period, regardless of when claim is filed. Accident in 2020, claim filed in 2025, 2020 policy pays. CLAIMS-MADE: Both incident AND claim must occur during policy period (or extended reporting period). Accident in 2020, claim filed in 2025, NO COVERAGE unless you bought 'tail coverage.' CGL usually occurrence. Professional Liability usually claims-made. Claims-made requires continuous coverage or tail policy!",
+                simpleAnswer: "When incident must happen - Occurrence = incident during policy period; Claims-Made = BOTH incident and claim during policy period.",
+                topic: "Commercial Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is 'Tail Coverage' in claims-made policies?",
+                answers: ["Pet insurance", "Extended Reporting Period - continues coverage for past incidents reported after policy ends", "Extra liability coverage", "Only for retail businesses"],
+                correct: 1,
+                explanation: "Tail Coverage (Extended Reporting Period Endorsement) extends time to report claims after claims-made policy ends. Example: Doctor retires, cancels claims-made malpractice policy. Patient sues 3 years later for procedure done while insured. Without tail coverage, NO COVERAGE! Tail extends reporting period (often unlimited). Expensive - often 150-300% of annual premium. Critical when retiring, changing insurers, or switching to occurrence. Alternative: 'Nose Coverage' from new insurer.",
+                simpleAnswer: "Post-cancellation reporting period - Allows reporting claims after claims-made policy ends for incidents that happened during policy period (essential when retiring/changing insurers).",
+                topic: "Commercial Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What businesses typically qualify for a Businessowners Policy (BOP)?",
+                answers: ["Any business", "Small to medium businesses in eligible industries (offices, retail, restaurants, apartments) under certain size limits", "Only retail stores", "Large corporations"],
+                correct: 1,
+                explanation: "BOP is designed for small-medium businesses meeting eligibility: (1) Building size limits (usually under 100,000 sq ft), (2) Revenue limits (varies by industry), (3) Eligible business types: offices, retail, restaurants, apartments, wholesalers, (4) INELIGIBLE: auto dealers, banks, bars/nightclubs, contractors, manufacturers, parking garages. BOP bundles property + liability + business income at better price than buying separately. Standardized package makes underwriting faster/cheaper for insurers.",
+                simpleAnswer: "Small-medium eligible businesses - Offices, retail, restaurants, apartments under size/revenue limits (excludes contractors, bars, manufacturers, etc.).",
+                topic: "Commercial Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is 'Business Interruption' or 'Business Income' coverage?",
+                answers: ["Covers business property", "Pays lost net income + continuing expenses when business must close due to covered property loss", "Covers employee wages", "Guarantees business success"],
+                correct: 1,
+                explanation: "Business Income pays for financial losses when business must close/reduce operations due to covered property damage. Pays: (1) Net income you would have earned, (2) Continuing expenses (rent, utilities, key employee salaries), (3) Usually for period of restoration (time to repair/reopen), typically max 12 months. Formula: (Net Profit + Continuing Expenses) × Shutdown Time. Example: Fire closes restaurant 4 months, would've made $20K/month profit + $15K expenses = $35K/month × 4 = $140K covered.",
+                simpleAnswer: "Lost income during closure - Pays net profit + continuing expenses when business must close for covered property damage repairs.",
+                topic: "Commercial Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is 'Extra Expense' coverage in commercial insurance?",
+                answers: ["Bonus coverage", "Pays extra costs to continue operations after loss (rent temporary space, equipment rental, overtime)", "Luxury expenses", "Employee bonuses"],
+                correct: 1,
+                explanation: "Extra Expense pays EXTRA costs to minimize business interruption and continue operations after covered loss. Examples: (1) Rent temporary location, (2) Rent equipment, (3) Overtime wages, (4) Expedited freight/materials, (5) Temporary power. Different from Business Income (which pays lost profits). Some businesses need Extra Expense MORE than Business Income - newspapers, hospitals, data centers that CAN'T shut down. Often combined with Business Income for comprehensive protection.",
+                simpleAnswer: "Costs to stay open - Pays extra expenses to continue operating after a loss (temporary location, equipment rental, overtime, expedited services).",
+                topic: "Commercial Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is 'Products and Completed Operations' coverage in a CGL policy?",
+                answers: ["Property coverage for products", "Liability coverage for injury/damage from your products or completed work after you've released them", "Manufacturing equipment coverage", "Only for retail stores"],
+                correct: 1,
+                explanation: "Products-Completed Operations (Prod-Comp) covers liability for: (1) PRODUCTS: Defective products cause injury after sale/delivery. Food poisoning from restaurant, defective product injures user. (2) COMPLETED OPERATIONS: Finished work causes problems later. Contractor finishes building, roof leaks. Aggregate limit separate from general aggregate. Critical for manufacturers, contractors, restaurants. If business stops, need 'tail' coverage since claims arise years later from past work/products.",
+                simpleAnswer: "After-sale/completion liability - Covers injuries from your products or completed work after you've sold/delivered/finished them.",
+                topic: "Commercial Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is 'Commercial Auto Insurance'?",
+                answers: ["Same as personal auto", "Auto coverage for vehicles used for business purposes with different coverages and higher limits", "Only for trucks", "Cheaper than personal auto"],
+                correct: 1,
+                explanation: "Commercial Auto covers vehicles used for business. Key differences from personal auto: (1) Named insured only (not family) unless endorsed, (2) Higher limits available, (3) Hired/non-owned auto coverage, (4) Different classifications: private passenger, trucks, tractors, trailers, (5) Different rating based on vehicle use/radius/cargo. Symbols determine who/what is covered: Symbol 1 = any auto, Symbol 2 = owned autos only, Symbol 7 = scheduled autos only. Essential for businesses using vehicles.",
+                simpleAnswer: "Business vehicle coverage - Auto insurance for vehicles used for business with higher limits and commercial-specific coverages.",
+                topic: "Commercial Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is 'Hired and Non-Owned Auto' coverage?",
+                answers: ["Coverage to rent cars", "Liability coverage when employees use rented vehicles (hired) or personal vehicles (non-owned) for business", "Required for all businesses", "Property damage coverage"],
+                correct: 1,
+                explanation: "Hired and Non-Owned Auto Liability protects business when: HIRED: Employee rents car for business trip and causes accident. NON-OWNED: Employee uses personal car for business errand and causes accident. Coverage excess over rental company/employee's personal insurance. Doesn't cover physical damage to the hired/non-owned vehicle. Relatively cheap. Essential for businesses without owned vehicles but where employees drive for business. Often included in CGL.",
+                simpleAnswer: "Rental/employee car liability - Protects business when employees use rentals or personal cars for business and cause accidents.",
+                topic: "Commercial Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is a 'Builder's Risk' policy?",
+                answers: ["Builder's liability", "Property coverage for buildings under construction", "Coverage for construction equipment", "Builder's license insurance"],
+                correct: 1,
+                explanation: "Builder's Risk is property coverage for buildings/structures DURING construction/renovation. Covers: (1) Building materials, (2) Fixtures, (3) Equipment permanently affixed, (4) Temporary structures. Usually on 'all risk'/open peril basis. Term: duration of construction. Can be purchased by: owner, general contractor, or lender. Excludes: theft of materials unless building enclosed, employee theft, contractor's tools/equipment (need separate inland marine). Automatically terminates when construction complete or building occupied.",
+                simpleAnswer: "Construction property coverage - Protects buildings/materials during construction until project is complete or occupied.",
+                topic: "Commercial Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is 'Inland Marine' insurance for businesses?",
+                answers: ["Boat insurance", "Coverage for movable property, property in transit, equipment, or specialty items", "Ocean shipping only", "Only for marinas"],
+                correct: 1,
+                explanation: "Inland Marine covers property: (1) IN TRANSIT - goods being shipped, (2) MOBILE - contractor equipment, medical equipment, camera equipment, (3) INSTRUMENTALITIES OF TRANSPORTATION - bridges, tunnels, (4) PROPERTY OF CERTAIN DEALERS - jewelry dealers, furriers, (5) BAILEE PROPERTY - dry cleaners, repair shops. Historical: originally covered cargo moved inland from ships. Now: anything movable or unusual. Examples: Contractors Equipment, Installation Floater, Computer Floater, Accounts Receivable, Valuable Papers.",
+                simpleAnswer: "Mobile/specialty property - Covers portable equipment, items in transit, tools, and specialty business property (not related to water).",
+                topic: "Commercial Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is 'Cyber Liability Insurance'?",
+                answers: ["Computer equipment coverage", "Covers data breaches, cyber attacks, privacy violations, and related costs", "Internet service insurance", "Social media coverage"],
+                correct: 1,
+                explanation: "Cyber Liability covers losses from: (1) Data Breach - customer data stolen, (2) Ransomware, (3) Business interruption from cyber attack, (4) Legal fees defending privacy lawsuits, (5) Notification costs (must notify affected customers), (6) Credit monitoring for victims, (7) Public relations/reputation management, (8) Regulatory fines. Essential in modern business - any company storing customer data faces risk. Often separate policy, not covered under CGL/BOP. Requirements: security measures, encryption, employee training.",
+                simpleAnswer: "Data breach/cyber attack coverage - Protects against hacking, data theft, ransomware, notification costs, and lawsuits from privacy violations.",
+                topic: "Commercial Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is 'Employment Practices Liability Insurance' (EPLI)?",
+                answers: ["Workers' compensation", "Covers lawsuits from employees for wrongful termination, discrimination, harassment, retaliation", "Health insurance", "Payroll insurance"],
+                correct: 1,
+                explanation: "EPLI protects against employee lawsuits claiming: (1) Wrongful termination, (2) Discrimination (age, race, sex, disability), (3) Sexual harassment, (4) Retaliation, (5) Failure to promote, (6) Wage/hour violations. Covers: defense costs, settlements, judgments. Does NOT cover: intentional violations, criminal acts, punitive damages (varies by state), wage/benefits owed. Usually has deductible/retention. Important: ANY size business faces risk. Even winning defense costs $150K+. Prevention: document everything, HR policies, training.",
+                simpleAnswer: "Employee lawsuit protection - Covers claims of wrongful termination, discrimination, harassment, and other employment-related lawsuits.",
+                topic: "Commercial Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is 'Directors and Officers' (D&O) Liability Insurance?",
+                answers: ["Worker's Comp for executives", "Protects personal assets of company directors/officers from lawsuits over management decisions", "Property coverage for executives", "Life insurance for officers"],
+                correct: 1,
+                explanation: "D&O protects personal assets of directors/officers from lawsuits claiming mismanagement, breach of fiduciary duty, or wrongful acts in managing company. Claims from: shareholders, creditors, competitors, regulators, employees. Three coverages: (1) Side A - protects individuals when company can't indemnify, (2) Side B - reimburses company when it indemnifies directors/officers, (3) Side C (Entity Coverage) - protects company itself. Excludes: fraud, illegal profits, intentional violations. Essential for corporations, nonprofits - board members won't serve without it!",
+                simpleAnswer: "Executive lawsuit protection - Protects directors/officers' personal assets from lawsuits over management decisions and company operations.",
+                topic: "Commercial Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is 'Liquor Liability' insurance?",
+                answers: ["General liability for bars", "Specialized liability for businesses that sell/serve alcohol covering injuries caused by intoxicated patrons", "Product liability", "Property coverage"],
+                correct: 1,
+                explanation: "Liquor Liability covers businesses that sell/serve alcohol when patron becomes intoxicated and injures someone or damages property. Examples: Bar overserves customer, customer drives drunk and kills someone. Restaurant serves minor, minor causes accident. Covers: legal defense, settlements, judgments. Most CGL policies EXCLUDE liquor liability - must buy separate policy or endorsement. Required for: bars, restaurants, liquor stores, caterers, anywhere alcohol served. Some states have 'dram shop laws' imposing strict liability on sellers.",
+                simpleAnswer: "Alcohol seller liability - Covers lawsuits when intoxicated customers injure others after being served at your establishment (excluded from standard CGL).",
+                topic: "Commercial Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is 'Commercial Crime' insurance?",
+                answers: ["Liability for crimes", "Covers theft, embezzlement, forgery, and other financial crimes against the business", "Security guard insurance", "Customer theft liability"],
+                correct: 1,
+                explanation: "Commercial Crime (Fidelity) covers business losses from: (1) Employee theft/embezzlement, (2) Forgery/alteration of checks, (3) Computer fraud, (4) Funds transfer fraud, (5) Money/securities theft, (6) Robbery inside/outside premises. Does NOT cover: shoplifting by customers (that's inventory), inventory shortage from unknown causes. Common claims: Employee steals $200K over 3 years, Check forgery, Wire transfer fraud. Essential for businesses handling cash/valuables. High deductibles typical. Discovery period important.",
+                simpleAnswer: "Employee theft/fraud coverage - Protects against embezzlement, forgery, computer fraud, and theft of money/securities by employees or outsiders.",
+                topic: "Commercial Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is 'Commercial Umbrella' insurance?",
+                answers: ["Weather coverage", "Excess liability coverage sitting over underlying GL, auto, employer's liability", "Property coverage", "Only for large businesses"],
+                correct: 1,
+                explanation: "Commercial Umbrella provides excess liability limits above underlying: (1) CGL, (2) Commercial Auto, (3) Employer's Liability (part of Workers' Comp policy). Example: CGL limit $1M, Umbrella $5M. Lawsuit for $3M. CGL pays $1M, Umbrella pays remaining $2M. May also provide DROP-DOWN coverage for exposures not covered by underlying (with self-insured retention). Requires minimum underlying limits. Typical umbrella limits: $1M-$25M. Relatively cheap per million. Essential for businesses with significant exposure.",
+                simpleAnswer: "Excess business liability - Provides millions in additional liability coverage above CGL, auto, and employer's liability limits.",
+                topic: "Commercial Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is 'Key Person' or 'Key Employee' insurance?",
+                answers: ["Life insurance owned by company on key executives to protect business from financial loss if they die", "Health insurance for executives", "Disability for employees", "Liability coverage"],
+                correct: 0,
+                explanation: "Key Person insurance is life (or disability) insurance owned by the BUSINESS on critical employees. If key person dies/disabled, business receives proceeds to: (1) Replace lost revenue/profits, (2) Recruit/train replacement, (3) Pay off debts, (4) Stabilize business during transition. Business pays premiums, owns policy, is beneficiary. Not for employee's family benefit - that's separate. Common for: founders, top salespeople, unique skilled technicians. Premiums not tax-deductible, proceeds usually tax-free.",
+                simpleAnswer: "Life insurance on key executives - Company-owned life insurance protecting business from financial loss if critical employee dies/disabled.",
+                topic: "Commercial Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is a 'Commercial Package Policy' (CPP)?",
+                answers: ["Discount for multiple businesses", "Modular policy combining multiple commercial coverages customized for business needs", "Only for retail packages", "Same as BOP"],
+                correct: 1,
+                explanation: "CPP is customizable commercial policy combining multiple coverages: Common Property Declarations + multiple coverage parts selected from: (1) Commercial Property, (2) Commercial General Liability, (3) Commercial Auto, (4) Crime, (5) Boiler & Machinery, (6) Inland Marine, (7) Farm. More flexible than BOP. Used for: larger businesses, unusual exposures, businesses not BOP-eligible. Each coverage can have different limits/deductibles. Allows tailoring to specific business needs. Usually cheaper than separate policies.",
+                simpleAnswer: "Customized commercial package - Modular policy letting businesses select and combine needed coverages (property, liability, auto, crime, etc.).",
+                topic: "Commercial Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "What is 'Contingent Business Interruption' coverage?",
+                answers: ["Backup for regular BI coverage", "Covers lost income when suppliers, customers, or key locations are damaged and interrupt your business", "Only for manufacturing", "Property coverage"],
+                correct: 1,
+                explanation: "Contingent BI pays when YOUR business loses income due to property damage at: (1) Key supplier - factory that supplies critical parts burns, you can't produce, (2) Major customer - biggest customer's facility damaged, can't buy from you, (3) Nearby attraction - mall anchor store closes, reduces traffic to your store, (4) Utility/service provider. YOUR property isn't damaged, but you still lose income. Regular Business Income won't cover - you need Contingent BI endorsement. Example: Only supplier of critical component has fire, you must shut production for 2 months.",
+                simpleAnswer: "Third-party disruption coverage - Pays your lost income when damage to suppliers, customers, or key locations forces your business to close/slow.",
+                topic: "Commercial Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "What is the 'Aggregate Limit' in a CGL policy?",
+                answers: ["Maximum per claim", "Maximum total payout for all claims during policy period", "Minimum coverage required", "Deductible amount"],
+                correct: 1,
+                explanation: "Aggregate Limit is the MAXIMUM the insurer will pay for ALL covered claims during the policy period. CGL typically has: (1) General Aggregate - applies to premises/operations, (2) Products-Completed Operations Aggregate - separate for prod-comp claims, (3) Per Occurrence Limit - max per single incident. Example: $2M General Aggregate, $1M per occurrence. Three claims of $800K each = $2.4M total. Policy pays only $2M aggregate. Third claim gets only $400K. Aggregate resets annually at renewal.",
+                simpleAnswer: "Total annual limit - Maximum insurer pays for ALL claims combined during policy period (resets at renewal).",
+                topic: "Commercial Insurance",
+                difficulty: "medium"
+            },
 
             // ===== CLAIMS & CALCULATIONS (20 questions) =====
             
@@ -1823,22 +2773,315 @@
                 difficulty: "hard"
             },
 
-            // [Continue with remaining calculation questions...]
-
-            // ===== REAL CLAIM SCENARIOS (15 questions from original) =====
-            
             {
-                question: "REAL CLAIM: A customer calls and says 'I hit a deer with my car last night. My front bumper is smashed.' What coverage pays for this?",
-                answers: ["Liability Coverage", "Collision Coverage", "Comprehensive Coverage", "Uninsured Motorist Coverage"],
+                question: "CALCULATION: Customer has 50/100/50 liability. They cause accident injuring 3 people: Person A = $60,000, Person B = $55,000, Person C = $40,000. Total = $155,000. How much does insurance pay for bodily injuries?",
+                answers: ["$155,000 (full amount)", "$100,000 (per accident limit)", "$150,000 ($50K each)", "$50,000 (one person only)"],
+                correct: 1,
+                explanation: "50/100/50 means: $50K per person max, $100K per accident max, $50K property damage. Person A gets $50K (max per person), Person B gets $50K (max per person), Person C would get $40K but we've already paid $100K total (per accident limit reached). Person C gets $0 from insurance. Customer personally owes: Person A $10K, Person B $5K, Person C $40K = $55K out-of-pocket! This is why minimum limits are dangerous.",
+                simpleAnswer: "$100,000 total - Per accident limit caps total payout even though 3 people injured; customer owes remaining $55,000 personally.",
+                topic: "Claims & Calculations",
+                difficulty: "hard"
+            },
+            {
+                question: "CALCULATION: Homeowners policy with $250,000 Coverage A. Coverage C (Personal Property) is automatically what amount?",
+                answers: ["$25,000", "$50,000", "$125,000", "$250,000"],
                 correct: 2,
-                explanation: "Hitting an ANIMAL is always Comprehensive, not Collision. The insurance rule is: if your car hits an animal OR an animal hits your car, it's Comprehensive. Animals are considered unpredictable moving objects, like an 'act of nature.' You can't control when a deer jumps in front of you.",
-                simpleAnswer: "Comprehensive - Hitting any animal (deer, dog, etc.) is always Comprehensive coverage, NOT Collision.",
+                explanation: "Coverage C = 50% of Coverage A automatically. $250,000 × 0.50 = $125,000. Also: Coverage B (Other Structures) = 10% = $25,000. Coverage D (Loss of Use) = 20% = $50,000. These are automatic but can be increased. Remember: B=10%, C=50%, D=20% of Coverage A.",
+                simpleAnswer: "$125,000 - Personal Property is automatically 50% of dwelling coverage ($250K × 50% = $125K).",
+                topic: "Claims & Calculations",
+                difficulty: "easy"
+            },
+            {
+                question: "CALCULATION: Car totaled. Actual Cash Value = $18,000. You owe $24,000 on loan. Deductible = $500. Insurance pays you $17,500. How much do you still owe the bank?",
+                answers: ["$0", "$500", "$6,000", "$6,500"],
+                correct: 3,
+                explanation: "Insurance pays: $18,000 ACV - $500 deductible = $17,500. You owe bank $24,000. After insurance payment: $24,000 - $17,500 = $6,500 still owed! You must pay bank $6,500 AND you have no car. This is why Gap Insurance is critical for new cars with small down payments. Gap would pay that $6,500.",
+                simpleAnswer: "$6,500 - You owe bank $24K, insurance pays $17,500, you're stuck paying the $6,500 difference with no car (need Gap Insurance!).",
+                topic: "Claims & Calculations",
+                difficulty: "medium"
+            },
+            {
+                question: "CALCULATION: Business Income loss. Restaurant closed 3 months for fire repairs. Usually makes $30,000/month profit + $20,000/month continuing expenses (rent, utilities, key staff). How much covered?",
+                answers: ["$30,000", "$90,000", "$150,000", "$180,000"],
+                correct: 2,
+                explanation: "Business Income formula: (Net Profit + Continuing Expenses) × Time Period. ($30,000 profit + $20,000 expenses) × 3 months = $50,000/month × 3 = $150,000. Continuing expenses are costs that continue even while closed. Non-continuing expenses (like hourly workers you laid off) aren't covered since you're not paying them.",
+                simpleAnswer: "$150,000 - (Profit + Continuing Expenses) × Months: ($30K + $20K) × 3 months = $150K.",
+                topic: "Claims & Calculations",
+                difficulty: "medium"
+            },
+            {
+                question: "CALCULATION: Workers' Comp Experience Mod = 1.25. Base premium = $15,000. What's the actual premium?",
+                answers: ["$12,000", "$15,000", "$18,750", "$20,000"],
+                correct: 2,
+                explanation: "Experience Mod multiplies base premium. Base Premium × MOD = Actual Premium. $15,000 × 1.25 = $18,750. MOD of 1.25 means 25% penalty (worse than industry average). MOD of 1.0 = average (pay base). MOD of 0.80 = 20% credit (pay $12,000). Better safety record = lower MOD = lower premium.",
+                simpleAnswer: "$18,750 - Base premium × MOD: $15,000 × 1.25 = $18,750 (25% penalty for worse-than-average claims).",
+                topic: "Claims & Calculations",
+                difficulty: "easy"
+            },
+            {
+                question: "CALCULATION: HO-3 policy has $1,500 jewelry sub-limit. Thief steals: engagement ring ($8,000), necklace ($2,500), earrings ($1,000). Total jewelry = $11,500. How much covered?",
+                answers: ["$11,500", "$8,000", "$1,500", "$3,500"],
+                correct: 2,
+                explanation: "Sub-limits apply TOTAL for the category, not per item. Policy pays maximum $1,500 total for all jewelry combined, even though total value is $11,500. Customer loses $10,000 out-of-pocket! To cover valuable jewelry, must 'schedule' items with Scheduled Personal Property endorsement (provides full coverage, no deductible, broader coverage). Always ask about expensive jewelry!",
+                simpleAnswer: "$1,500 total - Sub-limit applies to entire category combined; need scheduled endorsement for valuable jewelry.",
+                topic: "Claims & Calculations",
+                difficulty: "hard"
+            },
+            {
+                question: "CALCULATION: Property insured for $200,000, 80% coinsurance, replacement cost $300,000, $50,000 loss, $2,500 deductible. Insurance pays?",
+                answers: ["$47,500", "$41,667 - $2,500 = $39,167", "$50,000", "$38,750"],
+                correct: 1,
+                explanation: "Step 1: Should be insured for 80% × $300K = $240K. Step 2: Only insured for $200K. Step 3: Coinsurance penalty: ($200K carried / $240K required) × $50K loss = (0.833) × $50K = $41,667. Step 4: Minus $2,500 deductible = $39,167 paid. Under-insured by $40K, so penalty applied. If properly insured for $240K, would've gotten $47,500 ($50K - $2,500).",
+                simpleAnswer: "$39,167 - Coinsurance penalty for under-insurance reduces payment from $47,500 to $39,167.",
+                topic: "Claims & Calculations",
+                difficulty: "hard"
+            },
+            {
+                question: "CALCULATION: Liability limit $300,000. Defense costs $80,000. Judgment against you $250,000. Total = $330,000. How much does insurance pay?",
+                answers: ["$300,000 only", "$330,000 (full amount)", "$250,000 only", "$220,000"],
+                correct: 1,
+                explanation: "Defense costs are paid IN ADDITION TO the policy limit - they don't reduce the limit! This is one of the best features of liability coverage. Insurance pays: $80,000 defense + $250,000 judgment = $330,000 total, even though limit is only $300,000. Defense costs can be huge ($100K-$500K for complex cases). You're never stuck paying attorney fees.",
+                simpleAnswer: "$330,000 - Defense costs don't count against the limit; paid in addition to the $300K limit.",
+                topic: "Claims & Calculations",
+                difficulty: "medium"
+            },
+            {
+                question: "CALCULATION: Windstorm damages home. Dwelling coverage $400,000. Wind deductible is 2%. How much is deductible?",
+                answers: ["$2,000", "$4,000", "$8,000", "$20,000"],
+                correct: 2,
+                explanation: "Percentage deductibles multiply Coverage A amount: $400,000 × 2% = $8,000 deductible for wind/hurricane damage. Regular perils might have $1,000 flat deductible. If claim is $25,000, insurance pays $17,000 ($25K - $8K). Coastal NC properties often have 2-5% wind deductibles. $400K home with 5% wind deductible = $20,000 out-of-pocket before insurance pays!",
+                simpleAnswer: "$8,000 - Percentage deductible × Coverage A: $400,000 × 2% = $8,000 wind deductible.",
+                topic: "Claims & Calculations",
+                difficulty: "medium"
+            },
+            {
+                question: "CALCULATION: Medical Payments coverage $5,000. Guest injured, medical bills $3,200. Who pays and how much?",
+                answers: ["Insurance pays $3,200, no deductible, no fault determination", "Customer pays $3,200", "Insurance pays $5,000", "Insurance pays $1,600 after deductible"],
+                correct: 0,
+                explanation: "Medical Payments (Coverage F in homeowners, Part B in auto) pays actual medical expenses up to limit, with NO deductible and NO fault determination required. It's goodwill coverage to avoid lawsuits. Guest's bills = $3,200, insurance pays $3,200 immediately. If bills were $6,000, insurance would pay max $5,000 (limit). Quick payment keeps good relationships and often prevents bigger liability claims.",
+                simpleAnswer: "Insurance pays $3,200, no deductible, no fault needed - Med Pay covers actual medical bills up to limit automatically.",
+                topic: "Claims & Calculations",
+                difficulty: "easy"
+            },
+            {
+                question: "CALCULATION: Personal property claim for stolen laptop, purchased 4 years ago for $2,000. Current replacement cost $1,500. Depreciation 40%. With ACV coverage, insurance pays?",
+                answers: ["$2,000", "$1,500", "$900", "$1,200"],
+                correct: 2,
+                explanation: "ACV = Replacement Cost - Depreciation. Replacement Cost Today = $1,500 (current price for similar laptop). Minus 40% depreciation = $1,500 × 0.60 = $900 paid (minus deductible). Original purchase price doesn't matter - only current replacement cost minus depreciation. With Replacement Cost coverage, you'd get $1,500 to buy new. ACV leaves you short!",
+                simpleAnswer: "$900 - Current replacement cost ($1,500) minus 40% depreciation = $900 (original price irrelevant).",
+                topic: "Claims & Calculations",
+                difficulty: "medium"
+            },
+            {
+                question: "CALCULATION: CGL policy - $1M per occurrence, $2M general aggregate. Year has 4 claims: $600K, $500K, $400K, $300K = $1.8M total. How much does insurance pay?",
+                answers: ["$1,000,000", "$1,800,000", "$2,000,000", "$1,500,000"],
+                correct: 1,
+                explanation: "Each claim is under $1M per occurrence limit, so all covered individually. Total claims = $1.8M. General Aggregate limit is $2M (max for the year). Since $1.8M < $2M aggregate, insurance pays all claims: $1.8M. You still have $200K aggregate remaining. If another $500K claim happens, insurance would only pay $200K (remaining aggregate), and you'd owe $300K personally. Aggregates reset annually.",
+                simpleAnswer: "$1,800,000 - All claims under per-occurrence limit and total under $2M aggregate, so fully covered.",
+                topic: "Claims & Calculations",
+                difficulty: "hard"
+            },
+            {
+                question: "CALCULATION: Tree removal after storm. Tree damage = $12,000. Removal/debris = $4,000. Debris Removal coverage is 25% of loss + $10,000 additional. How much total paid?",
+                answers: ["$12,000", "$16,000", "$15,000", "$19,000"],
+                correct: 1,
+                explanation: "Debris Removal pays UP TO 25% of loss payment, plus additional amount if needed. Tree damage: $12,000. Debris removal: 25% of $12K = $3,000 included. But debris actually costs $4,000. The additional $10K limit kicks in for overage: $1,000 extra. Total paid: $12,000 damage + $4,000 debris = $16,000 (minus deductible applied once). Without debris coverage, customer pays $4,000 out-of-pocket just to haul away their own tree!",
+                simpleAnswer: "$16,000 - Pays damage ($12K) + debris removal ($4K) using 25% provision plus additional amount for overage.",
+                topic: "Claims & Calculations",
+                difficulty: "hard"
+            },
+            {
+                question: "CALCULATION: Rental Reimbursement $40/day, 30-day max. Car repairs take 25 days. Actual rental costs $50/day. Insurance pays?",
+                answers: ["$1,000 ($40 × 25 days)", "$1,250 ($50 × 25 days)", "$1,200 ($40 × 30 days)", "$1,500 ($50 × 30 days)"],
+                correct: 0,
+                explanation: "Rental Reimbursement pays the LESSER of: (1) Daily limit × Days, or (2) Actual rental cost. $40/day × 25 days = $1,000 max (limited by daily amount). Even though actual cost was $1,250 ($50/day), insurance only pays up to $40/day. Customer pays extra $10/day out-of-pocket = $250. If repairs took 35 days, would be limited to 30-day max = $1,200.",
+                simpleAnswer: "$1,000 - Pays daily limit × days: $40/day × 25 days = $1,000 (customer pays extra $10/day).",
+                topic: "Claims & Calculations",
+                difficulty: "medium"
+            },
+            {
+                question: "CALCULATION: Commercial property, $500K value, insured with Agreed Amount endorsement for $400K. Loss = $100K. Coinsurance clause present. Insurance pays?",
+                answers: ["$100,000 (full loss)", "$80,000 (coinsurance penalty)", "$60,000", "$50,000"],
+                correct: 0,
+                explanation: "Agreed Amount endorsement SUSPENDS the coinsurance clause! Insurer agreed that $400K is adequate coverage. Even though actual value is $500K, NO coinsurance penalty applies because of the endorsement. Insurance pays full $100K loss (minus deductible). Without Agreed Amount: Would need 80% = $400K minimum, which you have, so would pay anyway. But if value increased to $600K during year, you'd be under-insured without realizing it. Agreed Amount protects against this.",
+                simpleAnswer: "$100,000 full amount - Agreed Amount endorsement waives coinsurance penalty; pays full loss regardless of value changes.",
+                topic: "Claims & Calculations",
+                difficulty: "hard"
+            },
+            {
+                question: "CALCULATION: UM coverage limits $100K/$300K. Hit by uninsured driver. Your damages: Medical $80K, Lost wages $40K, Pain/suffering $60K = $180K total. Insurance pays?",
+                answers: ["$100,000 (per person limit)", "$180,000 (full amount)", "$300,000 (per accident limit)", "$80,000 (medical only)"],
+                correct: 0,
+                explanation: "UM per person limit is $100K maximum per injured person. Your total damages = $180K but you're capped at $100K. You lose $80K. If TWO people in your car each had $120K damages ($240K total), first person gets $100K, second gets $100K = $200K total (under $300K per-accident aggregate). Always buy UM limits matching your liability limits! If you can be sued for $300K, you need protection against uninsured drivers too.",
+                simpleAnswer: "$100,000 per person cap - Even with $180K damages, limited to $100K per person maximum (should buy higher limits!).",
+                topic: "Claims & Calculations",
+                difficulty: "hard"
+            },
+            {
+                question: "CALCULATION: Business personal property claim. Equipment purchased for $50K 3 years ago, depreciated 30%. Current replacement cost $60K. Policy has Replacement Cost coverage. Insurance pays?",
+                answers: ["$35,000", "$42,000", "$50,000", "$60,000"],
+                correct: 3,
+                explanation: "Replacement Cost on business property pays current cost to replace without depreciation deduction. Current replacement cost is $60K (equipment prices increased). Insurance pays $60K (minus deductible). Note: Usually paid in two steps - ACV upfront ($60K - 30% = $42K), then depreciation withheld ($18K) after repairs completed to prevent fraud. Original purchase price ($50K) irrelevant. With ACV coverage, would only get $42K ($60K minus 30% depreciation).",
+                simpleAnswer: "$60,000 - Replacement Cost pays current cost to replace ($60K) without deducting depreciation or considering original cost.",
+                topic: "Claims & Calculations",
+                difficulty: "medium"
+            },
+            {
+                question: "CALCULATION: Loss of Use claim. Hotel costs $150/night for 30 days = $4,500. Normal housing cost $0 (owned home, paid off). How much covered?",
+                answers: ["$0", "$4,500 (full hotel cost)", "$2,250 (half)", "Only mortgage amount"],
+                correct: 1,
+                explanation: "Loss of Use (Additional Living Expense) pays the EXTRA costs above normal living expenses while home is uninhabitable. Normal housing cost = $0 (no mortgage/rent). Hotel costs = $4,500. Extra expense = $4,500 - $0 = $4,500 covered. If you had $1,200/month mortgage, you'd STILL get $4,500 hotel costs (you pay mortgage + insurance pays hotel). Also covers extra food costs (restaurants vs. groceries), laundry, pet boarding, storage, moving.",
+                simpleAnswer: "$4,500 full amount - Loss of Use pays EXTRA costs; since normal housing cost is $0, entire hotel expense is 'extra'.",
+                topic: "Claims & Calculations",
+                difficulty: "medium"
+            },
+            {
+                question: "CALCULATION: Umbrella policy $2M, requires $300K underlying liability limits. You have $300K home liability. Lawsuit $1.5M. Home policy pays $300K. Umbrella pays?",
+                answers: ["$1,200,000 (remaining)", "$2,000,000", "$1,500,000", "$0 (underlying should pay)"],
+                correct: 0,
+                explanation: "Umbrella pays EXCESS over underlying limits. Total judgment = $1.5M. Underlying homeowners pays its $300K limit first. Remaining $1.2M covered by umbrella (well within $2M umbrella limit). Umbrella still has $800K remaining for additional claims during policy period. If judgment was $2.5M: Home pays $300K, Umbrella pays $2M (its limit), you personally owe $200K. This is why high-net-worth individuals buy $5M-$10M umbrellas.",
+                simpleAnswer: "$1,200,000 - Umbrella pays amount exceeding underlying limit: $1.5M total - $300K underlying = $1.2M umbrella pays.",
+                topic: "Claims & Calculations",
+                difficulty: "medium"
+            },
+
+            // ===== REAL CLAIM SCENARIOS (15 NC-specific questions) =====
+
+            {
+                question: "REAL SCENARIO NC: Customer walks in: 'My basement flooded last week during that heavy rain in Charlotte. My carpet and furniture are ruined. Is this covered on my homeowners?'",
+                answers: ["Yes, water damage is covered", "No, need separate flood insurance policy", "Only if you have water backup endorsement", "Depends - need more information"],
+                correct: 3,
+                explanation: "Critical question: WHERE did water come from? (1) FLOOD (water from outside/ground) = NOT COVERED, need NFIP flood policy. (2) SEWER/DRAIN BACKUP = NOT COVERED without water backup endorsement. (3) BURST PIPE inside home = COVERED under standard policy. Ask: 'Did water come from outside (ground/street) or from inside plumbing/drains?' Basement flooding from rain usually means groundwater/flood = excluded.",
+                simpleAnswer: "Need more info - Flood from outside = NOT covered. Pipe burst inside = covered. Sewer backup = need endorsement. Ask where water came from!",
+                topic: "Real Claim Scenarios",
+                difficulty: "hard"
+            },
+            {
+                question: "REAL SCENARIO NC: Customer calls: 'I got arrested for DWI in Raleigh last night. What happens to my car insurance?'",
+                answers: ["Nothing, first offense forgiven", "Rate increase only", "Must file SR-22 for 3 years, license suspended, rates skyrocket 2-3x, may be dropped", "Just pay fine"],
+                correct: 2,
+                explanation: "NC DWI is SERIOUS: (1) Insurance rates increase 200-300% (can triple!), (2) Must file SR-22 certificate with DMV for 3 years minimum, (3) License suspended until complete ADETS program, pay fees, file SR-22, (4) Many insurers drop DWI customers - may need high-risk insurer, (5) SR-22 filing costs extra, (6) Any lapse in SR-22 = license suspended again. Tell customer: Get lawyer, expect huge insurance impact for 3+ years.",
+                simpleAnswer: "Major consequences - SR-22 required for 3 years, rates triple, license suspended, may be dropped by insurer. DWI is very expensive in NC!",
+                topic: "Real Claim Scenarios",
+                difficulty: "easy"
+            },
+            {
+                question: "REAL SCENARIO NC: Customer: 'Hurricane damaged my beach house in Wrightsville Beach. My roof has holes and water got inside. Am I covered?'",
+                answers: ["Yes, fully covered", "No, hurricane excluded", "Wind damage YES, flood damage NO, may have high wind deductible", "Only with separate hurricane policy"],
+                correct: 2,
+                explanation: "Coastal NC hurricane claims are COMPLEX: (1) WIND damage to roof = COVERED (but likely 2-5% wind deductible = $8K-$20K on $400K home!), (2) RAIN entering through wind-damaged roof = COVERED (follows wind coverage), (3) FLOOD/STORM SURGE entering through doors/ground = NOT COVERED (need NFIP flood), (4) Likely has separate wind deductible trigger. Tell customer: file claim, adjuster will separate wind vs. flood damage. Wind deductible will be HIGH!",
+                simpleAnswer: "Split coverage - Wind damage covered (high deductible!), flood damage excluded. Rain through wind-damaged roof = covered. Storm surge = not covered.",
+                topic: "Real Claim Scenarios",
+                difficulty: "hard"
+            },
+            {
+                question: "REAL SCENARIO NC: 'I rear-ended someone in Durham. I only have the state minimum 30/60/25. Other driver's medical bills are $45,000. What happens?'",
+                answers: ["Insurance pays all $45K", "Insurance pays $30K, you owe $15K personally", "Insurance pays nothing, you pay all", "Other driver's insurance pays"],
+                correct: 1,
+                explanation: "30/60/25 means $30K max per person for bodily injury. Medical bills = $45K. Your insurance pays $30K limit. YOU personally owe remaining $15K! Other driver can sue you personally, garnish wages, put lien on property. This is why minimum limits are DANGEROUS - one accident can destroy you financially. Always recommend higher limits (100/300/100 minimum). NC is increasing minimums to 50/100/50 in July 2025 because 30/60/25 isn't enough anymore!",
+                simpleAnswer: "You're screwed - Insurance pays $30K max, you personally owe $15K. They can sue you! ALWAYS recommend higher limits than minimums.",
+                topic: "Real Claim Scenarios",
+                difficulty: "medium"
+            },
+            {
+                question: "REAL SCENARIO NC: 'I rent out my house on Airbnb in Asheville. Can I use my regular homeowners policy?'",
+                answers: ["Yes, homeowners covers rentals", "No, need dwelling policy and discuss commercial liability", "Yes, just add endorsement", "Only if renting less than 30 days"],
+                correct: 1,
+                explanation: "SHORT-TERM RENTALS (Airbnb/VRBO) create HUGE insurance gaps! (1) HO-3 is for OWNER-OCCUPIED homes - if you don't live there, may be DENIED, (2) Business activities often excluded, (3) Need: Dwelling Policy (DP-3) for property + Commercial GL or STR-specific policy for liability, (4) Regular homeowners may deny claims if discovers STR use, (5) Airbnb's coverage is LIMITED/secondary. Tell customer: MUST disclose STR use, likely need specialty STR insurance. Hidden STR use = claim denial!",
+                simpleAnswer: "NO! Regular homeowners excludes business use. Need DP-3 + commercial liability or specialty STR policy. Hiding STR use = denied claims!",
+                topic: "Real Claim Scenarios",
+                difficulty: "hard"
+            },
+            {
+                question: "REAL SCENARIO NC: 'Someone hit my parked car in a parking lot in Greensboro and drove off. I don't know who they are. What coverage pays?'",
+                answers: ["Their liability (if caught)", "Your Collision coverage", "Your Uninsured Motorist Property Damage (if you have it) OR Collision", "No coverage available"],
+                correct: 2,
+                explanation: "Hit-and-run/phantom vehicle options in NC: (1) If you have UM PROPERTY DAMAGE (UMPD) - covers hit-and-run with NO deductible OR lower deductible ($250 common). (2) If no UMPD, your COLLISION coverage applies - but must pay full deductible ($500-$1,000). (3) File police report immediately - required for UM claim. (4) NC requires offering UMPD but customers often decline to save premium. Tell customer: Check if they have UMPD - saves money on hit-and-run claims!",
+                simpleAnswer: "UM Property Damage (if has it) OR Collision - UMPD has no/low deductible; Collision has full deductible. Always file police report!",
+                topic: "Real Claim Scenarios",
+                difficulty: "medium"
+            },
+            {
+                question: "REAL SCENARIO NC: 'I'm a contractor. Can I insure my work truck under personal auto insurance to save money?'",
+                answers: ["Yes, it's a truck you own", "No, must have commercial auto insurance", "Yes, just list 'commuting'", "Only if under 10,000 lbs"],
+                correct: 1,
+                explanation: "Using work vehicle REQUIRES commercial auto, not personal! Personal auto EXCLUDES business use (beyond incidental commuting). If adjuster discovers: Hauling tools/equipment, business logo on truck, going to job sites, carrying materials → CLAIM DENIED even for non-work accident! Commercial auto costs more but: (1) Covers business use, (2) Higher limits available, (3) Hired/non-owned coverage, (4) Protects business from lawsuit. Tell contractor: Don't risk it - one denied claim costs more than years of premium difference!",
+                simpleAnswer: "NO! Must have commercial auto. Personal auto EXCLUDES business use - claims will be DENIED. Don't risk it for small savings!",
+                topic: "Real Claim Scenarios",
+                difficulty: "medium"
+            },
+            {
+                question: "REAL SCENARIO NC: 'My 16-year-old got their license. Do I have to add them to my policy? They mostly drive my spouse's car.'",
+                answers: ["No, they're not the owner", "Yes, must add within 30 days or claims may be denied", "Only if they drive more than 50%", "Wait until they have accident"],
+                correct: 1,
+                explanation: "Licensed household members MUST be listed on policy! (1) Failure to disclose = material misrepresentation = DENIED CLAIMS, (2) Most insurers require adding within 30 days of license, (3) Doesn't matter whose car they 'mostly' drive - they're a risk to ALL vehicles, (4) Teen drivers increase premium 50-100%, (5) Can't hide them to save money - claims will be denied if discovered. Options: Add to policy (expensive but safe), Named Driver Exclusion (they CANNOT drive, NO coverage if they do - dangerous!). Tell customer: Yes, must add immediately.",
+                simpleAnswer: "YES, must add immediately! Licensed household members must be on policy within 30 days or ALL claims may be denied - no exceptions!",
+                topic: "Real Claim Scenarios",
+                difficulty: "easy"
+            },
+            {
+                question: "REAL SCENARIO NC: 'My water heater burst while I was on vacation. Water damaged floors and walls. Covered?'",
+                answers: ["No, you weren't home", "No, maintenance issue", "Yes, sudden water damage from plumbing is covered (but not the water heater itself)", "Only if you have special endorsement"],
+                correct: 2,
+                explanation: "BURST PIPE/APPLIANCE claims are COMMON: (1) Sudden water discharge FROM plumbing/appliance = COVERED (floors, walls, contents damaged), (2) The APPLIANCE itself = NOT COVERED (that's wear/tear, not sudden loss), (3) Being on vacation doesn't matter for sudden events, (4) SLOW LEAK over time = NOT COVERED (that's maintenance/neglect). Insurance pays: $15K floor/wall/furniture damage. Does NOT pay: $800 new water heater. Lesson: Turn off water main when leaving for extended time!",
+                simpleAnswer: "Yes, damage covered; water heater not - Pays damage to home/contents from sudden water discharge, but NOT the failed appliance itself.",
+                topic: "Real Claim Scenarios",
+                difficulty: "medium"
+            },
+            {
+                question: "REAL SCENARIO NC: Customer: 'I have full coverage. That means everything is covered, right?'",
+                answers: ["Yes, that's what full coverage means", "No! 'Full coverage' is slang - explain what they actually have", "Full coverage only applies to cars", "Yes, except flood and earthquake"],
+                correct: 1,
+                explanation: "EDUCATE CUSTOMER - 'Full Coverage' is NOT a real term! Usually means Liability + Collision + Comprehensive. But does NOT include: Med Pay, UM/UIM, Rental, Gap, higher limits. Even with all coverages, still have: Deductibles, Limits, Exclusions (racing, intentional acts, wear/tear). ALWAYS review Declarations page and explain: What you HAVE, What limits mean, What's NOT covered, What endorsements they might need. Don't assume - confirm actual coverages! 'Full coverage' is marketing slang.",
+                simpleAnswer: "NO! Slang term - Explain actual coverages, limits, deductibles, exclusions. Review declarations together. 'Full coverage' means different things to different people!",
+                topic: "Real Claim Scenarios",
+                difficulty: "easy"
+            },
+            {
+                question: "REAL SCENARIO NC: 'Tree fell from my yard onto my neighbor's car in Charlotte. Whose insurance pays?'",
+                answers: ["Your homeowners liability", "Neighbor's auto comprehensive", "Split 50/50", "Whoever reports first"],
+                correct: 1,
+                explanation: "Tree falling on neighbor's property is covered by THEIR insurance (unless you were negligent): (1) Neighbor's AUTO COMPREHENSIVE pays for their car damage, (2) Your homeowners liability does NOT pay (act of nature, not negligence), (3) EXCEPTION: If tree was dead/rotten and you knew it was dangerous but did nothing = NEGLIGENCE = your liability pays. (4) Neighbor can file through their comp (easier) or try to claim you were negligent. Tree removal from neighbor's property = their responsibility. Healthy tree falling = act of nature = not your liability.",
+                simpleAnswer: "Neighbor's Comprehensive pays - Tree falling is act of nature (not your liability) unless you were negligent (knew tree was dead/dangerous).",
+                topic: "Real Claim Scenarios",
+                difficulty: "hard"
+            },
+            {
+                question: "REAL SCENARIO NC: 'I run a small home business selling crafts online. Am I covered under homeowners?'",
+                answers: ["Yes, it's your home", "No, need separate business policy", "Limited - only $2,500 business property, NO business liability", "Yes, if revenue under $50K"],
+                correct: 2,
+                explanation: "Home business = SEVERE limitations on HO policy: (1) Business PROPERTY: Max $2,500 on-premises, $500 off-premises (inventory, supplies, equipment), (2) Business LIABILITY: ZERO - excluded! Customer injured by your product, sues = NOT COVERED, (3) Business interruption: NOT COVERED. For even small home business, need: In-Home Business endorsement (adds some coverage) OR Business Owners Policy. E-commerce? Need cyber liability. ANY employees? Need workers' comp. Don't assume homeowners covers business!",
+                simpleAnswer: "Severely limited - Only $2,500 property, ZERO liability! Home business needs separate coverage. Customer lawsuits NOT covered by homeowners!",
+                topic: "Real Claim Scenarios",
+                difficulty: "hard"
+            },
+            {
+                question: "REAL SCENARIO NC: 'Lightning struck my house, fried my TV, computer, and appliances. $8,000 total damage. Deductible is $1,500. Insurance pays?'",
+                answers: ["$8,000 (no deductible for lightning)", "$6,500 ($8,000 - $1,500)", "$0 (electrical damage excluded)", "$4,000 (50% depreciation)"],
+                correct: 1,
+                explanation: "LIGHTNING = covered peril on all policies! (1) Direct strike damage = covered, (2) Surge through wiring frying electronics = covered, (3) Pay $8,000 minus $1,500 deductible = $6,500, (4) ONE deductible per occurrence (not per item), (5) May pay Replacement Cost or ACV depending on coverage. Advise customer: Surge protectors help but insurance covers it. This is a clear covered claim - lightning is a named peril on even basic policies. File claim if damage exceeds deductible!",
+                simpleAnswer: "$6,500 - Lightning covered on all policies, pays total damage minus deductible: $8,000 - $1,500 = $6,500.",
+                topic: "Real Claim Scenarios",
+                difficulty: "easy"
+            },
+            {
+                question: "REAL SCENARIO NC: 'I let my friend borrow my car. They crashed it. Whose insurance pays?'",
+                answers: ["Friend's insurance (they were driving)", "Your insurance (it's your car) - insurance follows the vehicle", "Split between both", "Whoever has higher limits"],
+                correct: 1,
+                explanation: "INSURANCE FOLLOWS THE VEHICLE in most cases! (1) YOUR auto insurance is PRIMARY (pays first) - friend was permissive user, (2) Friend's insurance might be EXCESS (secondary) if your limits exhausted, (3) Your premium may increase even though you weren't driving, (4) If friend caused serious accident, they can be sued personally too. Important: You're responsible for who you let borrow your car! Friend has terrible record? Your insurance pays and rates go up. Never let unlicensed/uninsured/bad drivers use your car!",
+                simpleAnswer: "Your insurance pays primary - Insurance follows the VEHICLE. Your coverage, your rates affected. Choose who you lend to carefully!",
+                topic: "Real Claim Scenarios",
+                difficulty: "medium"
+            },
+            {
+                question: "REAL SCENARIO NC: 'I slipped on ice in a store parking lot in Raleigh and broke my arm. Can I use my homeowners insurance for my medical bills?'",
+                answers: ["Yes, homeowners covers all medical bills", "No, that's the store's liability insurance responsibility", "Yes, use Coverage F Medical Payments", "No, use health insurance then sue store"],
+                correct: 3,
+                explanation: "Homeowners DOES NOT cover YOUR injuries from someone else's negligence! (1) YOUR Coverage F (Med Pay) only covers GUESTS injured on YOUR property, not you elsewhere, (2) For YOUR medical bills: Use your HEALTH insurance, (3) If store was negligent (didn't salt ice, no warning signs), you can FILE CLAIM against STORE'S liability insurance, (4) May need personal injury lawyer if serious injury, (5) Store's CGL Coverage A should pay. Common confusion: Homeowners doesn't cover your injuries everywhere - only liability for OTHERS on your property and guests' injuries.",
+                simpleAnswer: "No! Use health insurance, file claim against store's liability - YOUR homeowners only covers others injured on YOUR property, not you elsewhere.",
                 topic: "Real Claim Scenarios",
                 difficulty: "medium"
             }
-
-            // ... [Continue with all remaining questions from the original bank]
-            // NOTE: Due to length, I've shown the structure and examples. The full implementation would include all 200+ questions organized by topic as shown above
         ];
 
         // Glossary Terms (keeping all 45+ original terms)
