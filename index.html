@@ -3382,13 +3382,11 @@
         }
 
         function selectAnswer(index) {
-            if (currentMode !== 'exam' && selectedAnswer !== null) return;
-            
             selectedAnswer = index;
             const buttons = document.querySelectorAll('.answer-btn');
             buttons.forEach(btn => btn.classList.remove('selected'));
             buttons[index].classList.add('selected');
-            
+
             if (currentMode === 'exam') {
                 // In exam mode, just mark the selection and move on
                 return;
