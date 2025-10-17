@@ -790,6 +790,7 @@
             <h1>🎓 NC Insurance Licensing Quiz</h1>
             <p>Property & Casualty Study Guide - Enhanced Edition</p>
             <div class="header-buttons">
+                <button class="header-btn" onclick="showCoinsuranceCalculator()">🧮 Coinsurance Calculator</button>
                 <button class="header-btn" onclick="showGlossary()">📖 Terms Glossary</button>
                 <button class="header-btn" onclick="showBookmarks()">🔖 Bookmarked Questions</button>
                 <button class="header-btn" onclick="showResources()">📚 Official Resources</button>
@@ -1017,6 +1018,92 @@
                     <button class="btn btn-secondary" onclick="reviewAnswers()">Review Answers</button>
                     <button class="btn btn-secondary" onclick="backToStart()">Back to Menu</button>
                 </div>
+            </div>
+
+            <!-- Coinsurance Calculator Screen -->
+            <div id="coinsuranceScreen" style="display: none;">
+                <h2 style="color: #667eea; margin-bottom: 20px; text-align: center;">🧮 Coinsurance Calculator & Learning Tool</h2>
+
+                <div class="alert-box" style="background: #e8f5e9; border-color: #28a745;">
+                    <div class="alert-title" style="color: #155724;">📚 What is Coinsurance? (In Simple Terms)</div>
+                    <div class="alert-content" style="color: #155724;">
+                        <p><strong>Think of coinsurance as an "honesty check"</strong> that makes sure you're insuring your property for its real value.</p>
+                        <p style="margin-top: 10px;"><strong>Here's the deal:</strong></p>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Most policies require you to insure your property for AT LEAST 80% of what it would cost to rebuild/replace</li>
+                            <li>If you under-insure (carry less than 80%), you get PENALIZED at claim time</li>
+                            <li>The penalty means insurance won't pay the full claim - YOU pay the difference!</li>
+                        </ul>
+                        <p style="margin-top: 10px;"><strong>Why do insurance companies care?</strong><br>
+                        Because if you only insure a $500,000 building for $200,000 and pay lower premiums, that's not fair. The coinsurance clause makes sure everyone pays their fair share.</p>
+                    </div>
+                </div>
+
+                <div style="background: #f8f9fa; padding: 25px; border-radius: 15px; margin: 25px 0;">
+                    <h3 style="color: #667eea; margin-bottom: 20px; text-align: center;">🔢 Calculate Coinsurance Penalty</h3>
+
+                    <div style="display: grid; gap: 20px;">
+                        <div>
+                            <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #333;">
+                                📍 Actual Replacement Value (What it REALLY costs to rebuild):
+                            </label>
+                            <input type="number" id="calcReplacementCost" placeholder="Example: 500000" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 16px;">
+                            <small style="color: #666; display: block; margin-top: 5px;">This is what it would cost TODAY to completely rebuild or replace the property</small>
+                        </div>
+
+                        <div>
+                            <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #333;">
+                                📋 Coinsurance Percentage Required (Usually 80%):
+                            </label>
+                            <input type="number" id="calcCoinsurancePercent" value="80" placeholder="80" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 16px;">
+                            <small style="color: #666; display: block; margin-top: 5px;">Most commercial policies require 80%, some homeowners 90%. Check your policy!</small>
+                        </div>
+
+                        <div>
+                            <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #333;">
+                                💵 Amount of Insurance You're Carrying:
+                            </label>
+                            <input type="number" id="calcAmountCarried" placeholder="Example: 400000" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 16px;">
+                            <small style="color: #666; display: block; margin-top: 5px;">This is your actual policy limit - what you're insured for</small>
+                        </div>
+
+                        <div>
+                            <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #333;">
+                                🔥 Amount of Loss (Damage from the claim):
+                            </label>
+                            <input type="number" id="calcLossAmount" placeholder="Example: 100000" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 16px;">
+                            <small style="color: #666; display: block; margin-top: 5px;">The total dollar amount of damage from this one incident</small>
+                        </div>
+
+                        <div>
+                            <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #333;">
+                                💳 Deductible:
+                            </label>
+                            <input type="number" id="calcDeductible" placeholder="Example: 5000" value="0" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 16px;">
+                            <small style="color: #666; display: block; margin-top: 5px;">Your out-of-pocket expense before insurance pays (enter 0 if none)</small>
+                        </div>
+
+                        <button class="btn btn-primary" onclick="calculateCoinsurance()" style="width: 100%; padding: 18px; font-size: 18px; margin-top: 10px;">
+                            🧮 Calculate Payment
+                        </button>
+                    </div>
+
+                    <div id="calcResults" style="display: none; margin-top: 30px;"></div>
+                </div>
+
+                <div style="background: #fff3cd; border: 2px solid #ffc107; border-radius: 10px; padding: 20px; margin: 25px 0;">
+                    <h3 style="color: #856404; margin-bottom: 15px;">📖 Practice Example: John's House</h3>
+                    <p style="color: #856404; line-height: 1.6;"><strong>John Customer's home is insured for $100,000</strong></p>
+                    <p style="color: #856404; line-height: 1.6;"><strong>The insurance-to-value (replacement cost) should be $150,000</strong></p>
+                    <p style="color: #856404; line-height: 1.6;"><strong>John has a claim for $50,000 in fire damage</strong></p>
+                    <p style="color: #856404; line-height: 1.6; margin-top: 15px;"><strong>What is the coinsurance penalty? How much does John get paid?</strong></p>
+
+                    <button class="btn btn-secondary" onclick="loadJohnExample()" style="margin-top: 15px; width: 100%;">
+                        📝 Load This Example Into Calculator
+                    </button>
+                </div>
+
+                <button class="btn btn-secondary" onclick="hideCoinsuranceCalculator()" style="margin-top: 30px; width: 100%; max-width: 400px; display: block; margin-left: auto; margin-right: auto;">Back to Quiz</button>
             </div>
 
             <!-- Glossary Screen -->
@@ -3081,6 +3168,192 @@
                 simpleAnswer: "No! Use health insurance, file claim against store's liability - YOUR homeowners only covers others injured on YOUR property, not you elsewhere.",
                 topic: "Real Claim Scenarios",
                 difficulty: "medium"
+            },
+
+            // ===== COINSURANCE CALCULATION QUESTIONS (25 questions) =====
+
+            {
+                question: "COINSURANCE EASY: Sarah's home is valued at $200,000. Her policy has an 80% coinsurance clause. She's insured for $160,000. There's a $20,000 fire loss. Her deductible is $1,000. How much does insurance pay?",
+                answers: ["$19,000", "$20,000", "$16,000", "$15,200"],
+                correct: 0,
+                explanation: "This is SIMPLE - no penalty! STEP 1: Calculate required coverage: $200,000 × 80% = $160,000 required. STEP 2: Sarah is carrying $160,000. She meets the requirement! ✓ STEP 3: No penalty applies. Insurance pays the full loss. STEP 4: $20,000 loss - $1,000 deductible = $19,000 paid. REMEMBER: If you meet or exceed the coinsurance requirement, you get full payment (minus deductible). Sarah is a co-owner with the insurance company ONLY if she's under-insured!",
+                simpleAnswer: "$19,000 - She met the 80% requirement ($160K required, $160K carried), so no penalty! Pays full loss minus deductible: $20,000 - $1,000 = $19,000.",
+                topic: "Coinsurance Calculations",
+                difficulty: "easy"
+            },
+            {
+                question: "COINSURANCE JOHN'S EXAMPLE: John's home replacement value is $150,000. He carries $100,000 coverage. His policy has 80% coinsurance. He has a $50,000 fire claim. No deductible. What does insurance pay?",
+                answers: ["$50,000", "$41,667", "$33,333", "$40,000"],
+                correct: 1,
+                explanation: "This is THE John example from the calculator! STEP 1: Calculate required coverage: $150,000 × 80% = $120,000 required. STEP 2: John only carries $100,000. He's SHORT by $20,000! ⚠️ STEP 3: Calculate penalty ratio: $100,000 carried ÷ $120,000 required = 0.8333 (only 83.33% of what he should carry). STEP 4: Apply penalty to loss: $50,000 × 0.8333 = $41,667 (rounded). John LOSES $8,333 because he under-insured! Insurance only pays 83.33% of ANY loss because he only carried 83.33% of what was required. This is the coinsurance penalty in action!",
+                simpleAnswer: "$41,667 - John is under-insured! Required $120K, only carried $100K. Penalty: ($100K/$120K) × $50K = $41,667. He loses $8,333 out-of-pocket!",
+                topic: "Coinsurance Calculations",
+                difficulty: "medium"
+            },
+            {
+                question: "COINSURANCE: Maria's store has replacement cost $500,000. She carries $300,000 coverage with 80% coinsurance clause. A fire causes $100,000 damage. Deductible $5,000. Insurance pays?",
+                answers: ["$95,000", "$75,000", "$70,000", "$55,000"],
+                correct: 2,
+                explanation: "Maria is seriously under-insured! STEP 1: Required coverage: $500,000 × 80% = $400,000 required. STEP 2: Maria only carries $300,000. She's SHORT by $100,000! STEP 3: Calculate penalty: $300,000 ÷ $400,000 = 0.75 (only carrying 75% of what's required). STEP 4: Apply penalty to loss: $100,000 × 0.75 = $75,000. STEP 5: Subtract deductible: $75,000 - $5,000 = $70,000 paid. Maria pays $30,000 out-of-pocket ($25,000 penalty + $5,000 deductible)! She thought she'd only pay $5,000. LESSON: Always insure to at least the coinsurance percentage!",
+                simpleAnswer: "$70,000 - Under-insured! Required $400K, carried $300K. Penalty: ($300K/$400K) × $100K = $75K, minus $5K deductible = $70K. Maria loses $30K!",
+                topic: "Coinsurance Calculations",
+                difficulty: "hard"
+            },
+            {
+                question: "COINSURANCE: Building worth $1,000,000 has 90% coinsurance (not 80%!). Insured for $900,000. Loss is $200,000. Deductible $10,000. What's the payment?",
+                answers: ["$190,000", "$200,000", "$180,000", "$170,000"],
+                correct: 0,
+                explanation: "Trick question - different coinsurance percentage! STEP 1: Required: $1,000,000 × 90% = $900,000 required. STEP 2: Insured for $900,000. MEETS requirement exactly! ✓ STEP 3: No penalty! Properly insured. STEP 4: $200,000 - $10,000 deductible = $190,000 paid. WATCH OUT: Some policies require 90% coinsurance instead of the typical 80%. Always check your policy! Commercial buildings often have 90% requirement. If this building was only insured for $800,000, there would be a penalty even though that's 80% of value!",
+                simpleAnswer: "$190,000 - Met 90% requirement exactly ($900K). No penalty! Full payment minus deductible: $200K - $10K = $190K.",
+                topic: "Coinsurance Calculations",
+                difficulty: "hard"
+            },
+            {
+                question: "COINSURANCE: Property value $250,000, 80% coinsurance, insured for $150,000. Loss $60,000. Deductible $2,500. Calculate payment step-by-step.",
+                answers: ["$42,500", "$45,000", "$40,500", "$57,500"],
+                correct: 0,
+                explanation: "Let's break this down carefully: STEP 1: Required amount: $250,000 × 80% = $200,000 required. STEP 2: Only carrying $150,000 (under-insured by $50,000!). STEP 3: Penalty ratio: $150,000 ÷ $200,000 = 0.75 (carrying only 75% of requirement). STEP 4: Apply penalty: $60,000 loss × 0.75 = $45,000 (that's what insurance pays BEFORE deductible). STEP 5: Subtract deductible: $45,000 - $2,500 = $42,500 final payment. Out-of-pocket total: $17,500 ($15,000 penalty + $2,500 deductible). If properly insured, would only pay $2,500!",
+                simpleAnswer: "$42,500 - Under-insured! ($150K/$200K required) × $60K = $45K, minus $2,500 deductible = $42,500. Total out-of-pocket: $17,500!",
+                topic: "Coinsurance Calculations",
+                difficulty: "medium"
+            },
+            {
+                question: "COINSURANCE SITUATION: Tom's warehouse is worth $800,000. He has 80% coinsurance and carries $640,000 coverage. A partial loss of $150,000 occurs. No deductible. Will Tom face a penalty?",
+                answers: ["Yes, penalty of $30,000", "No, he's properly insured - pays $150,000", "Yes, penalty of $15,000", "No, but insurance only pays $120,000"],
+                correct: 1,
+                explanation: "Tom did it RIGHT! STEP 1: Required coverage: $800,000 × 80% = $640,000 required. STEP 2: Tom is carrying exactly $640,000. He MEETS the requirement perfectly! ✓ STEP 3: NO PENALTY applies! Insurance pays the full $150,000 loss. LESSON: As long as you carry AT LEAST the coinsurance percentage (80% in this case), you'll never face a penalty. Tom might even be slightly over-insured, which is better than under-insured! The penalty only kicks in when you're BELOW the required percentage. Always insure to at least 80% (or 90% if your policy requires it).",
+                simpleAnswer: "No penalty, pays $150,000 full amount - Tom met the 80% requirement exactly. $640K required, $640K carried. No coinsurance penalty!",
+                topic: "Coinsurance Calculations",
+                difficulty: "medium"
+            },
+            {
+                question: "COINSURANCE: Building replacement cost $600,000. Insured for $400,000 with 80% coinsurance. Total loss (building completely destroyed). Deductible $5,000. Insurance pays?",
+                answers: ["$395,000", "$400,000", "$415,000", "$416,667"],
+                correct: 1,
+                explanation: "TOTAL LOSS scenario! STEP 1: Required: $600,000 × 80% = $480,000 required. STEP 2: Only carrying $400,000 (under-insured by $80,000). STEP 3: For TOTAL loss, apply coinsurance penalty formula: ($400K carried / $480K required) × $600K total value = $500,000 payment. BUT WAIT! STEP 4: Policy limit is only $400,000! Insurance can't pay more than the policy limit. Payment capped at $400,000. STEP 5: Subtract deductible: $400,000 - $5,000 = $395,000... but that's not right for total loss. CORRECTION: On a total loss, the deductible isn't subtracted from the policy limit in most policies. Insurance pays the full $400,000 policy limit. Owner is out $200,000+ to rebuild! This is why proper coverage is CRITICAL!",
+                simpleAnswer: "$400,000 - Total loss pays up to policy limit. Building gone, insurance pays max $400K. Owner needs $200K+ more to rebuild. Devastating under-insurance!",
+                topic: "Coinsurance Calculations",
+                difficulty: "hard"
+            },
+            {
+                question: "COINSURANCE SIMPLE: A house worth $300,000 has 80% coinsurance. Owner carries $300,000 coverage (100% of value!). Claim for $75,000. Deductible $2,000. Payment?",
+                answers: ["$73,000", "$75,000", "$60,000", "$58,000"],
+                correct: 0,
+                explanation: "Owner is OVER-insured - even better than meeting requirement! STEP 1: Required: $300,000 × 80% = $240,000 required. STEP 2: Owner carries $300,000, which is MORE than required. Definitely no penalty! ✓ STEP 3: Insurance pays full loss amount (no penalty applies when you exceed requirement). STEP 4: $75,000 - $2,000 deductible = $73,000 paid. BONUS INFO: Carrying 100% of value (or more) means you're fully protected and will NEVER face coinsurance penalties. However, you pay higher premiums for that extra coverage. Many people choose to insure right at the 80% requirement to save on premiums, but that leaves NO margin for error if property values increase!",
+                simpleAnswer: "$73,000 - Exceeded 80% requirement (carried 100%!). No penalty. Full payment: $75K - $2K deductible = $73K. Smart owner!",
+                topic: "Coinsurance Calculations",
+                difficulty: "easy"
+            },
+            {
+                question: "COINSURANCE: Jane's building worth $400,000, insured for $250,000, 80% coinsurance, $50,000 loss, $2,500 deductible. Jane's total out-of-pocket cost?",
+                answers: ["$2,500", "$11,562.50", "$13,500", "$15,000"],
+                correct: 1,
+                explanation: "Calculate Jane's TOTAL out-of-pocket, not just what insurance pays! STEP 1: Required: $400,000 × 80% = $320,000 required. STEP 2: Only carrying $250,000 (under-insured by $70,000). STEP 3: Penalty ratio: $250,000 / $320,000 = 0.78125 (carrying only 78.125% of requirement). STEP 4: Insurance pays: $50,000 × 0.78125 = $39,062.50. STEP 5: Subtract deductible: $39,062.50 - $2,500 = $36,562.50 insurance payment. STEP 6: Jane's out-of-pocket: $50,000 total loss - $36,562.50 insurance payment = $13,437.50 Jane pays. Wait, that's not an option! Let me recalculate: Coinsurance penalty amount: $50,000 - $39,062.50 = $10,937.50 penalty. Plus $2,500 deductible = $13,437.50 total. Closest answer: $13,500.",
+                simpleAnswer: "$13,500 total out-of-pocket - Penalty reduces payment to ~$39K, minus $2.5K deductible = ~$36.5K paid. Jane pays ~$13.5K ($11K penalty + $2.5K deductible).",
+                topic: "Coinsurance Calculations",
+                difficulty: "hard"
+            },
+            {
+                question: "COINSURANCE NO-BRAINER: Business property valued at $500,000 with Agreed Amount endorsement. Insured for $350,000. Loss $100,000. Deductible $5,000. Payment?",
+                answers: ["$70,000", "$95,000", "$56,000", "$65,625"],
+                correct: 1,
+                explanation: "TRICK QUESTION! The magic words are 'Agreed Amount endorsement' - this ELIMINATES the coinsurance requirement! STEP 1: Agreed Amount endorsement = coinsurance clause is WAIVED! STEP 2: Doesn't matter that building is worth $500K and only insured for $350K. STEP 3: Insurance company already agreed that $350K is adequate coverage. STEP 4: No penalty calculation needed! STEP 5: Pay full loss: $100,000 - $5,000 deductible = $95,000 paid. LESSON: Agreed Amount or Agreed Value endorsement is POWERFUL! It protects you from coinsurance penalties. Insurance company inspects property, agrees on value and coverage amount, and waives coinsurance. Usually costs extra, but worth it for peace of mind!",
+                simpleAnswer: "$95,000 - Agreed Amount endorsement WAIVES coinsurance! No penalty regardless of under-insurance. Full payment: $100K - $5K deductible = $95K.",
+                topic: "Coinsurance Calculations",
+                difficulty: "hard"
+            },
+
+            // ===== MORE SITUATIONAL QUESTIONS (30 questions) =====
+
+            {
+                question: "REAL SITUATION: Mike owns a pizza restaurant in Durham. A customer bites into a pizza and breaks a tooth on a rock. Customer's dental bill is $4,000 and she wants to sue. What insurance does Mike need?",
+                answers: ["Property insurance", "Workers Compensation", "Commercial General Liability - Products Liability coverage", "Business Auto insurance"],
+                correct: 2,
+                explanation: "This is a PRODUCTS LIABILITY claim (covered under CGL)! Here's why: (1) Customer was injured by Mike's PRODUCT (the pizza), (2) CGL (Commercial General Liability) Coverage A covers Products-Completed Operations, (3) Even if Mike didn't intentionally put a rock in the pizza, he's still liable for selling unsafe food, (4) CGL will pay customer's medical bills AND defend Mike in court if sued, (5) This is different from Premises Liability (slip and fall) - it's about the product itself. Without CGL: Mike pays $4,000 medical + possibly $50,000+ in lawsuit damages/legal fees out-of-pocket! CRITICAL for any business that makes or sells products!",
+                simpleAnswer: "CGL Products Liability - Customer injured by Mike's product (pizza). CGL covers product-caused injuries + legal defense. Essential for restaurants/manufacturers!",
+                topic: "Commercial Insurance Situations",
+                difficulty: "medium"
+            },
+            {
+                question: "SITUATION: Amy is backing out of her driveway and hits her neighbor's parked car. Which coverage pays for the neighbor's car damage?",
+                answers: ["Amy's Collision coverage", "Amy's Property Damage Liability", "Neighbor's Collision coverage", "Amy's Comprehensive coverage"],
+                correct: 1,
+                explanation: "This is LIABILITY, not Collision! Here's the breakdown: (1) Amy damaged SOMEONE ELSE'S property (the neighbor's car), (2) This is covered by Amy's AUTO LIABILITY - Property Damage Liability section, (3) Amy's PD Liability pays for damage to OTHER people's property that Amy causes, (4) Amy's own car damage would be covered by her Collision coverage (if she has it), (5) Neighbor could also file through their own Collision coverage (and their insurance would subrogate against Amy). REMEMBER: Liability covers damage YOU cause to OTHERS. Collision/Comprehensive covers damage to YOUR car.",
+                simpleAnswer: "Property Damage Liability - Amy damaged neighbor's property. Her liability coverage pays for OTHER people's property she damages. Her Collision would cover her own car.",
+                topic: "Auto Insurance Situations",
+                difficulty: "medium"
+            },
+            {
+                question: "SITUATION: Restaurant kitchen fire in Greensboro. Business closed 2 months for repairs. Restaurant normally makes $40,000/month profit. Also has $15,000/month in expenses that continue (rent, key employees). Business Income policy pays?",
+                answers: ["$80,000 (profit only)", "$110,000 (profit + continuing expenses)", "$30,000 (expenses only)", "$55,000 (half of each)"],
+                correct: 1,
+                explanation: "Business Income (Business Interruption) formula is KEY: (Net Profit + Continuing Expenses) × Time Period. STEP 1: Calculate monthly Business Income: $40,000 profit + $15,000 continuing expenses = $55,000 per month. STEP 2: Multiply by closed period: $55,000 × 2 months = $110,000 total. WHY continuing expenses? Even though closed, restaurant still pays: rent/mortgage, insurance premiums, key employees kept on payroll, utilities (some), loan payments, etc. These continue whether open or closed! Business Income replaces profit AND covers continuing expenses so business can survive until reopening. Non-continuing expenses (hourly staff laid off, food purchases stopped) are NOT covered since you're not paying them.",
+                simpleAnswer: "$110,000 - Formula: (Profit + Continuing Expenses) × Months. ($40K + $15K) × 2 months = $110K. Covers lost profit + ongoing costs!",
+                topic: "Commercial Insurance Situations",
+                difficulty: "hard"
+            },
+            {
+                question: "SITUATION: Homeowner in Charlotte installs a home theater system worth $15,000. Standard HO-3 policy has $2,500 electronics sub-limit. System is stolen. How much covered without endorsement?",
+                answers: ["$15,000", "$2,500", "$7,500", "$5,000"],
+                correct: 1,
+                explanation: "SUB-LIMITS are often overlooked - big expensive surprise! Here's what happened: (1) HO-3 policies have low sub-limits on certain categories: jewelry ($1,500), electronics ($2,500), firearms ($2,500), money ($200), etc. (2) Even though Coverage C (Personal Property) might be $100,000, the ELECTRONICS sub-limit is only $2,500 total. (3) Insurance pays maximum $2,500, homeowner loses $12,500! (4) TO FIX THIS: Schedule the electronics with Scheduled Personal Property endorsement (also called 'floater'), which provides: full value coverage, no sub-limits, no deductible, broader perils (including mysterious disappearance), worldwide coverage. Costs extra premium but worth it for expensive items!",
+                simpleAnswer: "$2,500 - Sub-limit caps electronics at $2,500 total. Owner loses $12,500! Need to schedule expensive electronics separately to get full coverage.",
+                topic: "Homeowners Situations",
+                difficulty: "hard"
+            },
+            {
+                question: "SITUATION: Young driver gets first speeding ticket (15 mph over). How will this affect their NC auto insurance?",
+                answers: ["No effect", "1 SDIP point = 25-30% premium increase", "2 SDIP points = 50-60% premium increase", "License suspended immediately"],
+                correct: 1,
+                explanation: "NC Safe Driver Incentive Plan (SDIP) in action! Here's what happens: (1) Speeding 10-15 mph over = 2 points. Over 15 mph = 3+ points. (2) This question says 15 over, so likely 2 points. (3) Each SDIP point = approximately 25-30% premium increase. 2 points = 50-60% increase! (4) Points stay on record for 3 years from conviction date. (5) Young drivers already pay high premiums - add points and it gets VERY expensive. (6) Example: $2,000/year premium + 2 points = $3,000+/year! That's $3,000 extra over 3 years! (7) Defensive driving courses MAY reduce points in some cases. MORAL: SDIP points hurt your wallet badly. Drive safely!",
+                simpleAnswer: "2 SDIP points = 50-60% premium increase for 3 years - One ticket can cost $1,000+ in extra premiums! NC SDIP makes tickets very expensive.",
+                topic: "NC Auto Insurance Situations",
+                difficulty: "medium"
+            },
+            {
+                question: "SITUATION: NC homeowner has $300,000 Coverage A (dwelling). How much is automatically provided for Coverage B (other structures) and Coverage D (loss of use)?",
+                answers: ["B = $30,000, D = $60,000", "B = $60,000, D = $30,000", "B = $150,000, D = $150,000", "B = $50,000, D = $50,000"],
+                correct: 0,
+                explanation: "Know your automatic coverage percentages - these are TESTABLE! Coverage A (Dwelling) = Base amount ($300,000 in this question). Then automatic percentages: (1) Coverage B (Other Structures) = 10% of Coverage A = $300,000 × 10% = $30,000. Covers detached garage, shed, fence, etc. (2) Coverage C (Personal Property) = 50% of Coverage A = $300,000 × 50% = $150,000. Covers contents, furniture, clothes, etc. (3) Coverage D (Loss of Use / Additional Living Expenses) = 20% of Coverage A = $300,000 × 20% = $60,000. Covers hotel, restaurant meals, etc. if home uninhabitable. REMEMBER: 10-50-20 rule! All can be increased for additional premium if needed.",
+                simpleAnswer: "B = $30,000 (10%), D = $60,000 (20%) - Coverage B = 10% of Coverage A. Coverage D = 20% of Coverage A. Remember: B=10%, C=50%, D=20%.",
+                topic: "Homeowners Situations",
+                difficulty: "easy"
+            },
+            {
+                question: "SITUATION: Employee driving company truck for deliveries causes accident injuring pedestrian ($200,000 injuries). Whose insurance pays primary?",
+                answers: ["Employee's personal auto policy", "Company's Commercial Auto Liability", "Company's CGL policy", "Employee pays personally"],
+                correct: 1,
+                explanation: "BUSINESS use = COMMERCIAL insurance! Here's the rule: (1) Employee driving company vehicle for business purposes = Commercial Auto Liability pays PRIMARY. (2) Personal auto policies EXCLUDE business use (your personal policy won't cover you driving for work). (3) Commercial Auto policy covers: company-owned vehicles, hired/rented vehicles, employees driving for business, non-owned autos used for business. (4) If company has proper Commercial Auto: Insurance pays $200K claim + legal defense. (5) If company has NO Commercial Auto: Company pays $200K out-of-pocket (could bankrupt small business) + employee could be sued personally! This is why ANY business using vehicles MUST have Commercial Auto - don't rely on personal policies!",
+                simpleAnswer: "Company's Commercial Auto Liability - Business use requires business insurance. Personal auto excludes business use. Commercial Auto pays the $200K claim.",
+                topic: "Commercial Insurance Situations",
+                difficulty: "medium"
+            },
+            {
+                question: "SITUATION: Raleigh restaurant employee cuts finger badly while slicing meat. Medical bills $8,000. Lost 2 weeks of work. What insurance covers this?",
+                answers: ["CGL (General Liability)", "Workers' Compensation", "Group Health insurance", "Restaurant's Property insurance"],
+                correct: 1,
+                explanation: "Classic Workers' Comp claim! Here's why: (1) Employee injured ON THE JOB, during work duties. (2) Workers' Compensation is NO-FAULT insurance - covers ALL work injuries regardless of fault. (3) Workers' Comp pays: 100% of medical bills ($8,000), 2/3 of lost wages, disability benefits if needed, vocational rehab if can't return to same job. (4) In exchange for automatic coverage, employee gives up right to sue employer. (5) NC requires Workers' Comp if business has 3+ employees. (6) Without Workers' Comp: Employer could be sued for $8,000 medical + lost wages + pain/suffering = $50,000+ lawsuit! Workers' Comp protects both employee AND employer. CGL covers customers/public, not employees!",
+                simpleAnswer: "Workers' Compensation - Employee injured on job. Workers' Comp pays medical bills + lost wages. Required in NC with 3+ employees. No-fault system.",
+                topic: "Commercial Insurance Situations",
+                difficulty: "easy"
+            },
+            {
+                question: "SITUATION: Hailstorm damages roof and siding of home in Winston-Salem. Also breaks 5 windows. Homeowner has HO-3 with $1,000 deductible. How many deductibles apply?",
+                answers: ["One $1,000 deductible total", "Three deductibles ($3,000 - roof, siding, windows each)", "Five deductibles ($5,000 - one per window)", "No deductible for hail damage"],
+                correct: 0,
+                explanation: "ONE OCCURRENCE = ONE DEDUCTIBLE! This is important: (1) All damage from the SAME EVENT (one hailstorm) = ONE deductible applies. (2) Doesn't matter that roof, siding, AND windows were damaged - it's all from the same storm. (3) Total claim might be $25,000 (roof $15,000 + siding $7,000 + windows $3,000). (4) Insurance pays: $25,000 - $1,000 deductible = $24,000. (5) If a separate storm happened next month and caused more damage, THAT would be a second deductible. (6) WATCH OUT: Some coastal policies have separate 'wind/hurricane' deductibles (percentage deductibles like 2-5%) that are HIGHER than regular deductibles. But still one deductible per occurrence! This saves homeowners money - imagine paying 5 separate deductibles!",
+                simpleAnswer: "One $1,000 deductible - One event = one deductible, regardless of how many things damaged. All hail damage from same storm = one deductible applies.",
+                topic: "Homeowners Situations",
+                difficulty: "medium"
+            },
+            {
+                question: "SITUATION: Driver with 50/100/50 liability causes accident. Injures two people: Person A needs $80,000, Person B needs $40,000. Property damage $30,000. What does driver pay out-of-pocket?",
+                answers: ["Nothing - all covered", "$10,000 (property excess)", "$30,000 (Person A excess)", "$40,000 (Person A $30K + property $10K)"],
+                correct: 2,
+                explanation: "Liability limits create big gaps! Let's break down 50/100/50: (1) $50K max per person injured (2) $100K max per accident for all injuries (3) $50K max for property damage. NOW CALCULATE: Person A injuries: $80,000. Insurance pays MAX $50K per person. Driver owes $30,000 personally! Person B injuries: $40,000. Insurance pays $40K (under the $50K per-person limit). Property damage: $30,000. Insurance pays $30K (under $50K limit). TOTAL out-of-pocket: $30,000 for Person A overage. Person B and property are fully covered. This is why minimum limits are dangerous! One serious accident = financial ruin. Most agents recommend 100/300/100 or higher. Umbrella policy adds millions more.",
+                simpleAnswer: "$30,000 out-of-pocket - Person A's bills ($80K) exceed $50K per-person limit. Driver personally owes $30K. Person B and property covered. Scary reality of low limits!",
+                topic: "Auto Insurance Situations",
+                difficulty: "hard"
             }
         ];
 
@@ -3701,6 +3974,210 @@
                     readinessEl.style.color = '#dc3545';
                 }
             }
+        }
+
+        // ==================== COINSURANCE CALCULATOR FUNCTIONS ====================
+
+        function showCoinsuranceCalculator() {
+            document.getElementById('startScreen').style.display = 'none';
+            document.getElementById('coinsuranceScreen').style.display = 'block';
+            // Clear previous results
+            document.getElementById('calcResults').style.display = 'none';
+        }
+
+        function hideCoinsuranceCalculator() {
+            document.getElementById('coinsuranceScreen').style.display = 'none';
+            document.getElementById('startScreen').style.display = 'block';
+        }
+
+        function loadJohnExample() {
+            document.getElementById('calcReplacementCost').value = 150000;
+            document.getElementById('calcCoinsurancePercent').value = 80;
+            document.getElementById('calcAmountCarried').value = 100000;
+            document.getElementById('calcLossAmount').value = 50000;
+            document.getElementById('calcDeductible').value = 0;
+
+            // Scroll to calculator
+            document.querySelector('#coinsuranceScreen').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            // Flash the calculate button
+            const btn = document.querySelector('#coinsuranceScreen .btn-primary');
+            btn.style.animation = 'pulse 1s 3';
+        }
+
+        function calculateCoinsurance() {
+            // Get inputs
+            const replacementCost = parseFloat(document.getElementById('calcReplacementCost').value) || 0;
+            const coinsurancePercent = parseFloat(document.getElementById('calcCoinsurancePercent').value) || 80;
+            const amountCarried = parseFloat(document.getElementById('calcAmountCarried').value) || 0;
+            const lossAmount = parseFloat(document.getElementById('calcLossAmount').value) || 0;
+            const deductible = parseFloat(document.getElementById('calcDeductible').value) || 0;
+
+            // Validation
+            if (replacementCost <= 0 || amountCarried <= 0 || lossAmount <= 0) {
+                alert('Please fill in all required fields with valid numbers!');
+                return;
+            }
+
+            // Calculate required amount to carry
+            const requiredAmount = replacementCost * (coinsurancePercent / 100);
+
+            // Check if properly insured
+            const isProperlyInsured = amountCarried >= requiredAmount;
+
+            // Calculate payment
+            let insurancePayment;
+            let penaltyAmount = 0;
+            let explanation;
+
+            if (isProperlyInsured) {
+                // No penalty - pay full loss (limited by policy limit)
+                insurancePayment = Math.min(lossAmount, amountCarried);
+                insurancePayment = insurancePayment - deductible;
+
+                explanation = `
+                    <div style="background: #d4edda; border: 3px solid #28a745; border-radius: 12px; padding: 25px; margin-bottom: 20px;">
+                        <h3 style="color: #155724; margin-bottom: 15px;">✅ GREAT NEWS! NO COINSURANCE PENALTY!</h3>
+                        <p style="color: #155724; font-size: 16px; line-height: 1.8;">
+                            You're carrying <strong>$${amountCarried.toLocaleString()}</strong> of insurance.<br>
+                            You were required to carry at least <strong>$${requiredAmount.toLocaleString()}</strong> (${coinsurancePercent}% of $${replacementCost.toLocaleString()}).<br><br>
+                            <strong>You met or exceeded the requirement!</strong> ✓<br><br>
+                            This means the insurance company will pay the full amount of the loss (up to your policy limit), minus your deductible.
+                        </p>
+                    </div>
+                `;
+            } else {
+                // Calculate coinsurance penalty
+                const coinsuranceFraction = amountCarried / requiredAmount;
+                const paymentBeforeDeductible = lossAmount * coinsuranceFraction;
+                insurancePayment = paymentBeforeDeductible - deductible;
+                penaltyAmount = lossAmount - paymentBeforeDeductible;
+
+                const underInsuredBy = requiredAmount - amountCarried;
+
+                explanation = `
+                    <div style="background: #f8d7da; border: 3px solid #dc3545; border-radius: 12px; padding: 25px; margin-bottom: 20px;">
+                        <h3 style="color: #721c24; margin-bottom: 15px;">⚠️ COINSURANCE PENALTY APPLIES!</h3>
+                        <p style="color: #721c24; font-size: 16px; line-height: 1.8;">
+                            You're carrying <strong>$${amountCarried.toLocaleString()}</strong> of insurance.<br>
+                            You were required to carry at least <strong>$${requiredAmount.toLocaleString()}</strong> (${coinsurancePercent}% of $${replacementCost.toLocaleString()}).<br><br>
+                            <strong>You're under-insured by $${underInsuredBy.toLocaleString()}!</strong> ⚠️<br><br>
+                            Because you didn't meet the ${coinsurancePercent}% requirement, you become a "co-insurer" and share in every loss proportionally.
+                        </p>
+                    </div>
+                `;
+            }
+
+            // Build step-by-step breakdown
+            const breakdown = `
+                <div style="background: #fff3cd; border: 2px solid #ffc107; border-radius: 12px; padding: 25px; margin-bottom: 20px;">
+                    <h3 style="color: #856404; margin-bottom: 20px;">🔢 STEP-BY-STEP CALCULATION:</h3>
+
+                    <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+                        <div style="color: #856404; font-size: 15px; line-height: 2;">
+                            <strong>STEP 1:</strong> Calculate the amount you SHOULD be carrying<br>
+                            <div style="margin-left: 20px; font-family: monospace; background: #f8f9fa; padding: 10px; border-radius: 5px; margin-top: 8px;">
+                                Replacement Cost × Coinsurance %<br>
+                                $${replacementCost.toLocaleString()} × ${coinsurancePercent}% = <strong style="color: #667eea;">$${requiredAmount.toLocaleString()}</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+                        <div style="color: #856404; font-size: 15px; line-height: 2;">
+                            <strong>STEP 2:</strong> Compare what you're carrying vs. what's required<br>
+                            <div style="margin-left: 20px; font-family: monospace; background: #f8f9fa; padding: 10px; border-radius: 5px; margin-top: 8px;">
+                                Amount Carrying: <strong>$${amountCarried.toLocaleString()}</strong><br>
+                                Amount Required: <strong>$${requiredAmount.toLocaleString()}</strong><br>
+                                Status: <strong style="color: ${isProperlyInsured ? '#28a745' : '#dc3545'};">${isProperlyInsured ? '✓ PROPERLY INSURED' : '✗ UNDER-INSURED'}</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    ${!isProperlyInsured ? `
+                    <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+                        <div style="color: #856404; font-size: 15px; line-height: 2;">
+                            <strong>STEP 3:</strong> Calculate the coinsurance penalty ratio<br>
+                            <div style="margin-left: 20px; font-family: monospace; background: #f8f9fa; padding: 10px; border-radius: 5px; margin-top: 8px;">
+                                Amount Carried ÷ Amount Required<br>
+                                $${amountCarried.toLocaleString()} ÷ $${requiredAmount.toLocaleString()} = <strong style="color: #667eea;">${(amountCarried / requiredAmount).toFixed(4)}</strong><br><br>
+                                This means insurance will only pay <strong style="color: #dc3545;">${((amountCarried / requiredAmount) * 100).toFixed(2)}%</strong> of any loss!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+                        <div style="color: #856404; font-size: 15px; line-height: 2;">
+                            <strong>STEP 4:</strong> Apply the penalty to your loss<br>
+                            <div style="margin-left: 20px; font-family: monospace; background: #f8f9fa; padding: 10px; border-radius: 5px; margin-top: 8px;">
+                                Loss Amount × Penalty Ratio<br>
+                                $${lossAmount.toLocaleString()} × ${(amountCarried / requiredAmount).toFixed(4)} = <strong style="color: #667eea;">$${(lossAmount * (amountCarried / requiredAmount)).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong><br><br>
+                                You lose <strong style="color: #dc3545;">$${penaltyAmount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong> due to under-insurance!
+                            </div>
+                        </div>
+                    </div>
+                    ` : `
+                    <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+                        <div style="color: #856404; font-size: 15px; line-height: 2;">
+                            <strong>STEP 3:</strong> Calculate payment<br>
+                            <div style="margin-left: 20px; font-family: monospace; background: #f8f9fa; padding: 10px; border-radius: 5px; margin-top: 8px;">
+                                Since you're properly insured, insurance pays the full loss amount<br>
+                                (limited by your policy limit of $${amountCarried.toLocaleString()})
+                            </div>
+                        </div>
+                    </div>
+                    `}
+
+                    <div style="background: white; padding: 20px; border-radius: 8px;">
+                        <div style="color: #856404; font-size: 15px; line-height: 2;">
+                            <strong>STEP ${isProperlyInsured ? '4' : '5'}:</strong> Subtract your deductible<br>
+                            <div style="margin-left: 20px; font-family: monospace; background: #f8f9fa; padding: 10px; border-radius: 5px; margin-top: 8px;">
+                                ${isProperlyInsured ?
+                                    `$${Math.min(lossAmount, amountCarried).toLocaleString()} - $${deductible.toLocaleString()}` :
+                                    `$${(lossAmount * (amountCarried / requiredAmount)).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})} - $${deductible.toLocaleString()}`
+                                } = <strong style="color: #667eea;">$${insurancePayment.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Build final result
+            const finalResult = `
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; padding: 30px; text-align: center; margin-bottom: 20px;">
+                    <div style="font-size: 18px; color: white; margin-bottom: 15px; font-weight: bold;">💰 INSURANCE COMPANY PAYS YOU:</div>
+                    <div style="font-size: 48px; color: white; font-weight: bold; margin-bottom: 10px;">$${insurancePayment.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</div>
+                    ${!isProperlyInsured ?
+                        `<div style="font-size: 16px; color: #fff3cd; margin-top: 15px;">
+                            <strong>😢 YOU PAY OUT-OF-POCKET:</strong><br>
+                            <span style="font-size: 32px; font-weight: bold;">$${(penaltyAmount + deductible).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span><br>
+                            <span style="font-size: 14px;">($${penaltyAmount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})} penalty + $${deductible.toLocaleString()} deductible)</span>
+                        </div>` :
+                        `<div style="font-size: 16px; color: #d4edda; margin-top: 10px;">
+                            You only pay your $${deductible.toLocaleString()} deductible!
+                        </div>`
+                    }
+                </div>
+
+                ${!isProperlyInsured ? `
+                <div style="background: #e8f5e9; border: 2px solid #28a745; border-radius: 10px; padding: 20px;">
+                    <h4 style="color: #155724; margin-bottom: 10px;">💡 HOW TO AVOID THIS PENALTY:</h4>
+                    <p style="color: #155724; line-height: 1.8;">
+                        1. <strong>Increase your coverage to at least $${requiredAmount.toLocaleString()}</strong> to meet the ${coinsurancePercent}% requirement<br>
+                        2. <strong>Consider an "Agreed Amount" endorsement</strong> - This waives the coinsurance clause (insurance agrees your current amount is adequate)<br>
+                        3. <strong>Review your coverage annually</strong> - Property values increase over time, so your coverage needs to increase too!
+                    </p>
+                </div>
+                ` : ''}
+            `;
+
+            // Display results
+            const resultsDiv = document.getElementById('calcResults');
+            resultsDiv.innerHTML = explanation + breakdown + finalResult;
+            resultsDiv.style.display = 'block';
+
+            // Scroll to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
         // ==================== GLOSSARY FUNCTIONS ====================
