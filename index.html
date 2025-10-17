@@ -4608,7 +4608,7 @@
                             <strong>STEP 3:</strong> Calculate the coinsurance penalty ratio<br>
                             <div style="margin-left: 20px; font-family: monospace; background: #f8f9fa; padding: 10px; border-radius: 5px; margin-top: 8px;">
                                 Amount Carried ÷ Amount Required<br>
-                                $${amountCarried.toLocaleString()} ÷ $${requiredAmount.toLocaleString()} = <strong style="color: #667eea;">${(amountCarried / requiredAmount).toFixed(4)}</strong><br><br>
+                                $${amountCarried.toLocaleString()} ÷ $${requiredAmount.toLocaleString()} = <strong style="color: #667eea;">${(amountCarried / requiredAmount).toFixed(2)}</strong><br><br>
                                 This means insurance will only pay <strong style="color: #dc3545;">${((amountCarried / requiredAmount) * 100).toFixed(2)}%</strong> of any loss!
                             </div>
                         </div>
@@ -4619,7 +4619,7 @@
                             <strong>STEP 4:</strong> Apply the penalty to your loss<br>
                             <div style="margin-left: 20px; font-family: monospace; background: #f8f9fa; padding: 10px; border-radius: 5px; margin-top: 8px;">
                                 Loss Amount × Penalty Ratio<br>
-                                $${lossAmount.toLocaleString()} × ${(amountCarried / requiredAmount).toFixed(4)} = <strong style="color: #667eea;">$${(lossAmount * (amountCarried / requiredAmount)).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong><br><br>
+                                $${lossAmount.toLocaleString()} × ${(amountCarried / requiredAmount).toFixed(2)} = <strong style="color: #667eea;">$${(lossAmount * (amountCarried / requiredAmount)).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong><br><br>
                                 You lose <strong style="color: #dc3545;">$${penaltyAmount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong> due to under-insurance!
                             </div>
                         </div>
