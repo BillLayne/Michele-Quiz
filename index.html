@@ -1041,40 +1041,66 @@
                     </div>
                 </div>
 
+                <div style="background: #fff3cd; border: 2px solid #ffc107; border-radius: 10px; padding: 20px; margin: 25px 0;">
+                    <h3 style="color: #856404; margin-bottom: 15px;">📐 Coinsurance Penalty Formula (Industry Standard)</h3>
+                    <div style="font-family: 'Courier New', monospace; background: white; padding: 15px; border-radius: 8px; color: #333; font-size: 14px; line-height: 2;">
+                        <strong>Step 1:</strong> Amount Required = Property Value × Coinsurance %<br>
+                        <strong>Step 2:</strong> Compare Amount Carried to Amount Required<br>
+                        <strong>Step 3:</strong> If under-insured:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Insurance Pays = (Amount Carried ÷ Amount Required) × Loss Amount<br>
+                        <strong>Step 4:</strong> Subtract Deductible from payment<br>
+                        <strong>Step 5:</strong> Penalty = What you lose due to under-insurance
+                    </div>
+                </div>
+
                 <div style="background: #f8f9fa; padding: 25px; border-radius: 15px; margin: 25px 0;">
                     <h3 style="color: #667eea; margin-bottom: 20px; text-align: center;">🔢 Calculate Coinsurance Penalty</h3>
 
                     <div style="display: grid; gap: 20px;">
                         <div>
                             <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #333;">
-                                📍 Actual Replacement Value (What it REALLY costs to rebuild):
+                                📍 Property Replacement Value (Current Value):
                             </label>
-                            <input type="number" id="calcReplacementCost" placeholder="Example: 500000" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 16px;">
-                            <small style="color: #666; display: block; margin-top: 5px;">This is what it would cost TODAY to completely rebuild or replace the property</small>
+                            <input type="number" id="calcReplacementCost" placeholder="Example: 500000" oninput="autoCalcRequired()" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 16px;">
+                            <small style="color: #666; display: block; margin-top: 5px;">What would it cost to completely replace/rebuild the property TODAY?</small>
                         </div>
 
                         <div>
                             <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #333;">
-                                📋 Coinsurance Percentage Required (Usually 80%):
+                                📋 Coinsurance Percentage:
                             </label>
-                            <input type="number" id="calcCoinsurancePercent" value="80" placeholder="80" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 16px;">
-                            <small style="color: #666; display: block; margin-top: 5px;">Most commercial policies require 80%, some homeowners 90%. Check your policy!</small>
+                            <select id="calcCoinsurancePercent" onchange="autoCalcRequired()" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 16px;">
+                                <option value="80">80% (Most Common)</option>
+                                <option value="90">90% (Some Policies)</option>
+                                <option value="100">100% (Full Value)</option>
+                            </select>
+                            <small style="color: #666; display: block; margin-top: 5px;">Check your policy - usually 80%, sometimes 90% for commercial properties</small>
                         </div>
 
                         <div>
                             <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #333;">
-                                💵 Amount of Insurance You're Carrying:
+                                💰 Amount Required to be Carried (Auto-Calculated):
+                            </label>
+                            <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; font-size: 20px; font-weight: bold; color: #0d47a1; text-align: center; border: 2px solid #2196F3;" id="calcRequiredDisplay">
+                                Enter property value above
+                            </div>
+                            <small style="color: #666; display: block; margin-top: 5px;">This is automatically calculated: Property Value × Coinsurance %</small>
+                        </div>
+
+                        <div>
+                            <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #333;">
+                                💵 Amount of Insurance Actually Carrying:
                             </label>
                             <input type="number" id="calcAmountCarried" placeholder="Example: 400000" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 16px;">
-                            <small style="color: #666; display: block; margin-top: 5px;">This is your actual policy limit - what you're insured for</small>
+                            <small style="color: #666; display: block; margin-top: 5px;">What is your current policy limit / coverage amount?</small>
                         </div>
 
                         <div>
                             <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #333;">
-                                🔥 Amount of Loss (Damage from the claim):
+                                🔥 Loss Amount (Damage from Claim):
                             </label>
                             <input type="number" id="calcLossAmount" placeholder="Example: 100000" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 16px;">
-                            <small style="color: #666; display: block; margin-top: 5px;">The total dollar amount of damage from this one incident</small>
+                            <small style="color: #666; display: block; margin-top: 5px;">Total dollar amount of damage from this incident</small>
                         </div>
 
                         <div>
@@ -1082,11 +1108,11 @@
                                 💳 Deductible:
                             </label>
                             <input type="number" id="calcDeductible" placeholder="Example: 5000" value="0" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 16px;">
-                            <small style="color: #666; display: block; margin-top: 5px;">Your out-of-pocket expense before insurance pays (enter 0 if none)</small>
+                            <small style="color: #666; display: block; margin-top: 5px;">Your out-of-pocket amount before insurance pays (enter 0 if none)</small>
                         </div>
 
                         <button class="btn btn-primary" onclick="calculateCoinsurance()" style="width: 100%; padding: 18px; font-size: 18px; margin-top: 10px;">
-                            🧮 Calculate Payment
+                            🧮 Calculate Payment & Penalty
                         </button>
                     </div>
 
@@ -4394,11 +4420,10 @@
             document.getElementById('topicScreen').style.display = 'none';
             document.getElementById('resultsScreen').classList.remove('show');
             document.getElementById('quizInfo').style.display = 'none';
-            document.getElementById('glossaryScreen').style.display = 'none';
-            document.getElementById('resourcesScreen').style.display = 'none';
-            document.getElementById('bookmarksScreen').style.display = 'none';
             document.getElementById('timerDisplay').style.display = 'none';
-            document.getElementById('startScreen').style.display = 'block';
+
+            // Use the centralized function to hide all screens and show start
+            showStartScreen();
             
             // Refresh stats
             if (quizHistory.length > 0) {
@@ -4420,18 +4445,53 @@
             }
         }
 
+        // ==================== SCREEN MANAGEMENT ====================
+
+        function hideAllScreens() {
+            // Hide all main screens
+            document.getElementById('startScreen').style.display = 'none';
+            document.getElementById('coinsuranceScreen').style.display = 'none';
+            document.getElementById('acvScreen').style.display = 'none';
+            document.getElementById('quickRefScreen').style.display = 'none';
+            document.getElementById('glossaryScreen').style.display = 'none';
+            document.getElementById('bookmarksScreen').style.display = 'none';
+            document.getElementById('resourcesScreen').style.display = 'none';
+
+            // Hide quiz-related screens
+            const quizContent = document.querySelector('.content > div:not([id])');
+            const results = document.querySelector('.results');
+            if (quizContent) quizContent.style.display = 'none';
+            if (results) results.style.display = 'none';
+        }
+
+        function showStartScreen() {
+            hideAllScreens();
+            document.getElementById('startScreen').style.display = 'block';
+        }
+
         // ==================== COINSURANCE CALCULATOR FUNCTIONS ====================
 
         function showCoinsuranceCalculator() {
-            document.getElementById('startScreen').style.display = 'none';
+            hideAllScreens();
             document.getElementById('coinsuranceScreen').style.display = 'block';
             // Clear previous results
             document.getElementById('calcResults').style.display = 'none';
         }
 
         function hideCoinsuranceCalculator() {
-            document.getElementById('coinsuranceScreen').style.display = 'none';
-            document.getElementById('startScreen').style.display = 'block';
+            showStartScreen();
+        }
+
+        function autoCalcRequired() {
+            const propertyValue = parseFloat(document.getElementById('calcReplacementCost').value) || 0;
+            const coinsurancePercent = parseFloat(document.getElementById('calcCoinsurancePercent').value) || 80;
+
+            if (propertyValue > 0) {
+                const amountRequired = propertyValue * (coinsurancePercent / 100);
+                document.getElementById('calcRequiredDisplay').textContent = '$' + amountRequired.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            } else {
+                document.getElementById('calcRequiredDisplay').textContent = 'Enter property value above';
+            }
         }
 
         function loadJohnExample() {
@@ -4440,6 +4500,9 @@
             document.getElementById('calcAmountCarried').value = 100000;
             document.getElementById('calcLossAmount').value = 50000;
             document.getElementById('calcDeductible').value = 0;
+
+            // Update the required display
+            autoCalcRequired();
 
             // Scroll to calculator
             document.querySelector('#coinsuranceScreen').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -4615,9 +4678,34 @@
                 ` : ''}
             `;
 
+            // Add comprehensive summary box
+            const totalOutOfPocket = lossAmount - insurancePayment;
+            const summaryBox = `
+                <div style="background: #e3f2fd; border: 2px solid #2196F3; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
+                    <h3 style="color: #0d47a1; margin-bottom: 15px; text-align: center;">📊 COMPLETE BREAKDOWN</h3>
+                    <div style="color: #0d47a1; line-height: 1.8; font-size: 16px;">
+                        • <strong>Property Replacement Value:</strong> $${replacementCost.toLocaleString()}<br>
+                        • <strong>Coinsurance Requirement:</strong> ${coinsurancePercent}%<br>
+                        • <strong>Amount Required to Carry:</strong> $${requiredAmount.toLocaleString()}<br>
+                        • <strong>Amount Actually Carrying:</strong> $${amountCarried.toLocaleString()}<br>
+                        • <strong>Loss Amount:</strong> $${lossAmount.toLocaleString()}<br>
+                        ${!isProperlyInsured ? `• <strong style="color: #dc3545;">Coinsurance Penalty:</strong> -$${penaltyAmount.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}<br>` : ''}
+                        • <strong>Your Deductible:</strong> -$${deductible.toLocaleString()}<br>
+                    </div>
+                    <div style="background: #bbdefb; padding: 15px; margin-top: 15px; border-radius: 8px; text-align: center;">
+                        <div style="color: #0d47a1; font-size: 14px; margin-bottom: 5px;">INSURANCE PAYS YOU:</div>
+                        <div style="color: #0d47a1; font-size: 28px; font-weight: bold;">$${insurancePayment.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</div>
+                    </div>
+                    <div style="background: #fff3cd; padding: 15px; margin-top: 10px; border-radius: 8px; text-align: center;">
+                        <div style="color: #856404; font-size: 14px; margin-bottom: 5px;">YOU PAY OUT-OF-POCKET:</div>
+                        <div style="color: #dc3545; font-size: 28px; font-weight: bold;">$${totalOutOfPocket.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</div>
+                    </div>
+                </div>
+            `;
+
             // Display results
             const resultsDiv = document.getElementById('calcResults');
-            resultsDiv.innerHTML = explanation + breakdown + finalResult;
+            resultsDiv.innerHTML = explanation + breakdown + finalResult + summaryBox;
             resultsDiv.style.display = 'block';
 
             // Scroll to results
@@ -4627,14 +4715,13 @@
         // ==================== ACV CALCULATOR FUNCTIONS ====================
 
         function showACVCalculator() {
-            document.getElementById('startScreen').style.display = 'none';
+            hideAllScreens();
             document.getElementById('acvScreen').style.display = 'block';
             document.getElementById('acvResults').style.display = 'none';
         }
 
         function hideACVCalculator() {
-            document.getElementById('acvScreen').style.display = 'none';
-            document.getElementById('startScreen').style.display = 'block';
+            showStartScreen();
         }
 
         function loadSarahExample() {
@@ -4781,26 +4868,24 @@
         // ==================== QUICK REFERENCE FUNCTIONS ====================
 
         function showQuickReference() {
-            document.getElementById('startScreen').style.display = 'none';
+            hideAllScreens();
             document.getElementById('quickRefScreen').style.display = 'block';
         }
 
         function hideQuickReference() {
-            document.getElementById('quickRefScreen').style.display = 'none';
-            document.getElementById('startScreen').style.display = 'block';
+            showStartScreen();
         }
 
         // ==================== GLOSSARY FUNCTIONS ====================
 
         function showGlossary() {
-            document.getElementById('startScreen').style.display = 'none';
+            hideAllScreens();
             document.getElementById('glossaryScreen').style.display = 'block';
             renderGlossary('all');
         }
 
         function hideGlossary() {
-            document.getElementById('glossaryScreen').style.display = 'none';
-            document.getElementById('startScreen').style.display = 'block';
+            showStartScreen();
         }
 
         function renderGlossary(category = 'all') {
@@ -4857,19 +4942,18 @@
         // ==================== RESOURCES FUNCTIONS ====================
 
         function showResources() {
-            document.getElementById('startScreen').style.display = 'none';
+            hideAllScreens();
             document.getElementById('resourcesScreen').style.display = 'block';
         }
 
         function hideResources() {
-            document.getElementById('resourcesScreen').style.display = 'none';
-            document.getElementById('startScreen').style.display = 'block';
+            showStartScreen();
         }
 
         // ==================== BOOKMARKS FUNCTIONS ====================
 
         function showBookmarks() {
-            document.getElementById('startScreen').style.display = 'none';
+            hideAllScreens();
             document.getElementById('bookmarksScreen').style.display = 'block';
             
             const bookmarksList = document.getElementById('bookmarksList');
@@ -4899,8 +4983,7 @@
         }
 
         function hideBookmarks() {
-            document.getElementById('bookmarksScreen').style.display = 'none';
-            document.getElementById('startScreen').style.display = 'block';
+            showStartScreen();
         }
 
         function removeBookmark(questionText) {
