@@ -782,6 +782,153 @@
             color: #856404;
             line-height: 1.6;
         }
+
+        /* Print Button Styles */
+        .print-btn {
+            padding: 8px 16px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-left: 10px;
+        }
+
+        .print-btn:hover {
+            background: #218838;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(40, 167, 69, 0.3);
+        }
+
+        .print-all-btn {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin: 10px 0;
+            display: inline-block;
+        }
+
+        .print-all-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+
+            .header,
+            .quiz-info,
+            .footer,
+            .nav-buttons,
+            .bookmark-btn,
+            .print-btn,
+            .print-all-btn,
+            .header-buttons,
+            button:not(.no-print) {
+                display: none !important;
+            }
+
+            .question-card {
+                page-break-after: always;
+                margin-bottom: 40px;
+                padding: 20px;
+                border: 2px solid #333;
+            }
+
+            .question-text {
+                font-size: 16px;
+                color: #000;
+                margin-bottom: 20px;
+            }
+
+            .answer-btn {
+                border: 1px solid #333;
+                background: white;
+                color: #000;
+                margin: 10px 0;
+                page-break-inside: avoid;
+            }
+
+            .answer-btn.correct {
+                background: #d4edda !important;
+                border: 2px solid #28a745 !important;
+                font-weight: bold;
+            }
+
+            .explanation,
+            .correct-answer {
+                display: block !important;
+                page-break-inside: avoid;
+                background: white;
+                border: 1px solid #000;
+                color: #000;
+                margin-top: 20px;
+            }
+
+            .explanation-title,
+            .correct-answer-title {
+                color: #000;
+                font-weight: bold;
+            }
+
+            .explanation-text {
+                color: #000;
+            }
+
+            .question-category {
+                background: white;
+                border: 1px solid #000;
+                color: #000;
+            }
+
+            .answer-letter {
+                background: white !important;
+                color: #000 !important;
+                border: 1px solid #000;
+            }
+
+            .answer-btn.correct .answer-letter {
+                background: #28a745 !important;
+                color: white !important;
+            }
+
+            /* Study sheet specific styles */
+            .print-study-sheet {
+                display: block !important;
+            }
+
+            .print-study-sheet h1 {
+                text-align: center;
+                border-bottom: 3px solid #000;
+                padding-bottom: 10px;
+                margin-bottom: 20px;
+            }
+
+            .print-study-sheet .question-item {
+                page-break-inside: avoid;
+                margin-bottom: 30px;
+                padding: 15px;
+                border: 2px solid #333;
+            }
+        }
     </style>
 </head>
 <body>
@@ -4492,9 +4639,14 @@
                 <div class="question-card active">
                     <div class="question-number">
                         <span>Question ${currentQuestionIndex + 1} of ${currentQuiz.length}</span>
-                        <button class="bookmark-btn" onclick="toggleBookmark()" title="Bookmark this question">
-                            ${isBookmarked ? '⭐' : '☆'}
-                        </button>
+                        <div>
+                            <button class="print-btn" onclick="printCurrentQuestion()" title="Print this question with answer">
+                                🖨️ Print
+                            </button>
+                            <button class="bookmark-btn" onclick="toggleBookmark()" title="Bookmark this question">
+                                ${isBookmarked ? '⭐' : '☆'}
+                            </button>
+                        </div>
                     </div>
                     <div class="question-category">${question.topic}</div>
                     <div class="question-text">${question.question}</div>
@@ -4828,7 +4980,12 @@
 
             let html = `
                 <div style="background: #fff3cd; border-left: 5px solid #ffc107; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
-                    <h3 style="margin-bottom: 15px; color: #856404;">📝 Questions You Missed (${incorrectAnswers.length})</h3>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap;">
+                        <h3 style="color: #856404; margin: 0;">📝 Questions You Missed (${incorrectAnswers.length})</h3>
+                        <button class="print-all-btn" onclick="printIncorrectAnswers()" title="Print all incorrect answers as study sheet">
+                            🖨️ Print Study Sheet
+                        </button>
+                    </div>
                     <p style="color: #856404; margin-bottom: 20px;">Review these questions to understand what you got wrong:</p>
             `;
 
@@ -5490,13 +5647,186 @@
                 alert('You need at least 5 bookmarked questions to practice. Keep bookmarking questions during quizzes!');
                 return;
             }
-            
-            currentQuiz = bookmarkedQuestions.map(questionText => 
+
+            currentQuiz = bookmarkedQuestions.map(questionText =>
                 questionBank.find(q => q.question === questionText)
             ).filter(q => q !== undefined).slice(0, 10);
-            
+
             currentMode = 'practice';
             startQuiz();
+        }
+
+        // ==================== PRINT FUNCTIONS ====================
+
+        function printCurrentQuestion() {
+            const question = currentQuiz[currentQuestionIndex];
+            const letters = ['A', 'B', 'C', 'D'];
+
+            // Create a temporary div for printing
+            const printDiv = document.createElement('div');
+            printDiv.className = 'print-study-sheet';
+            printDiv.style.display = 'none';
+
+            printDiv.innerHTML = `
+                <h1>NC Property & Casualty Study Guide</h1>
+                <h2 style="text-align: center; color: #666; margin-bottom: 30px;">Question #${currentQuestionIndex + 1}</h2>
+
+                <div class="question-item">
+                    <div style="background: #e8f5e9; padding: 10px; border-radius: 5px; margin-bottom: 15px;">
+                        <strong>Topic:</strong> ${question.topic}
+                    </div>
+
+                    <div style="font-size: 18px; font-weight: bold; margin-bottom: 20px;">
+                        ${question.question}
+                    </div>
+
+                    <div style="margin: 20px 0;">
+                        ${question.answers.map((answer, index) => `
+                            <div class="answer-btn ${index === question.correct ? 'correct' : ''}" style="margin: 10px 0; padding: 12px; border: 2px solid ${index === question.correct ? '#28a745' : '#ddd'}; border-radius: 8px; background: ${index === question.correct ? '#d4edda' : 'white'};">
+                                <div style="display: flex; align-items: center; gap: 15px;">
+                                    <div class="answer-letter" style="width: 30px; height: 30px; border-radius: 50%; background: ${index === question.correct ? '#28a745' : '#667eea'}; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                                        ${letters[index]}
+                                    </div>
+                                    <div>${answer}</div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <div class="correct-answer" style="display: block; background: #d4edda; border-left: 4px solid #28a745; padding: 15px; border-radius: 8px; margin: 20px 0;">
+                        <div style="font-weight: bold; color: #155724; margin-bottom: 10px;">✓ Correct Answer:</div>
+                        <div style="color: #155724;">${question.simpleAnswer}</div>
+                    </div>
+
+                    <div class="explanation" style="display: block; background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; border-radius: 8px;">
+                        <div style="font-weight: bold; color: #856404; margin-bottom: 10px;">💡 Explanation:</div>
+                        <div style="color: #856404; line-height: 1.6;">${question.explanation}</div>
+                    </div>
+                </div>
+            `;
+
+            // Append to body, print, then remove
+            document.body.appendChild(printDiv);
+            printDiv.style.display = 'block';
+            window.print();
+            document.body.removeChild(printDiv);
+        }
+
+        function printIncorrectAnswers() {
+            if (incorrectAnswers.length === 0) {
+                alert('No incorrect answers to print!');
+                return;
+            }
+
+            const letters = ['A', 'B', 'C', 'D'];
+            const today = new Date().toLocaleDateString();
+
+            // Create a temporary div for printing
+            const printDiv = document.createElement('div');
+            printDiv.className = 'print-study-sheet';
+            printDiv.style.display = 'none';
+
+            let questionsHTML = '';
+            incorrectAnswers.forEach((item, index) => {
+                const userAnswerText = item.userAnswer !== null ? item.answers[item.userAnswer] : "No answer selected";
+                const correctAnswerText = item.answers[item.correctAnswer];
+
+                questionsHTML += `
+                    <div class="question-item" style="page-break-inside: avoid; margin-bottom: 30px; padding: 20px; border: 2px solid #333; border-radius: 10px;">
+                        <div style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                            <strong>Question ${index + 1} of ${incorrectAnswers.length}</strong>
+                        </div>
+
+                        <div style="font-size: 18px; font-weight: bold; margin-bottom: 20px; color: #000;">
+                            ${item.question}
+                        </div>
+
+                        <div style="margin: 20px 0;">
+                            ${item.answers.map((answer, answerIndex) => {
+                                let backgroundColor = 'white';
+                                let borderColor = '#ddd';
+                                let extraLabel = '';
+
+                                if (answerIndex === item.correctAnswer) {
+                                    backgroundColor = '#d4edda';
+                                    borderColor = '#28a745';
+                                    extraLabel = ' <strong style="color: #28a745;">✓ CORRECT</strong>';
+                                } else if (answerIndex === item.userAnswer) {
+                                    backgroundColor = '#f8d7da';
+                                    borderColor = '#dc3545';
+                                    extraLabel = ' <strong style="color: #dc3545;">✗ Your Answer</strong>';
+                                }
+
+                                return `
+                                    <div style="margin: 10px 0; padding: 12px; border: 2px solid ${borderColor}; border-radius: 8px; background: ${backgroundColor};">
+                                        <div style="display: flex; align-items: center; gap: 15px;">
+                                            <div style="width: 30px; height: 30px; border-radius: 50%; background: ${answerIndex === item.correctAnswer ? '#28a745' : '#667eea'}; color: white; display: inline-flex; align-items: center; justify-content: center; font-weight: bold;">
+                                                ${letters[answerIndex]}
+                                            </div>
+                                            <div style="flex: 1;">
+                                                ${answer}${extraLabel}
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+
+                        <div style="background: #d4edda; border-left: 4px solid #28a745; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                            <div style="font-weight: bold; color: #155724; margin-bottom: 8px;">✓ Correct Answer:</div>
+                            <div style="color: #155724; font-size: 15px;"><strong>${correctAnswerText}</strong></div>
+                        </div>
+
+                        <div style="background: #f8f9fa; border-left: 4px solid #667eea; padding: 15px; border-radius: 8px;">
+                            <div style="font-weight: bold; color: #333; margin-bottom: 8px;">💡 Remember This:</div>
+                            <div style="color: #333; line-height: 1.6;">${item.simpleAnswer}</div>
+                        </div>
+
+                        <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                            <div style="font-weight: bold; color: #856404; margin-bottom: 8px;">📚 Full Explanation:</div>
+                            <div style="color: #856404; line-height: 1.6; font-size: 14px;">${item.explanation}</div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            printDiv.innerHTML = `
+                <div style="padding: 20px;">
+                    <h1 style="text-align: center; border-bottom: 3px solid #000; padding-bottom: 15px; margin-bottom: 10px;">
+                        📝 NC Property & Casualty Study Sheet
+                    </h1>
+                    <h2 style="text-align: center; color: #666; margin-bottom: 30px;">
+                        Questions to Review - ${today}
+                    </h2>
+                    <div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin-bottom: 30px; border: 2px solid #ffc107;">
+                        <p style="margin: 0; color: #856404; font-size: 16px; text-align: center;">
+                            <strong>You missed ${incorrectAnswers.length} question${incorrectAnswers.length !== 1 ? 's' : ''}.</strong>
+                            Study these carefully to improve your score!
+                        </p>
+                    </div>
+                    ${questionsHTML}
+                    <div style="margin-top: 40px; padding: 20px; background: #e8f5e9; border-radius: 8px; border: 2px solid #28a745; page-break-inside: avoid;">
+                        <h3 style="color: #155724; margin-bottom: 10px;">✅ Study Tips:</h3>
+                        <ul style="color: #155724; line-height: 2;">
+                            <li>Read the explanation for each question carefully</li>
+                            <li>Write down the concepts you don't understand</li>
+                            <li>Review the correct answers until they make sense</li>
+                            <li>Take the quiz again to see if you've improved</li>
+                            <li>Focus on understanding WHY the answer is correct, not just memorizing it</li>
+                        </ul>
+                    </div>
+                    <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 2px solid #ddd; color: #666; font-size: 14px;">
+                        <p>Bill Layne Insurance Agency | 1283 N Bridge St, Elkin NC 28621 | 336-835-1993</p>
+                        <p>www.BillLayneInsurance.com</p>
+                    </div>
+                </div>
+            `;
+
+            // Append to body, print, then remove
+            document.body.appendChild(printDiv);
+            printDiv.style.display = 'block';
+            window.print();
+            document.body.removeChild(printDiv);
         }
     </script>
 </body>
