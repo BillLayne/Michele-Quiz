@@ -4264,6 +4264,7 @@
         let answered = 0;
         let selectedAnswer = null;
         let userAnswers = []; // Store user answers for exam mode
+        let incorrectAnswers = []; // Track questions answered incorrectly
         let quizHistory = [];
         let topicPerformance = {};
         let bookmarkedQuestions = [];
@@ -4468,6 +4469,7 @@
             score = 0;
             answered = 0;
             userAnswers = new Array(currentQuiz.length).fill(null); // Initialize answer array for exam mode
+            incorrectAnswers = []; // Reset incorrect answers for new quiz
 
             document.getElementById('startScreen').style.display = 'none';
             document.getElementById('topicScreen').style.display = 'none';
@@ -4592,6 +4594,15 @@
                 topicPerformance[question.topic].correct++;
             } else {
                 document.getElementById('correctAnswer').classList.add('show');
+                // Track incorrect answer
+                incorrectAnswers.push({
+                    question: question.question,
+                    userAnswer: selectedAnswer,
+                    correctAnswer: question.correct,
+                    answers: question.answers,
+                    explanation: question.explanation,
+                    simpleAnswer: question.simpleAnswer
+                });
             }
             
             document.getElementById('explanation').classList.add('show');
@@ -4643,6 +4654,16 @@
                 if (userAnswers[index] !== null && userAnswers[index] === question.correct) {
                     score++;
                     topicPerformance[question.topic].correct++;
+                } else {
+                    // Track incorrect answer
+                    incorrectAnswers.push({
+                        question: question.question,
+                        userAnswer: userAnswers[index],
+                        correctAnswer: question.correct,
+                        answers: question.answers,
+                        explanation: question.explanation,
+                        simpleAnswer: question.simpleAnswer
+                    });
                 }
             });
 
@@ -4725,6 +4746,8 @@
                     </div>
                 </div>
 
+                ${generateIncorrectAnswers()}
+
                 <div class="topic-performance">
                     <h3 style="margin-bottom: 15px;">📈 Performance by Topic</h3>
                     ${generateTopicPerformance()}
@@ -4796,6 +4819,46 @@
                 `;
             }
             return '';
+        }
+
+        function generateIncorrectAnswers() {
+            if (incorrectAnswers.length === 0) {
+                return '';
+            }
+
+            let html = `
+                <div style="background: #fff3cd; border-left: 5px solid #ffc107; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                    <h3 style="margin-bottom: 15px; color: #856404;">📝 Questions You Missed (${incorrectAnswers.length})</h3>
+                    <p style="color: #856404; margin-bottom: 20px;">Review these questions to understand what you got wrong:</p>
+            `;
+
+            incorrectAnswers.forEach((item, index) => {
+                const userAnswerText = item.userAnswer !== null ? item.answers[item.userAnswer] : "No answer selected";
+                const correctAnswerText = item.answers[item.correctAnswer];
+
+                html += `
+                    <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 2px solid #ffc107;">
+                        <div style="font-weight: bold; color: #333; margin-bottom: 10px;">
+                            ${index + 1}. ${item.question}
+                        </div>
+                        <div style="margin-bottom: 8px;">
+                            <span style="color: #dc3545; font-weight: bold;">❌ Your Answer:</span>
+                            <span style="color: #dc3545;">${userAnswerText}</span>
+                        </div>
+                        <div style="margin-bottom: 8px;">
+                            <span style="color: #28a745; font-weight: bold;">✓ Correct Answer:</span>
+                            <span style="color: #28a745;">${correctAnswerText}</span>
+                        </div>
+                        <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                            <div style="font-weight: bold; color: #666; margin-bottom: 5px;">Explanation:</div>
+                            <div style="color: #333; font-size: 14px;">${item.simpleAnswer}</div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += `</div>`;
+            return html;
         }
 
         function generateRecentHistory() {
