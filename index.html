@@ -782,153 +782,6 @@
             color: #856404;
             line-height: 1.6;
         }
-
-        /* Print Button Styles */
-        .print-btn {
-            padding: 8px 16px;
-            background: #28a745;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: bold;
-            transition: all 0.3s;
-            margin-left: 10px;
-        }
-
-        .print-btn:hover {
-            background: #218838;
-            transform: translateY(-2px);
-            box-shadow: 0 3px 10px rgba(40, 167, 69, 0.3);
-        }
-
-        .print-all-btn {
-            padding: 12px 24px;
-            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            transition: all 0.3s;
-            margin: 10px 0;
-            display: inline-block;
-        }
-
-        .print-all-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
-        }
-
-        /* Print Styles */
-        @media print {
-            body {
-                background: white;
-                padding: 0;
-            }
-
-            .container {
-                box-shadow: none;
-                max-width: 100%;
-            }
-
-            .header,
-            .quiz-info,
-            .footer,
-            .nav-buttons,
-            .bookmark-btn,
-            .print-btn,
-            .print-all-btn,
-            .header-buttons,
-            button:not(.no-print) {
-                display: none !important;
-            }
-
-            .question-card {
-                page-break-after: always;
-                margin-bottom: 40px;
-                padding: 20px;
-                border: 2px solid #333;
-            }
-
-            .question-text {
-                font-size: 16px;
-                color: #000;
-                margin-bottom: 20px;
-            }
-
-            .answer-btn {
-                border: 1px solid #333;
-                background: white;
-                color: #000;
-                margin: 10px 0;
-                page-break-inside: avoid;
-            }
-
-            .answer-btn.correct {
-                background: #d4edda !important;
-                border: 2px solid #28a745 !important;
-                font-weight: bold;
-            }
-
-            .explanation,
-            .correct-answer {
-                display: block !important;
-                page-break-inside: avoid;
-                background: white;
-                border: 1px solid #000;
-                color: #000;
-                margin-top: 20px;
-            }
-
-            .explanation-title,
-            .correct-answer-title {
-                color: #000;
-                font-weight: bold;
-            }
-
-            .explanation-text {
-                color: #000;
-            }
-
-            .question-category {
-                background: white;
-                border: 1px solid #000;
-                color: #000;
-            }
-
-            .answer-letter {
-                background: white !important;
-                color: #000 !important;
-                border: 1px solid #000;
-            }
-
-            .answer-btn.correct .answer-letter {
-                background: #28a745 !important;
-                color: white !important;
-            }
-
-            /* Study sheet specific styles */
-            .print-study-sheet {
-                display: block !important;
-            }
-
-            .print-study-sheet h1 {
-                text-align: center;
-                border-bottom: 3px solid #000;
-                padding-bottom: 10px;
-                margin-bottom: 20px;
-            }
-
-            .print-study-sheet .question-item {
-                page-break-inside: avoid;
-                margin-bottom: 30px;
-                padding: 15px;
-                border: 2px solid #333;
-            }
-        }
     </style>
 </head>
 <body>
@@ -4380,6 +4233,916 @@
                 simpleAnswer: "Dispute resolution for value disagreements - When you and insurer disagree on damage amount, neutral appraisers determine the value without going to court.",
                 topic: "Claims & Calculations",
                 difficulty: "hard"
+            },
+
+            // ===== NC P&C EXAM PRACTICE - 100 QUESTIONS (Questions 1-100) =====
+
+            // PROPERTY INSURANCE (Questions 1-30)
+            {
+                question: "Which homeowners policy provides the broadest coverage for both dwelling and personal property?",
+                answers: ["HO-3 Special Form", "HO-4 Renters Policy", "HO-5 Comprehensive Form", "HO-8 Older Home Policy"],
+                correct: 2,
+                explanation: "The HO-5 Comprehensive Form provides the most comprehensive coverage, offering open perils (all-risk) coverage for BOTH the dwelling AND personal property. The HO-3 provides open perils for dwelling but only named perils for personal property. HO-4 is for renters (no dwelling coverage), and HO-8 is for older homes with limited coverage.",
+                simpleAnswer: "HO-5 Comprehensive Form - It covers both dwelling and personal property against all risks except what's specifically excluded.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "An HO-3 policy provides what type of coverage for the dwelling?",
+                answers: ["Named perils only", "Open perils (all-risk)", "No coverage", "Fire and lightning only"],
+                correct: 1,
+                explanation: "The HO-3 Special Form provides open perils (all-risk) coverage for the DWELLING, which means it covers all causes of loss except those specifically excluded. However, personal property under HO-3 is covered on a named perils basis only.",
+                simpleAnswer: "Open perils (all-risk) - The dwelling is covered for all causes of loss except what's specifically excluded in the policy.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "Which homeowners policy is specifically designed for renters?",
+                answers: ["HO-2", "HO-3", "HO-4", "HO-6"],
+                correct: 2,
+                explanation: "The HO-4 Renters Policy (also called Contents Broad Form) is specifically designed for people who rent their residence. It covers personal property and liability but does not cover the dwelling itself since the renter doesn't own it.",
+                simpleAnswer: "HO-4 - This is the Renters Policy that covers your personal belongings and liability but not the building you rent.",
+                topic: "Property Insurance",
+                difficulty: "easy"
+            },
+            {
+                question: "In a standard HO-3 policy, Coverage B (Other Structures) is typically what percentage of Coverage A?",
+                answers: ["5%", "10%", "20%", "50%"],
+                correct: 1,
+                explanation: "Coverage B (Other Structures) is automatically provided at 10% of Coverage A (Dwelling). So if your dwelling is insured for $300,000, you automatically have $30,000 for other structures like detached garages, sheds, or fences.",
+                simpleAnswer: "10% - Other structures are automatically covered for 10% of your dwelling coverage amount.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "Coverage C (Personal Property) in a homeowners policy is typically what percentage of Coverage A?",
+                answers: ["10%", "20%", "50%", "100%"],
+                correct: 2,
+                explanation: "Coverage C (Personal Property) is automatically provided at 50% of Coverage A (Dwelling). So if your dwelling is insured for $300,000, you automatically have $150,000 for personal property. This can be increased if needed.",
+                simpleAnswer: "50% - Personal property is automatically covered for 50% of your dwelling coverage amount.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "Which Coverage under Section II of a homeowners policy pays for bodily injury or property damage to others for which the insured is legally liable?",
+                answers: ["Coverage A", "Coverage C", "Coverage E", "Coverage F"],
+                correct: 2,
+                explanation: "Coverage E - Personal Liability is part of Section II and provides coverage when you are legally liable for bodily injury or property damage to others. Coverage A is dwelling, Coverage C is personal property, and Coverage F is medical payments.",
+                simpleAnswer: "Coverage E - Personal Liability covers you when you're legally responsible for injuring someone or damaging their property.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "Coverage F (Medical Payments to Others) in a homeowners policy typically has a limit of:",
+                answers: ["$500-$1,000 per person", "$1,000-$5,000 per person", "$10,000-$25,000 per person", "$50,000-$100,000 per person"],
+                correct: 1,
+                explanation: "Coverage F typically provides $1,000-$5,000 per person for medical payments to others injured on your property, regardless of fault. This is a no-fault coverage that pays medical expenses for guests injured on your property.",
+                simpleAnswer: "$1,000-$5,000 per person - This pays medical bills for guests injured on your property, regardless of who's at fault.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "Which homeowners policy is designed for condominium owners?",
+                answers: ["HO-3", "HO-4", "HO-5", "HO-6"],
+                correct: 3,
+                explanation: "The HO-6 Condominium Unit-Owners Policy is specifically designed for condo owners. It covers personal property, interior walls/fixtures, improvements/betterments, loss assessment coverage, and liability. The condo association's master policy covers the building structure.",
+                simpleAnswer: "HO-6 - This is the Condo Policy that covers your unit's interior, your belongings, and fills gaps in the association's master policy.",
+                topic: "Property Insurance",
+                difficulty: "easy"
+            },
+            {
+                question: "How many named perils are typically covered in the Broad Form of homeowners insurance?",
+                answers: ["10", "16", "20", "All perils except exclusions"],
+                correct: 1,
+                explanation: "The Broad Form (such as HO-2) typically covers 16 named perils. This includes the 10 basic perils plus 6 additional perils like falling objects, weight of ice/snow/sleet, freezing, and others.",
+                simpleAnswer: "16 - The Broad Form covers 16 specific named perils (10 basic + 6 additional).",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "Which of the following is NOT one of the basic named perils in homeowners insurance?",
+                answers: ["Fire or lightning", "Flood", "Windstorm or hail", "Explosion"],
+                correct: 1,
+                explanation: "Flood is specifically EXCLUDED from homeowners policies and requires separate flood insurance through the National Flood Insurance Program (NFIP) or private insurers. Fire, windstorm, and explosion are all covered perils.",
+                simpleAnswer: "Flood - Flood damage is always excluded from homeowners policies and requires separate flood insurance.",
+                topic: "Property Insurance",
+                difficulty: "easy"
+            },
+            {
+                question: "Actual Cash Value (ACV) is calculated as:",
+                answers: ["Replacement cost plus depreciation", "Replacement cost minus depreciation", "Market value plus appreciation", "Original cost minus 10%"],
+                correct: 1,
+                explanation: "Actual Cash Value = Replacement Cost - Depreciation. For example, if a 10-year-old roof costs $20,000 to replace but has depreciated $8,000, the ACV is $12,000. This reflects the item's value considering age and wear.",
+                simpleAnswer: "Replacement cost minus depreciation - ACV accounts for the item's age and wear by subtracting depreciation from replacement cost.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "A building valued at $400,000 has an 80% coinsurance clause. How much insurance must be carried to avoid a penalty?",
+                answers: ["$200,000", "$300,000", "$320,000", "$400,000"],
+                correct: 2,
+                explanation: "With an 80% coinsurance requirement, you must insure the property for at least 80% of its value. $400,000 × 80% = $320,000. If you carry less than this amount, you'll face a coinsurance penalty at claim time.",
+                simpleAnswer: "$320,000 (80% of $400,000) - You must insure for at least 80% of the property value to avoid penalties.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "A property worth $500,000 is insured for $300,000 with an 80% coinsurance requirement. A $100,000 loss occurs. How much will the insurer pay (before deductible)?",
+                answers: ["$75,000", "$80,000", "$90,000", "$100,000"],
+                correct: 0,
+                explanation: "Coinsurance formula: (Amount Carried ÷ Amount Required) × Loss = Payment. Amount required = $500,000 × 80% = $400,000. Calculation: ($300,000 ÷ $400,000) × $100,000 = 0.75 × $100,000 = $75,000. The insured pays a penalty for being underinsured.",
+                simpleAnswer: "$75,000 - Because the property is underinsured, the coinsurance penalty reduces the payment to 75% of the loss.",
+                topic: "Property Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "Which endorsement waives the coinsurance penalty by agreeing to a predetermined value?",
+                answers: ["Inflation guard", "Agreed value", "Replacement cost", "Functional replacement"],
+                correct: 1,
+                explanation: "The Agreed Value endorsement allows the insured and insurer to agree on the property's value upfront and waive the coinsurance clause. This eliminates the risk of a coinsurance penalty at claim time, as long as adequate premium is paid.",
+                simpleAnswer: "Agreed value - This endorsement sets a predetermined value and eliminates the coinsurance requirement.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "Insurable interest in property insurance must exist:",
+                answers: ["Only at the time of policy inception", "Only at the time of loss", "At both policy inception and time of loss", "Neither time; it's not required"],
+                correct: 2,
+                explanation: "In property insurance, insurable interest must exist at BOTH policy inception AND at the time of loss. You must have a financial stake in the property at both times to collect on a claim. This prevents people from buying insurance on property they don't own.",
+                simpleAnswer: "At both policy inception and time of loss - You must have a financial interest in the property when you buy the policy and when the loss occurs.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "The primary difference between a dwelling policy and a homeowners policy is:",
+                answers: ["Dwelling policies cost more", "Dwelling policies are for non-owner-occupied properties", "Dwelling policies provide broader coverage", "Homeowners policies exclude liability"],
+                correct: 1,
+                explanation: "Dwelling policies are typically used for rental properties, vacation homes, or properties under renovation - not owner-occupied residences. They provide more limited coverage than homeowners policies and may not include theft or liability coverage unless added by endorsement.",
+                simpleAnswer: "Dwelling policies are for non-owner-occupied properties - They're used for rental properties and other properties where the owner doesn't live.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "Which dwelling policy form provides the most limited coverage?",
+                answers: ["DP-1 Basic Form", "DP-2 Broad Form", "DP-3 Special Form", "All provide equal coverage"],
+                correct: 0,
+                explanation: "DP-1 Basic Form provides the most limited coverage with only 10 named perils and coverage on an Actual Cash Value basis. DP-2 Broad Form adds more perils and some replacement cost options. DP-3 Special Form provides open perils coverage for the dwelling.",
+                simpleAnswer: "DP-1 Basic Form - This provides the least coverage with only 10 named perils and ACV settlement.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "In a standard dwelling policy, which coverage is NOT automatically included?",
+                answers: ["Dwelling coverage", "Personal property coverage", "Other structures coverage", "Fair rental value"],
+                correct: 1,
+                explanation: "Personal property coverage is NOT automatically included in a standard dwelling policy and must be added by endorsement. This is because dwelling policies are typically for rental properties where the owner's personal property isn't kept at the property.",
+                simpleAnswer: "Personal property coverage - This must be added by endorsement since dwelling policies assume you don't keep belongings at rental properties.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "A Business Owner's Policy (BOP) combines which two main coverages?",
+                answers: ["Auto and liability", "Property and liability", "Workers compensation and liability", "Property and auto"],
+                correct: 1,
+                explanation: "A BOP is a package policy that combines property insurance and liability insurance for small to medium-sized businesses. It's designed to be more affordable than buying separate commercial property and general liability policies.",
+                simpleAnswer: "Property and liability - A BOP packages property coverage and liability coverage together for small businesses.",
+                topic: "Commercial Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "Which businesses are typically eligible for a BOP?",
+                answers: ["Banks and financial institutions", "Auto repair shops", "Small offices and retail stores", "Bars and nightclubs"],
+                correct: 2,
+                explanation: "BOPs are designed for small to medium-sized businesses with relatively low risk, such as office buildings, retail stores, and small restaurants. High-risk businesses like banks, auto repair shops, and bars are typically ineligible and need customized commercial coverage.",
+                simpleAnswer: "Small offices and retail stores - BOPs are for low-risk small businesses; high-risk operations aren't eligible.",
+                topic: "Commercial Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "The ISO Commercial Property form CP 10 30 provides:",
+                answers: ["Basic named perils", "Broad named perils", "Special (open perils) coverage", "No coverage"],
+                correct: 2,
+                explanation: "CP 10 30 is the Causes of Loss - Special Form, which provides open perils (all-risk) coverage. This means it covers all causes of loss except those specifically excluded. CP 10 10 is Basic Form and CP 10 20 is Broad Form.",
+                simpleAnswer: "Special (open perils) coverage - CP 10 30 covers all risks except what's specifically excluded.",
+                topic: "Commercial Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "In commercial property insurance, debris removal coverage is typically limited to:",
+                answers: ["10% of loss plus $5,000 additional", "25% of loss plus $10,000 additional", "50% of loss plus $25,000 additional", "No limit"],
+                correct: 1,
+                explanation: "Debris removal is typically limited to 25% of the loss payment plus the policy limit for that property, with an additional $10,000 available if the 25% is exhausted. This covers the cost of removing debris from damaged property.",
+                simpleAnswer: "25% of loss plus $10,000 additional - This covers debris removal costs after a covered loss.",
+                topic: "Commercial Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "The National Flood Insurance Program (NFIP) has a typical waiting period of:",
+                answers: ["No waiting period", "15 days", "30 days", "60 days"],
+                correct: 2,
+                explanation: "NFIP flood insurance has a 30-day waiting period from the date of purchase before coverage takes effect. This prevents people from buying flood insurance only when a storm is approaching. Some exceptions apply for newly purchased homes or required lender coverage.",
+                simpleAnswer: "30 days - You must wait 30 days after purchasing NFIP flood insurance before it becomes effective.",
+                topic: "Flood Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "Under the NFIP, the maximum coverage for a residential building is:",
+                answers: ["$100,000", "$250,000", "$500,000", "$1,000,000"],
+                correct: 1,
+                explanation: "The NFIP provides a maximum of $250,000 for residential building coverage and $100,000 for contents coverage. Properties needing higher limits must purchase excess flood insurance from private insurers.",
+                simpleAnswer: "$250,000 - This is the maximum building coverage available through NFIP for residential properties.",
+                topic: "Flood Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "The maximum contents coverage under NFIP residential flood insurance is:",
+                answers: ["$50,000", "$100,000", "$250,000", "$500,000"],
+                correct: 1,
+                explanation: "The NFIP provides a maximum of $100,000 for contents (personal property) coverage in residential properties. Building coverage maximum is $250,000. Both limits can be purchased, providing up to $350,000 total residential flood coverage.",
+                simpleAnswer: "$100,000 - This is the maximum contents coverage available through NFIP for residential properties.",
+                topic: "Flood Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "Earthquake insurance typically has deductibles expressed as:",
+                answers: ["Flat dollar amounts ($500-$2,500)", "Percentages of dwelling coverage (5%-25%)", "No deductibles", "Per-claim amounts"],
+                correct: 1,
+                explanation: "Earthquake insurance deductibles are typically expressed as a percentage of the dwelling coverage amount, ranging from 5% to 25%. So with $300,000 dwelling coverage and a 10% deductible, you'd pay the first $30,000 of any earthquake damage.",
+                simpleAnswer: "Percentages of dwelling coverage (5%-25%) - Earthquake deductibles are much higher than standard deductibles.",
+                topic: "Special Coverages",
+                difficulty: "medium"
+            },
+            {
+                question: "Ordinance or Law coverage pays for:",
+                answers: ["Only the cost to repair damage from covered perils", "Legal fees when sued", "Increased costs to comply with current building codes", "Fines for code violations"],
+                correct: 2,
+                explanation: "Ordinance or Law coverage pays for the increased cost to rebuild property to meet current building codes after a covered loss. For example, if your 1950s home burns down, this coverage pays the extra cost to meet current electrical, plumbing, and structural codes.",
+                simpleAnswer: "Increased costs to comply with current building codes - This covers extra expenses to bring damaged property up to current code standards.",
+                topic: "Property Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "The four essential parts of an insurance policy are:",
+                answers: ["Premium, deductible, limits, exclusions", "Declarations, insuring agreement, conditions, exclusions", "Coverage, exclusions, definitions, endorsements", "Application, binder, policy, renewal"],
+                correct: 1,
+                explanation: "Every insurance policy has four key parts: Declarations (who, what, when, where, how much), Insuring Agreement (the company's promise to pay), Conditions (rules both parties must follow), and Exclusions (what's NOT covered). Remember this as 'DICE'.",
+                simpleAnswer: "Declarations, insuring agreement, conditions, exclusions - These are the four essential parts of any insurance policy (DICE).",
+                topic: "General Insurance Concepts",
+                difficulty: "medium"
+            },
+            {
+                question: "Which standard exclusion in homeowners policies requires separate coverage?",
+                answers: ["Lightning damage", "Theft", "Flood", "Fire"],
+                correct: 2,
+                explanation: "Flood is a standard exclusion in all homeowners policies and requires separate coverage through the National Flood Insurance Program (NFIP) or private flood insurance. Other standard exclusions include earthquake, war, and nuclear hazard.",
+                simpleAnswer: "Flood - Flood damage is always excluded and requires separate flood insurance.",
+                topic: "Property Insurance",
+                difficulty: "easy"
+            },
+            {
+                question: "The liberalization clause in an insurance policy:",
+                answers: ["Allows the insured to cancel at any time", "Automatically provides broader coverage if the insurer improves the form", "Loosens underwriting requirements", "Reduces premiums automatically"],
+                correct: 1,
+                explanation: "The liberalization clause states that if the insurer broadens coverage in their standard policy form without additional premium, all existing policies automatically receive the broader coverage. This protects insureds from missing out on improvements made during their policy period.",
+                simpleAnswer: "Automatically provides broader coverage if the insurer improves the form - You get free upgrades if the insurer improves their standard policy.",
+                topic: "General Insurance Concepts",
+                difficulty: "medium"
+            },
+
+            // CASUALTY/LIABILITY INSURANCE (Questions 31-60)
+            {
+                question: "The Personal Auto Policy (PAP) is divided into how many parts?",
+                answers: ["Three", "Four", "Five", "Six"],
+                correct: 3,
+                explanation: "The PAP has six parts: Part A (Liability), Part B (Medical Payments), Part C (Uninsured Motorists), Part D (Coverage for Damage to Your Auto), Part E (Duties After an Accident or Loss), and Part F (General Provisions).",
+                simpleAnswer: "Six (Parts A through F) - Each part covers different aspects of auto insurance.",
+                topic: "Auto Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "Which part of the Personal Auto Policy is the only mandatory coverage in most states?",
+                answers: ["Part A - Liability Coverage", "Part B - Medical Payments", "Part C - Uninsured Motorist", "Part D - Physical Damage"],
+                correct: 0,
+                explanation: "Part A (Liability Coverage) is mandatory in almost all states with minimum required limits. This protects others from your negligence. The other coverages are optional or required only in some states.",
+                simpleAnswer: "Part A - Liability Coverage - This is required by law in most states to protect others from your negligence.",
+                topic: "Auto Insurance",
+                difficulty: "easy"
+            },
+            {
+                question: "In a PAP with split limits of 50/100/50, the 100 represents:",
+                answers: ["$100,000 bodily injury per person", "$100,000 bodily injury per accident", "$100,000 property damage per accident", "$100,000 total coverage"],
+                correct: 1,
+                explanation: "Split limits are expressed as Bodily Injury per person / Bodily Injury per accident / Property Damage per accident. So 50/100/50 means: $50,000 max per person injured, $100,000 max total for all injuries per accident, $50,000 max for property damage per accident.",
+                simpleAnswer: "$100,000 bodily injury per accident - This is the maximum for all bodily injuries combined in one accident.",
+                topic: "Auto Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "Part D of the Personal Auto Policy covers:",
+                answers: ["Liability to others", "Medical payments", "Physical damage to the insured's vehicle", "Uninsured motorists"],
+                correct: 2,
+                explanation: "Part D provides Coverage for Damage to Your Auto, including both Collision and Other Than Collision (Comprehensive) coverage. This is the only section that covers damage to your own vehicle.",
+                simpleAnswer: "Physical damage to the insured's vehicle - This covers repairs to your car from collision and comprehensive perils.",
+                topic: "Auto Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "Under Part D of the PAP, the insured hits a tree and damages their car. This is covered under:",
+                answers: ["Liability coverage", "Collision coverage", "Other Than Collision (Comprehensive)", "Not covered"],
+                correct: 1,
+                explanation: "Hitting a tree is covered under Collision coverage because it involves the vehicle hitting an object. Collision covers upset (rollover) or impact with another vehicle or object.",
+                simpleAnswer: "Collision coverage - Hitting any object (tree, pole, wall, etc.) is considered collision.",
+                topic: "Auto Insurance",
+                difficulty: "easy"
+            },
+            {
+                question: "Which of the following would be covered under Other Than Collision (Comprehensive) in a PAP?",
+                answers: ["Running into a parked car", "Overturning the vehicle", "Hail damage to the vehicle", "Hitting a telephone pole"],
+                correct: 2,
+                explanation: "Other Than Collision (Comprehensive) covers losses other than collision and upset, such as: theft, fire, vandalism, glass breakage, falling objects, hail, flood, and hitting an animal. All the other options involve impact or upset and are collision.",
+                simpleAnswer: "Hail damage to the vehicle - Comprehensive covers weather, theft, vandalism, and other non-collision perils.",
+                topic: "Auto Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "Under a PAP, a newly acquired vehicle must be reported to the insurer within:",
+                answers: ["7 days", "14 days for collision coverage; 30 days for liability", "30 days", "60 days"],
+                correct: 1,
+                explanation: "A newly acquired vehicle has automatic coverage: Collision and Other Than Collision (Comprehensive) are covered for 14 days if any vehicle on the policy has those coverages. Liability extends for 30 days or until the policy ends, whichever comes first.",
+                simpleAnswer: "14 days for collision coverage; 30 days for liability - You have automatic coverage but must report the vehicle within these timeframes.",
+                topic: "Auto Insurance",
+                difficulty: "hard"
+            },
+            {
+                question: "Medical Payments coverage under a PAP must be claimed within how long after the accident?",
+                answers: ["1 year", "2 years", "3 years", "5 years"],
+                correct: 2,
+                explanation: "Part B (Medical Payments Coverage) provides coverage for medical expenses incurred within 3 years from the date of the accident. This gives injured parties time to discover and treat accident-related injuries.",
+                simpleAnswer: "3 years - You have 3 years from the accident date to submit medical expenses for payment.",
+                topic: "Auto Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "Part C of the PAP provides coverage for:",
+                answers: ["Collision damage", "Liability to third parties", "Uninsured/Underinsured motorists", "Medical payments to the insured"],
+                correct: 2,
+                explanation: "Part C provides Uninsured Motorists (UM) and Underinsured Motorists (UIM) coverage. This protects you when you're injured by a driver who has no insurance or insufficient insurance to cover your damages.",
+                simpleAnswer: "Uninsured/Underinsured motorists - This protects you when hit by drivers with no insurance or not enough insurance.",
+                topic: "Auto Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "Which of the following is excluded under a standard Personal Auto Policy?",
+                answers: ["Permissive use by a friend", "Use by family members", "Commercial delivery use", "Temporary substitute vehicle"],
+                correct: 2,
+                explanation: "Commercial delivery or transportation of goods for a fee is excluded under a personal auto policy. This requires a commercial auto policy. Permissive use, family members, and temporary substitutes are all covered.",
+                simpleAnswer: "Commercial delivery use - Personal auto policies exclude business use; you need commercial coverage for delivery work.",
+                topic: "Auto Insurance",
+                difficulty: "medium"
+            },
+            {
+                question: "To prove negligence, all four of the following elements must be established EXCEPT:",
+                answers: ["Duty", "Breach", "Intent", "Damages"],
+                correct: 2,
+                explanation: "The four elements of negligence are: Duty (owed to another), Breach (of that duty), Causation (breach caused the injury), and Damages (actual harm occurred). Intent is NOT required for negligence - negligence is unintentional.",
+                simpleAnswer: "Intent - Negligence is UNINTENTIONAL. The four elements are Duty, Breach, Causation, and Damages.",
+                topic: "Liability Concepts",
+                difficulty: "medium"
+            },
+            {
+                question: "Under comparative negligence, if a plaintiff is 30% at fault and has $100,000 in damages, they can recover:",
+                answers: ["Nothing", "$30,000", "$70,000", "$100,000"],
+                correct: 2,
+                explanation: "Under comparative negligence, the plaintiff's recovery is reduced by their percentage of fault. $100,000 - (30% × $100,000) = $100,000 - $30,000 = $70,000. Most states use this fairer approach rather than contributory negligence.",
+                simpleAnswer: "$70,000 - Their damages are reduced by their 30% share of fault: $100,000 - $30,000 = $70,000.",
+                topic: "Liability Concepts",
+                difficulty: "medium"
+            },
+            {
+                question: "Under contributory negligence (minority rule), if the plaintiff contributed to their injury in any way:",
+                answers: ["Damages are reduced proportionally", "The plaintiff is completely barred from recovery", "Only medical expenses can be recovered", "The defendant pays 50% of damages"],
+                correct: 1,
+                explanation: "Under the harsh contributory negligence rule (used in only a few states including NC), if the plaintiff is even 1% at fault, they recover NOTHING. This all-or-nothing approach has been replaced by comparative negligence in most states.",
+                simpleAnswer: "The plaintiff is completely barred from recovery - Even 1% fault = zero recovery. Only a few states still use this harsh rule.",
+                topic: "Liability Concepts",
+                difficulty: "medium"
+            },
+            {
+                question: "Vicarious liability means:",
+                answers: ["One party is held liable for the acts of another", "Both parties share equal fault", "No one is liable", "Only intentional acts are covered"],
+                correct: 0,
+                explanation: "Vicarious liability holds one party responsible for the actions of another, even though they didn't directly cause the harm. Common examples: employer liable for employee acts, parent liable for child's acts, vehicle owner liable for driver's acts.",
+                simpleAnswer: "One party is held liable for the acts of another - Like an employer being responsible for their employee's actions.",
+                topic: "Liability Concepts",
+                difficulty: "medium"
+            },
+            {
+                question: "The legal doctrine of 'respondeat superior' means:",
+                answers: ["The employer is liable for employee acts within the scope of employment", "Employees are always personally liable", "Supervisors must respond to lawsuits", "Superior products have no liability"],
+                correct: 0,
+                explanation: "'Respondeat superior' (Latin for 'let the master answer') makes employers vicariously liable for employee actions taken within the scope of employment. This encourages employers to hire carefully, train properly, and supervise adequately.",
+                simpleAnswer: "The employer is liable for employee acts within the scope of employment - Employers answer for their employees' work-related negligence.",
+                topic: "Liability Concepts",
+                difficulty: "medium"
+            },
+            {
+                question: "A Commercial General Liability (CGL) policy has how many main coverage sections?",
+                answers: ["Two", "Three", "Four", "Five"],
+                correct: 1,
+                explanation: "A CGL has three main coverage sections: Coverage A (Bodily Injury and Property Damage Liability), Coverage B (Personal and Advertising Injury Liability), and Coverage C (Medical Payments). Each serves a different purpose.",
+                simpleAnswer: "Three - Coverage A (BI/PD), Coverage B (Personal/Advertising Injury), Coverage C (Medical Payments).",
+                topic: "Commercial Liability",
+                difficulty: "medium"
+            },
+            {
+                question: "Which of the following is NOT one of the four major liability exposures covered by a CGL?",
+                answers: ["Premises and Operations", "Products Liability", "Professional Liability", "Completed Operations"],
+                correct: 2,
+                explanation: "The four CGL exposures are: Premises and Operations, Products Liability, Completed Operations, and Contractual Liability. Professional Liability (Errors & Omissions) requires a separate professional liability policy.",
+                simpleAnswer: "Professional Liability - This requires a separate E&O policy; it's not covered by CGL.",
+                topic: "Commercial Liability",
+                difficulty: "medium"
+            },
+            {
+                question: "A customer slips and falls in a retail store. This is an example of which CGL exposure?",
+                answers: ["Products liability", "Completed operations", "Premises and operations", "Contractual liability"],
+                correct: 2,
+                explanation: "Premises and Operations covers bodily injury or property damage arising from the condition of your premises or your ongoing business operations. A slip and fall in your store is a classic premises liability claim.",
+                simpleAnswer: "Premises and operations - This covers injuries occurring on your business property or during business operations.",
+                topic: "Commercial Liability",
+                difficulty: "easy"
+            },
+            {
+                question: "A defective product causes injury after it has been sold and left the manufacturer's control. This is covered under:",
+                answers: ["Premises liability", "Products liability", "Completed operations", "Not covered by CGL"],
+                correct: 1,
+                explanation: "Products Liability covers bodily injury or property damage arising from goods or products you manufacture, sell, handle, or distribute after they leave your possession. A defective product injuring someone after sale is a products liability claim.",
+                simpleAnswer: "Products liability - This covers injuries caused by your products after they've been sold and left your control.",
+                topic: "Commercial Liability",
+                difficulty: "medium"
+            },
+            {
+                question: "Coverage B of a CGL policy covers:",
+                answers: ["Bodily injury only", "Property damage only", "Personal and advertising injury", "Auto liability"],
+                correct: 2,
+                explanation: "Coverage B covers Personal and Advertising Injury, including offenses like: false arrest, malicious prosecution, wrongful eviction, libel, slander, invasion of privacy, copyright infringement in your advertising, and misappropriation of advertising ideas.",
+                simpleAnswer: "Personal and advertising injury - This covers offenses like libel, slander, false arrest, copyright infringement in ads, etc.",
+                topic: "Commercial Liability",
+                difficulty: "medium"
+            },
+            {
+                question: "Which of the following is typically excluded from a CGL policy?",
+                answers: ["Bodily injury to customers", "Property damage to third parties", "Employee injuries", "Products liability"],
+                correct: 2,
+                explanation: "Employee injuries are excluded from CGL and must be covered by Workers Compensation insurance. CGL covers third parties (customers, vendors, the public), not your own employees.",
+                simpleAnswer: "Employee injuries - Employees need Workers Compensation, not CGL coverage.",
+                topic: "Commercial Liability",
+                difficulty: "medium"
+            },
+            {
+                question: "An occurrence-based CGL policy covers claims:",
+                answers: ["Only if reported during the policy period", "For incidents occurring during the policy period, regardless of when reported", "For one year after policy expiration", "Only for pre-existing conditions"],
+                correct: 1,
+                explanation: "An occurrence policy covers incidents that OCCUR during the policy period, even if the claim is filed years later. This contrasts with claims-made policies, which require both the occurrence AND the claim to happen during the policy period.",
+                simpleAnswer: "For incidents occurring during the policy period, regardless of when reported - You're covered even if sued years later.",
+                topic: "Commercial Liability",
+                difficulty: "medium"
+            },
+            {
+                question: "Workers Compensation insurance consists of how many parts?",
+                answers: ["Two", "Four", "Six", "Eight"],
+                correct: 2,
+                explanation: "Workers Compensation consists of six parts: Part One (Workers Compensation), Part Two (Employers Liability), Part Three (Other States Insurance), Part Four (Your Duties If Injury Occurs), Part Five (Premium), and Part Six (Conditions).",
+                simpleAnswer: "Six - Parts One through Six cover statutory benefits, employers liability, other states, duties, premium, and conditions.",
+                topic: "Workers Compensation",
+                difficulty: "medium"
+            },
+            {
+                question: "Part 1 of a Workers Compensation policy provides:",
+                answers: ["Employers liability coverage", "Statutory benefits per state law", "Professional liability", "General liability"],
+                correct: 1,
+                explanation: "Part One provides statutory Workers Compensation benefits as required by state law, including: medical care, disability income, vocational rehabilitation, and death benefits. Benefits and amounts are determined by state law, not the policy.",
+                simpleAnswer: "Statutory benefits per state law - This provides the legally required workers comp benefits in your state.",
+                topic: "Workers Compensation",
+                difficulty: "medium"
+            },
+            {
+                question: "The 'exclusive remedy' doctrine in Workers Compensation means:",
+                answers: ["Employers can sue employees", "Employees cannot sue employers for workplace injuries", "Only one type of injury is covered", "Coverage is optional"],
+                correct: 1,
+                explanation: "The exclusive remedy doctrine means Workers Compensation is the ONLY remedy employees have for workplace injuries - they cannot sue their employer in civil court. In exchange, employees get guaranteed benefits regardless of fault.",
+                simpleAnswer: "Employees cannot sue employers for workplace injuries - Workers Comp is their only remedy; they give up the right to sue.",
+                topic: "Workers Compensation",
+                difficulty: "medium"
+            },
+            {
+                question: "Workers Compensation typically pays what percentage of an employee's average weekly wage for disability?",
+                answers: ["50%", "60%", "66⅔%", "100%"],
+                correct: 2,
+                explanation: "Workers Compensation typically pays 66⅔% (two-thirds) of the employee's average weekly wage for temporary or permanent disability, subject to state minimums and maximums. This balances adequate support with incentive to return to work.",
+                simpleAnswer: "66⅔% (two-thirds) - Employees receive about two-thirds of their average wage for work-related disabilities.",
+                topic: "Workers Compensation",
+                difficulty: "medium"
+            },
+            {
+                question: "Part 2 of a Workers Compensation policy provides:",
+                answers: ["Statutory WC benefits", "Employers Liability coverage", "General liability", "Property coverage"],
+                correct: 1,
+                explanation: "Part Two provides Employers Liability coverage, which protects employers from lawsuits outside the Workers Compensation system, such as: third-party over actions, dual capacity suits, loss of consortium claims by spouses, and claims in states without exclusive remedy.",
+                simpleAnswer: "Employers Liability coverage - This protects against employee lawsuits that fall outside the WC system.",
+                topic: "Workers Compensation",
+                difficulty: "medium"
+            },
+            {
+                question: "Standard Employers Liability limits in a Workers Compensation policy are typically:",
+                answers: ["50/100/50", "100/300/100", "100/500/100", "500/500/500"],
+                correct: 2,
+                explanation: "Standard Employers Liability limits are 100/500/100: $100,000 per accident, $500,000 disease policy limit (aggregate), $100,000 disease per employee. These limits apply to Part Two (Employers Liability), not Part One (statutory WC benefits, which have no limit).",
+                simpleAnswer: "100/500/100 - $100K per accident, $500K disease policy limit, $100K disease per employee.",
+                topic: "Workers Compensation",
+                difficulty: "hard"
+            },
+            {
+                question: "A Business Owner's Policy (BOP) is designed for:",
+                answers: ["Large corporations", "Small to medium-sized businesses", "Fortune 500 companies", "Government entities"],
+                correct: 1,
+                explanation: "BOPs are specifically designed and priced for small to medium-sized businesses with standard risks. They package property and liability coverage together at a lower cost than buying separate policies. Large corporations need customized commercial policies.",
+                simpleAnswer: "Small to medium-sized businesses - BOPs offer packaged coverage at affordable rates for smaller operations.",
+                topic: "Commercial Insurance",
+                difficulty: "easy"
+            },
+            {
+                question: "Which of the following businesses would typically be ineligible for a BOP?",
+                answers: ["Retail store", "Office building", "Auto repair shop", "Restaurant"],
+                correct: 2,
+                explanation: "Auto repair shops, auto dealerships, banks, bars, and other high-risk or specialized businesses are typically ineligible for BOPs. They need customized commercial coverage. BOPs are for standard, lower-risk businesses like offices, retail stores, and small restaurants.",
+                simpleAnswer: "Auto repair shop - High-risk businesses like auto shops need customized commercial policies, not BOPs.",
+                topic: "Commercial Insurance",
+                difficulty: "medium"
+            },
+
+            // NORTH CAROLINA LAWS AND REGULATIONS (Questions 61-85)
+            {
+                question: "Effective October 1, 2025, North Carolina requires how many hours of pre-licensing education for P&C insurance?",
+                answers: ["20 hours", "30 hours", "40 hours", "Pre-licensing education is no longer required"],
+                correct: 3,
+                explanation: "As of October 1, 2025, North Carolina eliminated the pre-licensing education requirement for insurance producers. Candidates can go directly to taking the licensing exam without completing classroom hours. However, passing the exam and meeting other requirements (fingerprints, background check) are still required.",
+                simpleAnswer: "Pre-licensing education is no longer required - NC eliminated this requirement effective October 1, 2025.",
+                topic: "NC Licensing",
+                difficulty: "medium"
+            },
+            {
+                question: "Resident producers applying for an initial North Carolina insurance license must:",
+                answers: ["Submit fingerprints for a criminal background check", "Have a college degree", "Work for an insurance company first", "Be at least 25 years old"],
+                correct: 0,
+                explanation: "All resident producer applicants must submit fingerprints for a criminal background check. This helps protect consumers by identifying individuals with criminal histories that might make them unsuitable for insurance licensing.",
+                simpleAnswer: "Submit fingerprints for a criminal background check - This is required for all initial resident producer applications.",
+                topic: "NC Licensing",
+                difficulty: "medium"
+            },
+            {
+                question: "Non-resident producers applying for a North Carolina license must:",
+                answers: ["Submit fingerprints", "Complete NC-specific pre-licensing education", "Maintain their home state license in good standing", "Live in North Carolina part-time"],
+                correct: 2,
+                explanation: "Under reciprocity rules, non-resident producers must maintain an active license in good standing in their home state. North Carolina then grants a non-resident license without requiring the exam (if home state has reciprocity) or additional education.",
+                simpleAnswer: "Maintain their home state license in good standing - Reciprocity allows non-residents to get NC licenses based on their home state license.",
+                topic: "NC Licensing",
+                difficulty: "medium"
+            },
+            {
+                question: "North Carolina producer licenses are:",
+                answers: ["Valid for one year", "Valid for two years", "Valid for five years", "Perpetual (do not expire if CE is completed)"],
+                correct: 3,
+                explanation: "North Carolina producer licenses are perpetual (do not have an expiration date) as long as the producer completes continuing education requirements on time. If CE is not completed, the license becomes inactive.",
+                simpleAnswer: "Perpetual (do not expire if CE is completed) - Your license stays active forever as long as you keep up with CE requirements.",
+                topic: "NC Licensing",
+                difficulty: "medium"
+            },
+            {
+                question: "How many hours of continuing education must North Carolina resident P&C producers complete every two years?",
+                answers: ["12 hours", "18 hours", "24 hours", "30 hours"],
+                correct: 2,
+                explanation: "North Carolina requires 24 hours of continuing education every two years for resident P&C producers. This includes 3 hours of Ethics and 3 hours of Flood Insurance training (every other compliance period).",
+                simpleAnswer: "24 hours - This must be completed every two years to keep your license active.",
+                topic: "NC Continuing Education",
+                difficulty: "medium"
+            },
+            {
+                question: "Of the 24 hours of CE required in North Carolina, how many hours must be in Ethics?",
+                answers: ["None required", "1 hour", "3 hours", "6 hours"],
+                correct: 2,
+                explanation: "North Carolina requires 3 hours of Ethics training as part of the 24-hour CE requirement every two years. Ethics training must be approved by the NC Department of Insurance.",
+                simpleAnswer: "3 hours - Ethics training is required every compliance period as part of your 24 CE hours.",
+                topic: "NC Continuing Education",
+                difficulty: "medium"
+            },
+            {
+                question: "North Carolina P&C producers must complete flood insurance training:",
+                answers: ["Every compliance period", "In the first compliance period, then every other period (every 4 years)", "Only once", "It is not required"],
+                correct: 1,
+                explanation: "Flood insurance training (3 hours) is required in the first compliance period after initial licensing, then every other compliance period after that (every 4 years total). This helps producers stay current on NFIP rules.",
+                simpleAnswer: "In the first compliance period, then every other period (every 4 years) - You take it in your first CE period, skip one, then take it again.",
+                topic: "NC Continuing Education",
+                difficulty: "hard"
+            },
+            {
+                question: "Flood insurance training in North Carolina requires:",
+                answers: ["1 hour", "3 hours", "6 hours", "8 hours"],
+                correct: 1,
+                explanation: "North Carolina requires 3 hours of flood insurance training every other compliance period (every 4 years). This training must be approved by the NC Department of Insurance and covers NFIP rules and requirements.",
+                simpleAnswer: "3 hours - Flood training is 3 hours and must be taken every 4 years.",
+                topic: "NC Continuing Education",
+                difficulty: "medium"
+            },
+            {
+                question: "A producer born in May 1988 must complete their CE requirements by:",
+                answers: ["May 31st of every even year", "May 31st of every odd year", "December 31st of every even year", "December 31st of every odd year"],
+                correct: 0,
+                explanation: "CE compliance dates are based on birth year and birth month. Those born in even years (like 1988) comply by their birth month in even years. Born in 1988 in May = May 31st of every even year (2024, 2026, 2028, etc.).",
+                simpleAnswer: "May 31st of every even year - Even birth year = even compliance year, by your birth month.",
+                topic: "NC Continuing Education",
+                difficulty: "hard"
+            },
+            {
+                question: "If a North Carolina producer fails to complete CE by their compliance date, they have a grace period of:",
+                answers: ["30 days", "60 days", "90 days", "120 days"],
+                correct: 3,
+                explanation: "North Carolina provides a 120-day grace period (4 months) after the compliance date to complete CE. During this time, the producer can still conduct business. After 120 days, the license becomes inactive until CE is completed.",
+                simpleAnswer: "120 days - You have 4 months after your compliance date to finish CE before your license goes inactive.",
+                topic: "NC Continuing Education",
+                difficulty: "medium"
+            },
+            {
+                question: "Non-resident producers licensed in North Carolina must:",
+                answers: ["Complete North Carolina's CE requirements", "Complete their home state's CE requirements", "Complete both NC and home state requirements", "Complete no CE requirements"],
+                correct: 1,
+                explanation: "Non-resident producers satisfy North Carolina's CE requirements by completing the CE requirements of their home state. North Carolina accepts home state CE compliance under reciprocity rules.",
+                simpleAnswer: "Complete their home state's CE requirements - NC accepts your home state CE under reciprocity.",
+                topic: "NC Continuing Education",
+                difficulty: "medium"
+            },
+            {
+                question: "An insurance producer offers to share their commission with a client as an inducement to purchase a policy. This practice is:",
+                answers: ["Acceptable marketing", "Illegal rebating", "Legal if disclosed", "Required by law"],
+                correct: 1,
+                explanation: "Rebating is offering anything of value not specified in the policy as an inducement to purchase insurance. This includes sharing commissions, giving gifts, or paying part of the premium. It's illegal because it creates unfair discrimination - not all insureds get the same deal.",
+                simpleAnswer: "Illegal rebating - Offering kickbacks, gifts, or commission sharing to induce purchases is prohibited.",
+                topic: "NC Unfair Trade Practices",
+                difficulty: "easy"
+            },
+            {
+                question: "Which of the following would NOT be considered illegal rebating in North Carolina?",
+                answers: ["Giving the client a $50 gift card", "Offering to pay part of the premium", "Giving the client a calendar with the agency's name", "Sharing commission with the client"],
+                correct: 2,
+                explanation: "Promotional items of nominal value (under $10-$25 depending on interpretation) with the agency's name/logo, like calendars, pens, or notepads, are considered advertising, not rebating. However, substantial gifts, gift cards, cash, or commission sharing are illegal rebating.",
+                simpleAnswer: "Giving the client a calendar with the agency's name - Inexpensive promotional items are advertising, not rebating.",
+                topic: "NC Unfair Trade Practices",
+                difficulty: "medium"
+            },
+            {
+                question: "A producer willfully misrepresents a policy's terms to convince a client to replace their existing coverage. This is called:",
+                answers: ["Rebating", "Twisting", "Defamation", "Coercion"],
+                correct: 1,
+                explanation: "Twisting is making misrepresentations to induce a policyholder to lapse, forfeit, or replace existing coverage with a new policy. It's particularly harmful because it may result in loss of benefits, new contestability periods, and higher premiums for the consumer.",
+                simpleAnswer: "Twisting - Making false statements to convince someone to replace existing coverage is twisting.",
+                topic: "NC Unfair Trade Practices",
+                difficulty: "medium"
+            },
+            {
+                question: "Making false statements about a competitor's financial condition that are calculated to injure their business is:",
+                answers: ["Misrepresentation", "Twisting", "Defamation", "Unfair discrimination"],
+                correct: 2,
+                explanation: "Defamation is making false, malicious, or derogatory statements about the financial condition of an insurer or about the business practices of another agent/company that are calculated to injure their business. This protects competition and consumers.",
+                simpleAnswer: "Defamation - Making false statements to damage a competitor's reputation or business is defamation.",
+                topic: "NC Unfair Trade Practices",
+                difficulty: "medium"
+            },
+            {
+                question: "Under North Carolina law, rebating is prohibited because it:",
+                answers: ["Costs insurers too much money", "Creates unfair discrimination among insureds", "Is too complicated to administer", "Reduces agent commissions"],
+                correct: 1,
+                explanation: "Rebating is prohibited because it creates unfair discrimination - different insureds pay different effective prices for the same coverage based on their negotiating ability or relationship with the agent, not based on their risk. Insurance rates should be fair and equitable.",
+                simpleAnswer: "Creates unfair discrimination among insureds - Everyone should pay rates based on their risk, not on whether they negotiated kickbacks.",
+                topic: "NC Unfair Trade Practices",
+                difficulty: "medium"
+            },
+            {
+                question: "Refusing to write homeowners insurance solely based on the geographic location of a property (without other risk factors) is:",
+                answers: ["Legal and acceptable", "A sound underwriting practice", "Unfair discrimination", "Required by state law"],
+                correct: 2,
+                explanation: "Refusing coverage based solely on geographic location (redlining) without considering actual risk factors is unfair discrimination. While location can be a rating factor if it correlates with actual loss experience, blanket refusals based on neighborhood, ZIP code, or area are prohibited.",
+                simpleAnswer: "Unfair discrimination - Refusing coverage based solely on location without assessing actual risk is illegal redlining.",
+                topic: "NC Unfair Trade Practices",
+                difficulty: "medium"
+            },
+            {
+                question: "An insurer denies a claim but fails to explain which policy provisions apply to the claim facts. This violates:",
+                answers: ["Fair claim settlement practices", "Rebating laws", "Twisting prohibitions", "Privacy laws"],
+                correct: 0,
+                explanation: "Under G.S. 58-63-15(11), unfair claim settlement practices include failing to provide reasonable explanations for claim denials. Insurers must reference the specific policy provisions, conditions, or exclusions on which the denial is based.",
+                simpleAnswer: "Fair claim settlement practices - Insurers must explain which policy provisions justify a claim denial.",
+                topic: "NC Unfair Trade Practices",
+                difficulty: "medium"
+            },
+            {
+                question: "Which of the following is a ground for license suspension or revocation in North Carolina?",
+                answers: ["Failing to meet sales quotas", "Charging too little commission", "Misappropriating funds", "Taking too many vacations"],
+                correct: 2,
+                explanation: "Misappropriation or conversion of funds (premiums, claims, refunds) is a serious violation that will result in license revocation. Other grounds include fraud, misrepresentation, incompetence, untrustworthiness, dishonest practices, and violating insurance laws.",
+                simpleAnswer: "Misappropriating funds - Stealing or misusing premiums or claim funds will get your license revoked.",
+                topic: "NC Licensing",
+                difficulty: "easy"
+            },
+            {
+                question: "Using unauthorized notes during the North Carolina licensing examination is:",
+                answers: ["Acceptable if not caught", "Grounds for license denial or revocation", "Only a minor infraction", "Not addressed in regulations"],
+                correct: 1,
+                explanation: "Cheating on the licensing examination, including using unauthorized notes or materials, is grounds for license denial, suspension, or revocation. The NC Department of Insurance takes exam integrity seriously and will prosecute violations.",
+                simpleAnswer: "Grounds for license denial or revocation - Cheating on the exam will prevent you from getting licensed or get your license revoked.",
+                topic: "NC Licensing",
+                difficulty: "easy"
+            },
+            {
+                question: "When an insurance applicant pays a premium to a licensed producer, this payment is considered:",
+                answers: ["Invalid until received by the company", "Valid payment to the insurance company", "A loan to the producer", "Not legally binding"],
+                correct: 1,
+                explanation: "Under agency law, a licensed producer acts as the insurer's agent for receiving premiums. Payment to the producer is considered payment to the insurer, and coverage attaches. This protects consumers if the producer fails to forward the premium.",
+                simpleAnswer: "Valid payment to the insurance company - Paying your agent is the same as paying the insurance company directly.",
+                topic: "NC Insurance Law",
+                difficulty: "medium"
+            },
+            {
+                question: "Acting as an insurance producer in North Carolina without a valid license is:",
+                answers: ["A civil infraction", "A Class 1 misdemeanor", "A felony", "Not illegal if unintentional"],
+                correct: 1,
+                explanation: "Under G.S. 58-33-120, acting as an insurance producer without a valid license is a Class 1 misdemeanor, punishable by criminal penalties including fines and potential jail time. This protects consumers from unqualified or unscrupulous individuals.",
+                simpleAnswer: "A Class 1 misdemeanor - Selling insurance without a license is a criminal offense.",
+                topic: "NC Insurance Law",
+                difficulty: "medium"
+            },
+            {
+                question: "The North Carolina Insurance Guaranty Association (NCIGA) provides a maximum of how much coverage per individual?",
+                answers: ["$100,000", "$250,000", "$300,000", "$500,000"],
+                correct: 2,
+                explanation: "NCIGA provides a maximum of $300,000 per covered claim (combining all policy types) when an insurer becomes insolvent. Specific limits apply: $300,000 for property, $300,000 for liability, $100,000 for workers compensation, etc., but the total per person is capped at $300,000.",
+                simpleAnswer: "$300,000 - NCIGA pays up to $300,000 total per individual when an insurer goes insolvent.",
+                topic: "NC Insurance Guaranty Association",
+                difficulty: "medium"
+            },
+            {
+                question: "The purpose of the North Carolina Insurance Guaranty Association is to:",
+                answers: ["Provide insurance to high-risk properties", "Regulate insurance rates", "Protect policyholders when an insurer becomes insolvent", "License insurance producers"],
+                correct: 2,
+                explanation: "NCIGA is a safety net that pays covered claims and continues coverage when a property/casualty insurer licensed in NC becomes insolvent and cannot pay claims. It's funded by assessments on insurers and provides limited protection to policyholders.",
+                simpleAnswer: "Protect policyholders when an insurer becomes insolvent - NCIGA steps in to pay claims when an insurance company goes bankrupt.",
+                topic: "NC Insurance Guaranty Association",
+                difficulty: "easy"
+            },
+            {
+                question: "Insurance producers in North Carolina:",
+                answers: ["Must advertise NCIGA coverage when selling policies", "Should mention NCIGA coverage as a selling point", "Cannot advertise NCIGA coverage as a selling point", "Are required to sell NCIGA policies"],
+                correct: 2,
+                explanation: "Producers are prohibited from using the existence of NCIGA as a selling point or advertising that an insurer is protected by NCIGA. This prevents consumers from making purchase decisions based on guaranty fund protection rather than insurer quality.",
+                simpleAnswer: "Cannot advertise NCIGA coverage as a selling point - Don't tell clients to buy from weak insurers because NCIGA will protect them.",
+                topic: "NC Insurance Guaranty Association",
+                difficulty: "medium"
+            },
+
+            // GENERAL INSURANCE CONCEPTS AND OPERATIONS (Questions 86-100)
+            {
+                question: "The four essential elements of a legal insurance contract are:",
+                answers: ["Premium, coverage, exclusions, conditions", "Offer and acceptance, consideration, competent parties, legal purpose", "Application, underwriting, policy, claims", "Insured, insurer, agent, premium"],
+                correct: 1,
+                explanation: "Like any legal contract, an insurance contract requires: (1) Offer and Acceptance (one party offers, other accepts), (2) Consideration (premiums from insured, promise to pay from insurer), (3) Competent Parties (legal capacity to contract), and (4) Legal Purpose (insuring legal interests, not illegal activities).",
+                simpleAnswer: "Offer and acceptance, consideration, competent parties, legal purpose - These four elements make any contract legally binding.",
+                topic: "General Insurance Concepts",
+                difficulty: "medium"
+            },
+            {
+                question: "Pure risk differs from speculative risk in that pure risk:",
+                answers: ["Has potential for gain or loss", "Only has potential for loss or no loss", "Is more profitable", "Cannot be insured"],
+                correct: 1,
+                explanation: "Pure risk has only two outcomes: loss or no loss (never gain). Examples: house fire, car theft, illness. Insurance ONLY covers pure risks. Speculative risk has three outcomes: loss, no change, or gain (like investing, gambling). Insurance never covers speculative risks.",
+                simpleAnswer: "Only has potential for loss or no loss - Pure risks can only hurt you or leave you unchanged; you can never profit from them.",
+                topic: "General Insurance Concepts",
+                difficulty: "easy"
+            },
+            {
+                question: "The principle of indemnity means:",
+                answers: ["The insured can profit from a loss", "The insured is restored to their pre-loss financial position", "All losses are fully covered", "Premiums are returned if no claims"],
+                correct: 1,
+                explanation: "Indemnity means 'to make whole' - restoring the insured to their financial position just before the loss, no better, no worse. You can't profit from insurance. This prevents moral hazard (intentionally causing losses for profit). Life insurance is an exception (valued policy, not indemnity).",
+                simpleAnswer: "The insured is restored to their pre-loss financial position - Insurance makes you whole again but doesn't let you profit.",
+                topic: "General Insurance Concepts",
+                difficulty: "medium"
+            },
+            {
+                question: "Subrogation is:",
+                answers: ["The insured's right to sue the insurer", "The insurer's right to recover from a negligent third party after paying a claim", "The process of canceling a policy", "The agent's right to commission"],
+                correct: 1,
+                explanation: "Subrogation allows the insurer to 'step into the shoes' of the insured after paying a claim and pursue recovery from the negligent third party. Example: Your insurer pays your claim for damage caused by your neighbor, then sues your neighbor to recover. This helps keep premiums lower.",
+                simpleAnswer: "The insurer's right to recover from a negligent third party after paying a claim - The insurer steps into your shoes and goes after whoever caused your loss.",
+                topic: "General Insurance Concepts",
+                difficulty: "medium"
+            },
+            {
+                question: "A stock insurance company is owned by:",
+                answers: ["Policyholders", "Stockholders/shareholders", "The government", "Insurance agents"],
+                correct: 1,
+                explanation: "Stock insurers are owned by stockholders/shareholders who invest capital and expect dividends and capital appreciation. Management's primary duty is to shareholders. Profits go to shareholders as dividends. Examples: State Farm was a mutual but most large insurers today are stock companies.",
+                simpleAnswer: "Stockholders/shareholders - These for-profit companies are owned by investors expecting returns.",
+                topic: "Insurance Operations",
+                difficulty: "easy"
+            },
+            {
+                question: "A mutual insurance company is owned by:",
+                answers: ["Stockholders", "The state government", "Policyholders", "Insurance agents"],
+                correct: 2,
+                explanation: "Mutual insurers are owned by policyholders. When you buy a policy, you become a part-owner. Profits are returned to policyholders as dividends or used to reduce future premiums. Management's primary duty is to policyholders. Examples: many small regional insurers and some large ones.",
+                simpleAnswer: "Policyholders - When you buy a policy from a mutual insurer, you become a part-owner.",
+                topic: "Insurance Operations",
+                difficulty: "easy"
+            },
+            {
+                question: "Reinsurance is:",
+                answers: ["Canceling and reissuing a policy", "Insurance for insurance companies", "Secondary coverage for insureds", "Renewing an expired policy"],
+                correct: 1,
+                explanation: "Reinsurance is insurance that insurance companies buy to protect themselves. The reinsurer assumes some or all of the risk from the primary insurer (ceding company). This allows insurers to write larger policies, stabilize results, and protect against catastrophic losses.",
+                simpleAnswer: "Insurance for insurance companies - Insurers buy reinsurance to protect themselves from large losses.",
+                topic: "Insurance Operations",
+                difficulty: "easy"
+            },
+            {
+                question: "The primary purpose of reinsurance is to:",
+                answers: ["Lower premiums for consumers", "Increase agent commissions", "Allow insurers to accept larger risks and stabilize results", "Eliminate all risk"],
+                correct: 2,
+                explanation: "Reinsurance serves multiple purposes: (1) Increase capacity to write larger policies, (2) Stabilize loss experience year-to-year, (3) Protect against catastrophic events, (4) Provide surplus relief, (5) Enable entering new markets. It helps insurers manage risk and stay solvent.",
+                simpleAnswer: "Allow insurers to accept larger risks and stabilize results - Reinsurance helps insurers manage risk and stay financially strong.",
+                topic: "Insurance Operations",
+                difficulty: "medium"
+            },
+            {
+                question: "The primary purpose of underwriting is to:",
+                answers: ["Sell as many policies as possible", "Evaluate, select, and price risks appropriately", "Deny all high-risk applicants", "Maximize premiums"],
+                correct: 1,
+                explanation: "Underwriting evaluates each risk to determine: (1) Should we accept this risk? (2) At what premium? (3) With what conditions/exclusions? The goal is to create a profitable, balanced book of business where premiums collected adequately cover claims paid plus expenses and profit.",
+                simpleAnswer: "Evaluate, select, and price risks appropriately - Underwriters ensure risks are properly assessed and fairly priced.",
+                topic: "Insurance Operations",
+                difficulty: "medium"
+            },
+            {
+                question: "COPE in underwriting stands for:",
+                answers: ["Coverage, Occupancy, Premium, Exclusions", "Construction, Occupancy, Protection, Exposure", "Claims, Operations, Pricing, Evaluation", "Competence, Organization, Performance, Efficiency"],
+                correct: 1,
+                explanation: "COPE is a property underwriting framework: Construction (frame, brick, concrete?), Occupancy (how is building used?), Protection (sprinklers, fire station distance, alarms?), Exposure (neighboring properties, natural hazards?). These factors determine the property's risk level and appropriate premium.",
+                simpleAnswer: "Construction, Occupancy, Protection, Exposure - These four factors help underwriters evaluate property risks.",
+                topic: "Insurance Operations",
+                difficulty: "medium"
+            },
+            {
+                question: "The first step in the claims handling process is:",
+                answers: ["Payment", "Investigation", "Notice of loss", "Settlement negotiation"],
+                correct: 2,
+                explanation: "The claims process starts with Notice of Loss - the insured must notify the insurer of a loss promptly (typically immediately or as soon as practical). Then comes: acknowledgment, investigation, evaluation, negotiation, settlement, and payment or denial.",
+                simpleAnswer: "Notice of loss - You must first notify your insurer that a loss has occurred.",
+                topic: "Claims Handling",
+                difficulty: "easy"
+            },
+            {
+                question: "An insurance contract is considered 'aleatory' because:",
+                answers: ["Both parties make equal contributions", "There is an unequal exchange of value depending on chance", "It can be assigned freely", "It has no monetary value"],
+                correct: 1,
+                explanation: "Aleatory means the exchange of value is unequal and depends on chance. You might pay $2,000 in premiums and collect $500,000 if your house burns down, or pay premiums for 30 years and never file a claim. The outcome depends on uncertain events - that's aleatory.",
+                simpleAnswer: "There is an unequal exchange of value depending on chance - You might pay little and get a lot, or pay a lot and get nothing.",
+                topic: "Contract Law",
+                difficulty: "medium"
+            },
+            {
+                question: "An insurance policy is a 'contract of adhesion,' which means:",
+                answers: ["It sticks to the property", "It is prepared by the insurer and not negotiable", "Both parties negotiate all terms", "It automatically renews"],
+                correct: 1,
+                explanation: "Adhesion means it's a take-it-or-leave-it contract prepared entirely by the insurer. The insured cannot negotiate terms. Because of this imbalance, courts resolve ambiguities AGAINST the insurer (who wrote it) and IN FAVOR of the insured (who had no say). This protects consumers.",
+                simpleAnswer: "It is prepared by the insurer and not negotiable - You can't negotiate policy terms; you accept them as written or don't buy.",
+                topic: "Contract Law",
+                difficulty: "medium"
+            },
+            {
+                question: "A representation in insurance is:",
+                answers: ["A statement guaranteed to be absolutely true", "A statement believed to be true to the best of one's knowledge", "Not important to the contract", "Only required for commercial policies"],
+                correct: 1,
+                explanation: "A representation is a statement made by the applicant that is substantially true to the best of their knowledge. Minor errors don't void coverage unless they're material to the risk. Contrast with warranties (guaranteed absolutely true - rarely used in modern policies).",
+                simpleAnswer: "A statement believed to be true to the best of one's knowledge - Minor errors in application answers don't void coverage unless material.",
+                topic: "Contract Law",
+                difficulty: "medium"
+            },
+            {
+                question: "Physical hazard refers to:",
+                answers: ["Dishonesty or fraud", "Carelessness due to having insurance", "Physical characteristics that increase the chance of loss", "Legal environment affecting claims"],
+                correct: 2,
+                explanation: "Physical hazards are tangible conditions that increase the frequency or severity of loss: oily rags (fire hazard), icy steps (slip hazard), faulty wiring (fire hazard), poor lighting (theft hazard). These are physical things you can see or touch that make losses more likely.",
+                simpleAnswer: "Physical characteristics that increase the chance of loss - Real, tangible things like icy steps, oily rags, or faulty wiring.",
+                topic: "General Insurance Concepts",
+                difficulty: "easy"
             }
         ];
 
@@ -4639,14 +5402,9 @@
                 <div class="question-card active">
                     <div class="question-number">
                         <span>Question ${currentQuestionIndex + 1} of ${currentQuiz.length}</span>
-                        <div>
-                            <button class="print-btn" onclick="printCurrentQuestion()" title="Print this question with answer">
-                                🖨️ Print
-                            </button>
-                            <button class="bookmark-btn" onclick="toggleBookmark()" title="Bookmark this question">
-                                ${isBookmarked ? '⭐' : '☆'}
-                            </button>
-                        </div>
+                        <button class="bookmark-btn" onclick="toggleBookmark()" title="Bookmark this question">
+                            ${isBookmarked ? '⭐' : '☆'}
+                        </button>
                     </div>
                     <div class="question-category">${question.topic}</div>
                     <div class="question-text">${question.question}</div>
@@ -4980,12 +5738,7 @@
 
             let html = `
                 <div style="background: #fff3cd; border-left: 5px solid #ffc107; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap;">
-                        <h3 style="color: #856404; margin: 0;">📝 Questions You Missed (${incorrectAnswers.length})</h3>
-                        <button class="print-all-btn" onclick="printIncorrectAnswers()" title="Print all incorrect answers as study sheet">
-                            🖨️ Print Study Sheet
-                        </button>
-                    </div>
+                    <h3 style="margin-bottom: 15px; color: #856404;">📝 Questions You Missed (${incorrectAnswers.length})</h3>
                     <p style="color: #856404; margin-bottom: 20px;">Review these questions to understand what you got wrong:</p>
             `;
 
@@ -5647,186 +6400,13 @@
                 alert('You need at least 5 bookmarked questions to practice. Keep bookmarking questions during quizzes!');
                 return;
             }
-
-            currentQuiz = bookmarkedQuestions.map(questionText =>
+            
+            currentQuiz = bookmarkedQuestions.map(questionText => 
                 questionBank.find(q => q.question === questionText)
             ).filter(q => q !== undefined).slice(0, 10);
-
+            
             currentMode = 'practice';
             startQuiz();
-        }
-
-        // ==================== PRINT FUNCTIONS ====================
-
-        function printCurrentQuestion() {
-            const question = currentQuiz[currentQuestionIndex];
-            const letters = ['A', 'B', 'C', 'D'];
-
-            // Create a temporary div for printing
-            const printDiv = document.createElement('div');
-            printDiv.className = 'print-study-sheet';
-            printDiv.style.display = 'none';
-
-            printDiv.innerHTML = `
-                <h1>NC Property & Casualty Study Guide</h1>
-                <h2 style="text-align: center; color: #666; margin-bottom: 30px;">Question #${currentQuestionIndex + 1}</h2>
-
-                <div class="question-item">
-                    <div style="background: #e8f5e9; padding: 10px; border-radius: 5px; margin-bottom: 15px;">
-                        <strong>Topic:</strong> ${question.topic}
-                    </div>
-
-                    <div style="font-size: 18px; font-weight: bold; margin-bottom: 20px;">
-                        ${question.question}
-                    </div>
-
-                    <div style="margin: 20px 0;">
-                        ${question.answers.map((answer, index) => `
-                            <div class="answer-btn ${index === question.correct ? 'correct' : ''}" style="margin: 10px 0; padding: 12px; border: 2px solid ${index === question.correct ? '#28a745' : '#ddd'}; border-radius: 8px; background: ${index === question.correct ? '#d4edda' : 'white'};">
-                                <div style="display: flex; align-items: center; gap: 15px;">
-                                    <div class="answer-letter" style="width: 30px; height: 30px; border-radius: 50%; background: ${index === question.correct ? '#28a745' : '#667eea'}; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">
-                                        ${letters[index]}
-                                    </div>
-                                    <div>${answer}</div>
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-
-                    <div class="correct-answer" style="display: block; background: #d4edda; border-left: 4px solid #28a745; padding: 15px; border-radius: 8px; margin: 20px 0;">
-                        <div style="font-weight: bold; color: #155724; margin-bottom: 10px;">✓ Correct Answer:</div>
-                        <div style="color: #155724;">${question.simpleAnswer}</div>
-                    </div>
-
-                    <div class="explanation" style="display: block; background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; border-radius: 8px;">
-                        <div style="font-weight: bold; color: #856404; margin-bottom: 10px;">💡 Explanation:</div>
-                        <div style="color: #856404; line-height: 1.6;">${question.explanation}</div>
-                    </div>
-                </div>
-            `;
-
-            // Append to body, print, then remove
-            document.body.appendChild(printDiv);
-            printDiv.style.display = 'block';
-            window.print();
-            document.body.removeChild(printDiv);
-        }
-
-        function printIncorrectAnswers() {
-            if (incorrectAnswers.length === 0) {
-                alert('No incorrect answers to print!');
-                return;
-            }
-
-            const letters = ['A', 'B', 'C', 'D'];
-            const today = new Date().toLocaleDateString();
-
-            // Create a temporary div for printing
-            const printDiv = document.createElement('div');
-            printDiv.className = 'print-study-sheet';
-            printDiv.style.display = 'none';
-
-            let questionsHTML = '';
-            incorrectAnswers.forEach((item, index) => {
-                const userAnswerText = item.userAnswer !== null ? item.answers[item.userAnswer] : "No answer selected";
-                const correctAnswerText = item.answers[item.correctAnswer];
-
-                questionsHTML += `
-                    <div class="question-item" style="page-break-inside: avoid; margin-bottom: 30px; padding: 20px; border: 2px solid #333; border-radius: 10px;">
-                        <div style="font-size: 14px; color: #666; margin-bottom: 10px;">
-                            <strong>Question ${index + 1} of ${incorrectAnswers.length}</strong>
-                        </div>
-
-                        <div style="font-size: 18px; font-weight: bold; margin-bottom: 20px; color: #000;">
-                            ${item.question}
-                        </div>
-
-                        <div style="margin: 20px 0;">
-                            ${item.answers.map((answer, answerIndex) => {
-                                let backgroundColor = 'white';
-                                let borderColor = '#ddd';
-                                let extraLabel = '';
-
-                                if (answerIndex === item.correctAnswer) {
-                                    backgroundColor = '#d4edda';
-                                    borderColor = '#28a745';
-                                    extraLabel = ' <strong style="color: #28a745;">✓ CORRECT</strong>';
-                                } else if (answerIndex === item.userAnswer) {
-                                    backgroundColor = '#f8d7da';
-                                    borderColor = '#dc3545';
-                                    extraLabel = ' <strong style="color: #dc3545;">✗ Your Answer</strong>';
-                                }
-
-                                return `
-                                    <div style="margin: 10px 0; padding: 12px; border: 2px solid ${borderColor}; border-radius: 8px; background: ${backgroundColor};">
-                                        <div style="display: flex; align-items: center; gap: 15px;">
-                                            <div style="width: 30px; height: 30px; border-radius: 50%; background: ${answerIndex === item.correctAnswer ? '#28a745' : '#667eea'}; color: white; display: inline-flex; align-items: center; justify-content: center; font-weight: bold;">
-                                                ${letters[answerIndex]}
-                                            </div>
-                                            <div style="flex: 1;">
-                                                ${answer}${extraLabel}
-                                            </div>
-                                        </div>
-                                    </div>
-                                `;
-                            }).join('')}
-                        </div>
-
-                        <div style="background: #d4edda; border-left: 4px solid #28a745; padding: 15px; border-radius: 8px; margin: 15px 0;">
-                            <div style="font-weight: bold; color: #155724; margin-bottom: 8px;">✓ Correct Answer:</div>
-                            <div style="color: #155724; font-size: 15px;"><strong>${correctAnswerText}</strong></div>
-                        </div>
-
-                        <div style="background: #f8f9fa; border-left: 4px solid #667eea; padding: 15px; border-radius: 8px;">
-                            <div style="font-weight: bold; color: #333; margin-bottom: 8px;">💡 Remember This:</div>
-                            <div style="color: #333; line-height: 1.6;">${item.simpleAnswer}</div>
-                        </div>
-
-                        <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; border-radius: 8px; margin-top: 15px;">
-                            <div style="font-weight: bold; color: #856404; margin-bottom: 8px;">📚 Full Explanation:</div>
-                            <div style="color: #856404; line-height: 1.6; font-size: 14px;">${item.explanation}</div>
-                        </div>
-                    </div>
-                `;
-            });
-
-            printDiv.innerHTML = `
-                <div style="padding: 20px;">
-                    <h1 style="text-align: center; border-bottom: 3px solid #000; padding-bottom: 15px; margin-bottom: 10px;">
-                        📝 NC Property & Casualty Study Sheet
-                    </h1>
-                    <h2 style="text-align: center; color: #666; margin-bottom: 30px;">
-                        Questions to Review - ${today}
-                    </h2>
-                    <div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin-bottom: 30px; border: 2px solid #ffc107;">
-                        <p style="margin: 0; color: #856404; font-size: 16px; text-align: center;">
-                            <strong>You missed ${incorrectAnswers.length} question${incorrectAnswers.length !== 1 ? 's' : ''}.</strong>
-                            Study these carefully to improve your score!
-                        </p>
-                    </div>
-                    ${questionsHTML}
-                    <div style="margin-top: 40px; padding: 20px; background: #e8f5e9; border-radius: 8px; border: 2px solid #28a745; page-break-inside: avoid;">
-                        <h3 style="color: #155724; margin-bottom: 10px;">✅ Study Tips:</h3>
-                        <ul style="color: #155724; line-height: 2;">
-                            <li>Read the explanation for each question carefully</li>
-                            <li>Write down the concepts you don't understand</li>
-                            <li>Review the correct answers until they make sense</li>
-                            <li>Take the quiz again to see if you've improved</li>
-                            <li>Focus on understanding WHY the answer is correct, not just memorizing it</li>
-                        </ul>
-                    </div>
-                    <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 2px solid #ddd; color: #666; font-size: 14px;">
-                        <p>Bill Layne Insurance Agency | 1283 N Bridge St, Elkin NC 28621 | 336-835-1993</p>
-                        <p>www.BillLayneInsurance.com</p>
-                    </div>
-                </div>
-            `;
-
-            // Append to body, print, then remove
-            document.body.appendChild(printDiv);
-            printDiv.style.display = 'block';
-            window.print();
-            document.body.removeChild(printDiv);
         }
     </script>
 </body>
