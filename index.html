@@ -186,6 +186,19 @@
             transform: scale(1.2);
         }
 
+        .print-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            margin-left: 10px;
+        }
+
+        .print-btn:hover {
+            transform: scale(1.2);
+        }
+
         .question-category {
             display: inline-block;
             background: #e8f5e9;
@@ -781,6 +794,86 @@
         .alert-content {
             color: #856404;
             line-height: 1.6;
+        }
+
+        @media print {
+            /* Hide everything except the print content */
+            body * {
+                visibility: hidden;
+            }
+
+            #printContent, #printContent * {
+                visibility: visible;
+            }
+
+            #printContent {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                padding: 20px;
+            }
+
+            .print-header {
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 20px;
+                color: #333;
+                border-bottom: 3px solid #667eea;
+                padding-bottom: 10px;
+            }
+
+            .print-question {
+                font-size: 18px;
+                font-weight: bold;
+                margin: 20px 0;
+                color: #333;
+            }
+
+            .print-answers {
+                margin: 20px 0;
+            }
+
+            .print-answer-item {
+                padding: 10px;
+                margin: 5px 0;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+
+            .print-answer-item.correct {
+                background: #d4edda;
+                border-color: #28a745;
+                font-weight: bold;
+            }
+
+            .print-correct-answer {
+                margin: 20px 0;
+                padding: 15px;
+                background: #d4edda;
+                border: 2px solid #28a745;
+                border-radius: 8px;
+            }
+
+            .print-explanation {
+                margin: 20px 0;
+                padding: 15px;
+                background: #e7f3ff;
+                border: 2px solid #667eea;
+                border-radius: 8px;
+            }
+
+            .print-section-title {
+                font-weight: bold;
+                font-size: 16px;
+                margin-bottom: 10px;
+                color: #333;
+            }
+
+            /* Hide buttons in print */
+            .bookmark-btn, .print-btn, .nav-buttons, .header {
+                display: none !important;
+            }
         }
     </style>
 </head>
@@ -5402,9 +5495,14 @@
                 <div class="question-card active">
                     <div class="question-number">
                         <span>Question ${currentQuestionIndex + 1} of ${currentQuiz.length}</span>
-                        <button class="bookmark-btn" onclick="toggleBookmark()" title="Bookmark this question">
-                            ${isBookmarked ? '⭐' : '☆'}
-                        </button>
+                        <div>
+                            <button class="bookmark-btn" onclick="toggleBookmark()" title="Bookmark this question">
+                                ${isBookmarked ? '⭐' : '☆'}
+                            </button>
+                            <button class="print-btn" onclick="printQuestion()" title="Print this question">
+                                🖨️
+                            </button>
+                        </div>
                     </div>
                     <div class="question-category">${question.topic}</div>
                     <div class="question-text">${question.question}</div>
@@ -5462,15 +5560,84 @@
         function toggleBookmark() {
             const question = currentQuiz[currentQuestionIndex];
             const index = bookmarkedQuestions.indexOf(question.question);
-            
+
             if (index === -1) {
                 bookmarkedQuestions.push(question.question);
             } else {
                 bookmarkedQuestions.splice(index, 1);
             }
-            
+
             saveQuizHistory();
             loadQuestion(); // Reload to update bookmark star
+        }
+
+        function printQuestion() {
+            const question = currentQuiz[currentQuestionIndex];
+            const letters = ['A', 'B', 'C', 'D'];
+
+            // Create print content
+            let printContent = `
+                <div id="printContent">
+                    <div class="print-header">NC Insurance Producer License - Study Question</div>
+
+                    <div style="margin: 20px 0;">
+                        <strong>Question ${currentQuestionIndex + 1} of ${currentQuiz.length}</strong>
+                    </div>
+
+                    <div style="background: #e8f5e9; color: #2e7d32; padding: 8px 15px; border-radius: 8px; display: inline-block; margin: 10px 0;">
+                        <strong>Topic:</strong> ${question.topic}
+                    </div>
+
+                    <div class="print-question">
+                        ${question.question}
+                    </div>
+
+                    <div class="print-answers">
+                        <div class="print-section-title">Answer Options:</div>
+            `;
+
+            question.answers.forEach((answer, index) => {
+                const isCorrect = index === question.correct;
+                printContent += `
+                    <div class="print-answer-item ${isCorrect ? 'correct' : ''}">
+                        <strong>${letters[index]}.</strong> ${answer}
+                        ${isCorrect ? ' ✓ CORRECT ANSWER' : ''}
+                    </div>
+                `;
+            });
+
+            printContent += `
+                    </div>
+
+                    <div class="print-correct-answer">
+                        <div class="print-section-title">✓ Correct Answer:</div>
+                        <div>${question.simpleAnswer}</div>
+                    </div>
+
+                    <div class="print-explanation">
+                        <div class="print-section-title">💡 Explanation:</div>
+                        <div>${question.explanation}</div>
+                    </div>
+                </div>
+            `;
+
+            // Create temporary container for print content
+            const existingPrintContent = document.getElementById('printContent');
+            if (existingPrintContent) {
+                existingPrintContent.remove();
+            }
+
+            const printContainer = document.createElement('div');
+            printContainer.innerHTML = printContent;
+            document.body.appendChild(printContainer);
+
+            // Trigger print
+            window.print();
+
+            // Clean up after print
+            setTimeout(() => {
+                printContainer.remove();
+            }, 100);
         }
 
         function submitAnswer() {
